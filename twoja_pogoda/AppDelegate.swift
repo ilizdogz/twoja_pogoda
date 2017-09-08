@@ -1,0 +1,84 @@
+//
+//  AppDelegate.swift
+//  twoja_pogoda
+//
+//  Created by Krzysztof Glimos on 22.08.2017.
+//  Copyright © 2017 Krzysztof Glimos. All rights reserved.
+//
+
+import UIKit
+
+@UIApplicationMain
+class AppDelegate: UIResponder, UIApplicationDelegate {
+
+    var window: UIWindow?
+
+
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        // Override point for customization after application launch.
+        
+        UITabBarItem.appearance().titlePositionAdjustment = UIOffset(horizontal: 0, vertical: -5)
+        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName : UIColor.init(colorLiteralRed: 91/255, green: 154/255, blue: 1, alpha: 1), NSFontAttributeName: UIFont(name: "Menlo", size: 15)!], for: UIControlState.normal) // changes the default color
+        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName : UIColor.orange, NSFontAttributeName: UIFont(name: "Menlo", size: 15)!], for: UIControlState.selected)
+        UITabBar.appearance().tintColor = UIColor(colorLiteralRed: 12/255, green: 25/255, blue: 45/255, alpha: 1)
+        
+        UIApplication.shared.statusBarStyle = .lightContent
+        
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white, NSFontAttributeName: UIFont(name: "Menlo", size: 15)!]
+        if self.window!.rootViewController as? UITabBarController != nil {
+            let tabBarController = self.window!.rootViewController as! UITabBarController
+            tabBarController.selectedIndex = 1
+        }
+        let defaults = UserDefaults.standard
+        if defaults.object(forKey: "zapisaneKolory") == nil {
+            let zapisaneDomyslne = NSKeyedArchiver.archivedData(withRootObject: ZapisaneKolory.domyslneUstawienia)
+            defaults.set(zapisaneDomyslne, forKey: "zapisaneKolory")
+            zapisaneKolory = ZapisaneKolory.domyslneUstawienia
+        } else {
+            let koloryData = defaults.object(forKey: "zapisaneKolory") as! Data
+            zapisaneKolory = NSKeyedUnarchiver.unarchiveObject(with: koloryData) as! ZapisaneKolory
+        }
+        if defaults.object(forKey: "temperatura") == nil {
+            let temp: Stopien = .c
+            defaults.set(temp.rawValue, forKey: "temperatura")
+            formatTemp = temp
+        } else {
+            let tempRaw = defaults.object(forKey: "temperatura") as! String
+            formatTemp = Stopien(rawValue: tempRaw)
+        }
+        
+        /*
+        if let koloryData = defaults.object(forKey: "koloryPogoda") as? Data {
+            let kolory = NSKeyedUnarchiver.unarchiveObject(with: koloryData) as! KoloryPogoda
+        }
+        */
+        return true
+    }
+
+    func applicationWillResignActive(_ application: UIApplication) {
+        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
+        // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
+    }
+
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
+        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        
+    }
+
+    func applicationWillEnterForeground(_ application: UIApplication) {
+        // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+    }
+
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+
+    }
+
+    func applicationWillTerminate(_ application: UIApplication) {
+        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+
+
+}
+

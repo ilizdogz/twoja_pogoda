@@ -1,0 +1,656 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A000BA931F4B9B7C00AB967C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A000BA921F4B9B7C00AB967C /* AppDelegate.swift */; };
+		A000BA981F4B9B7C00AB967C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A000BA961F4B9B7C00AB967C /* Main.storyboard */; };
+		A000BA9A1F4B9B7C00AB967C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A000BA991F4B9B7C00AB967C /* Assets.xcassets */; };
+		A000BA9D1F4B9B7C00AB967C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A000BA9B1F4B9B7C00AB967C /* LaunchScreen.storyboard */; };
+		A000BAA81F4B9B7C00AB967C /* twoja_pogodaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A000BAA71F4B9B7C00AB967C /* twoja_pogodaTests.swift */; };
+		A000BAB31F4B9B7C00AB967C /* twoja_pogodaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A000BAB21F4B9B7C00AB967C /* twoja_pogodaUITests.swift */; };
+		A000BAC11F4B9CD600AB967C /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A000BAC01F4B9CD600AB967C /* TabBar.swift */; };
+		A000BAC51F4B9F0C00AB967C /* ZapisaneTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A000BAC41F4B9F0C00AB967C /* ZapisaneTableViewController.swift */; };
+		A000BACD1F4C467A00AB967C /* PogodaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A000BACC1F4C467A00AB967C /* PogodaTableViewController.swift */; };
+		A000BACF1F4CE12F00AB967C /* PogodaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A000BACE1F4CE12F00AB967C /* PogodaTableViewCell.swift */; };
+		A000BAD11F4CE45400AB967C /* PogodaTableViewController+delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A000BAD01F4CE45400AB967C /* PogodaTableViewController+delegate.swift */; };
+		A000BAD31F4CE50D00AB967C /* PogodaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A000BAD21F4CE50D00AB967C /* PogodaCollectionViewCell.swift */; };
+		A000BAD51F4CE9E500AB967C /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A000BAD41F4CE9E500AB967C /* SwiftyJSON.swift */; };
+		A000BAD71F4DBF8F00AB967C /* MiejsceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A000BAD61F4DBF8F00AB967C /* MiejsceTableViewCell.swift */; };
+		A000BAD91F4EFDCE00AB967C /* UIRefreshControl + beginRefreshingManually.swift in Sources */ = {isa = PBXBuildFile; fileRef = A000BAD81F4EFDCE00AB967C /* UIRefreshControl + beginRefreshingManually.swift */; };
+		A000BADF1F502A9C00AB967C /* Kolory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A000BADE1F502A9C00AB967C /* Kolory.swift */; };
+		A083E69B1F5C26090080A8B4 /* rodzajJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A083E69A1F5C26090080A8B4 /* rodzajJSON.swift */; };
+		A0B9AAEE1F6002F00022591D /* Pogoda.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B9AAED1F6002F00022591D /* Pogoda.swift */; };
+		A0F17D171F586085006D4E96 /* WyszukajViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F17D161F586085006D4E96 /* WyszukajViewController.swift */; };
+		A0F17D191F596F22006D4E96 /* UstawieniaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F17D181F596F22006D4E96 /* UstawieniaTableViewController.swift */; };
+		A0F17D211F597B3C006D4E96 /* UstawieniaPogodaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F17D201F597B3C006D4E96 /* UstawieniaPogodaTableViewController.swift */; };
+		A0F17D251F599BE8006D4E96 /* KoloryPogoda.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F17D241F599BE8006D4E96 /* KoloryPogoda.swift */; };
+		A0F17D271F599FF2006D4E96 /* UIColor + hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F17D261F599FF2006D4E96 /* UIColor + hex.swift */; };
+		A0F17D291F59C0DF006D4E96 /* ColorPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F17D281F59C0DE006D4E96 /* ColorPickerViewController.swift */; };
+		A0F17D2D1F59EE87006D4E96 /* colorPalette.plist in Resources */ = {isa = PBXBuildFile; fileRef = A0F17D2C1F59EE87006D4E96 /* colorPalette.plist */; };
+		A0F17D311F5AFEAC006D4E96 /* apiKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F17D301F5AFEAC006D4E96 /* apiKey.swift */; };
+		A0F17D331F5B0019006D4E96 /* Temperatura.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F17D321F5B0019006D4E96 /* Temperatura.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A000BAA41F4B9B7C00AB967C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A000BA871F4B9B7C00AB967C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A000BA8E1F4B9B7C00AB967C;
+			remoteInfo = twoja_pogoda;
+		};
+		A000BAAF1F4B9B7C00AB967C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A000BA871F4B9B7C00AB967C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A000BA8E1F4B9B7C00AB967C;
+			remoteInfo = twoja_pogoda;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A000BA8F1F4B9B7C00AB967C /* twoja_pogoda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = twoja_pogoda.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A000BA921F4B9B7C00AB967C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A000BA971F4B9B7C00AB967C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A000BA991F4B9B7C00AB967C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A000BA9C1F4B9B7C00AB967C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A000BA9E1F4B9B7C00AB967C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A000BAA31F4B9B7C00AB967C /* twoja_pogodaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = twoja_pogodaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A000BAA71F4B9B7C00AB967C /* twoja_pogodaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = twoja_pogodaTests.swift; sourceTree = "<group>"; };
+		A000BAA91F4B9B7C00AB967C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A000BAAE1F4B9B7C00AB967C /* twoja_pogodaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = twoja_pogodaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A000BAB21F4B9B7C00AB967C /* twoja_pogodaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = twoja_pogodaUITests.swift; sourceTree = "<group>"; };
+		A000BAB41F4B9B7C00AB967C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A000BAC01F4B9CD600AB967C /* TabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
+		A000BAC41F4B9F0C00AB967C /* ZapisaneTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZapisaneTableViewController.swift; sourceTree = "<group>"; };
+		A000BACC1F4C467A00AB967C /* PogodaTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PogodaTableViewController.swift; sourceTree = "<group>"; };
+		A000BACE1F4CE12F00AB967C /* PogodaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PogodaTableViewCell.swift; sourceTree = "<group>"; };
+		A000BAD01F4CE45400AB967C /* PogodaTableViewController+delegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PogodaTableViewController+delegate.swift"; sourceTree = "<group>"; };
+		A000BAD21F4CE50D00AB967C /* PogodaCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PogodaCollectionViewCell.swift; sourceTree = "<group>"; };
+		A000BAD41F4CE9E500AB967C /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		A000BAD61F4DBF8F00AB967C /* MiejsceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MiejsceTableViewCell.swift; path = ../MiejsceTableViewCell.swift; sourceTree = "<group>"; };
+		A000BAD81F4EFDCE00AB967C /* UIRefreshControl + beginRefreshingManually.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIRefreshControl + beginRefreshingManually.swift"; sourceTree = "<group>"; };
+		A000BADE1F502A9C00AB967C /* Kolory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kolory.swift; sourceTree = "<group>"; };
+		A083E69A1F5C26090080A8B4 /* rodzajJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = rodzajJSON.swift; sourceTree = "<group>"; };
+		A0B9AAED1F6002F00022591D /* Pogoda.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pogoda.swift; sourceTree = "<group>"; };
+		A0F17D161F586085006D4E96 /* WyszukajViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WyszukajViewController.swift; sourceTree = "<group>"; };
+		A0F17D181F596F22006D4E96 /* UstawieniaTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UstawieniaTableViewController.swift; sourceTree = "<group>"; };
+		A0F17D201F597B3C006D4E96 /* UstawieniaPogodaTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UstawieniaPogodaTableViewController.swift; sourceTree = "<group>"; };
+		A0F17D241F599BE8006D4E96 /* KoloryPogoda.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KoloryPogoda.swift; sourceTree = "<group>"; };
+		A0F17D261F599FF2006D4E96 /* UIColor + hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor + hex.swift"; path = "../UIColor + hex.swift"; sourceTree = "<group>"; };
+		A0F17D281F59C0DE006D4E96 /* ColorPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPickerViewController.swift; sourceTree = "<group>"; };
+		A0F17D2C1F59EE87006D4E96 /* colorPalette.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = colorPalette.plist; sourceTree = "<group>"; };
+		A0F17D301F5AFEAC006D4E96 /* apiKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = apiKey.swift; sourceTree = "<group>"; };
+		A0F17D321F5B0019006D4E96 /* Temperatura.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Temperatura.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A000BA8C1F4B9B7C00AB967C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A000BAA01F4B9B7C00AB967C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A000BAAB1F4B9B7C00AB967C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A000BA861F4B9B7C00AB967C = {
+			isa = PBXGroup;
+			children = (
+				A000BA911F4B9B7C00AB967C /* twoja_pogoda */,
+				A000BAA61F4B9B7C00AB967C /* twoja_pogodaTests */,
+				A000BAB11F4B9B7C00AB967C /* twoja_pogodaUITests */,
+				A000BA901F4B9B7C00AB967C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A000BA901F4B9B7C00AB967C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A000BA8F1F4B9B7C00AB967C /* twoja_pogoda.app */,
+				A000BAA31F4B9B7C00AB967C /* twoja_pogodaTests.xctest */,
+				A000BAAE1F4B9B7C00AB967C /* twoja_pogodaUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A000BA911F4B9B7C00AB967C /* twoja_pogoda */ = {
+			isa = PBXGroup;
+			children = (
+				A000BA921F4B9B7C00AB967C /* AppDelegate.swift */,
+				A000BA961F4B9B7C00AB967C /* Main.storyboard */,
+				A0F17D1A1F596F2F006D4E96 /* ustawienia */,
+				A0F17D1B1F596F39006D4E96 /* wyszukaj */,
+				A0F17D1C1F596F41006D4E96 /* pogoda(1) */,
+				A0F17D1D1F596F5A006D4E96 /* zapisane */,
+				A000BAC01F4B9CD600AB967C /* TabBar.swift */,
+				A0F17D321F5B0019006D4E96 /* Temperatura.swift */,
+				A0F17D301F5AFEAC006D4E96 /* apiKey.swift */,
+				A000BAD81F4EFDCE00AB967C /* UIRefreshControl + beginRefreshingManually.swift */,
+				A0F17D261F599FF2006D4E96 /* UIColor + hex.swift */,
+				A000BADE1F502A9C00AB967C /* Kolory.swift */,
+				A000BAD41F4CE9E500AB967C /* SwiftyJSON.swift */,
+				A0F17D2C1F59EE87006D4E96 /* colorPalette.plist */,
+				A000BA991F4B9B7C00AB967C /* Assets.xcassets */,
+				A000BA9B1F4B9B7C00AB967C /* LaunchScreen.storyboard */,
+				A000BA9E1F4B9B7C00AB967C /* Info.plist */,
+			);
+			path = twoja_pogoda;
+			sourceTree = "<group>";
+		};
+		A000BAA61F4B9B7C00AB967C /* twoja_pogodaTests */ = {
+			isa = PBXGroup;
+			children = (
+				A000BAA71F4B9B7C00AB967C /* twoja_pogodaTests.swift */,
+				A000BAA91F4B9B7C00AB967C /* Info.plist */,
+			);
+			path = twoja_pogodaTests;
+			sourceTree = "<group>";
+		};
+		A000BAB11F4B9B7C00AB967C /* twoja_pogodaUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A000BAB21F4B9B7C00AB967C /* twoja_pogodaUITests.swift */,
+				A000BAB41F4B9B7C00AB967C /* Info.plist */,
+			);
+			path = twoja_pogodaUITests;
+			sourceTree = "<group>";
+		};
+		A0F17D1A1F596F2F006D4E96 /* ustawienia */ = {
+			isa = PBXGroup;
+			children = (
+				A0F17D181F596F22006D4E96 /* UstawieniaTableViewController.swift */,
+				A0F17D201F597B3C006D4E96 /* UstawieniaPogodaTableViewController.swift */,
+				A0F17D241F599BE8006D4E96 /* KoloryPogoda.swift */,
+				A0F17D281F59C0DE006D4E96 /* ColorPickerViewController.swift */,
+			);
+			name = ustawienia;
+			sourceTree = "<group>";
+		};
+		A0F17D1B1F596F39006D4E96 /* wyszukaj */ = {
+			isa = PBXGroup;
+			children = (
+				A0F17D161F586085006D4E96 /* WyszukajViewController.swift */,
+			);
+			name = wyszukaj;
+			sourceTree = "<group>";
+		};
+		A0F17D1C1F596F41006D4E96 /* pogoda(1) */ = {
+			isa = PBXGroup;
+			children = (
+				A000BACC1F4C467A00AB967C /* PogodaTableViewController.swift */,
+				A083E69A1F5C26090080A8B4 /* rodzajJSON.swift */,
+				A000BAD01F4CE45400AB967C /* PogodaTableViewController+delegate.swift */,
+				A000BACE1F4CE12F00AB967C /* PogodaTableViewCell.swift */,
+				A000BAD21F4CE50D00AB967C /* PogodaCollectionViewCell.swift */,
+				A0B9AAED1F6002F00022591D /* Pogoda.swift */,
+			);
+			name = "pogoda(1)";
+			sourceTree = "<group>";
+		};
+		A0F17D1D1F596F5A006D4E96 /* zapisane */ = {
+			isa = PBXGroup;
+			children = (
+				A000BAC41F4B9F0C00AB967C /* ZapisaneTableViewController.swift */,
+				A000BAD61F4DBF8F00AB967C /* MiejsceTableViewCell.swift */,
+			);
+			name = zapisane;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A000BA8E1F4B9B7C00AB967C /* twoja_pogoda */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A000BAB71F4B9B7C00AB967C /* Build configuration list for PBXNativeTarget "twoja_pogoda" */;
+			buildPhases = (
+				A000BA8B1F4B9B7C00AB967C /* Sources */,
+				A000BA8C1F4B9B7C00AB967C /* Frameworks */,
+				A000BA8D1F4B9B7C00AB967C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = twoja_pogoda;
+			productName = twoja_pogoda;
+			productReference = A000BA8F1F4B9B7C00AB967C /* twoja_pogoda.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A000BAA21F4B9B7C00AB967C /* twoja_pogodaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A000BABA1F4B9B7C00AB967C /* Build configuration list for PBXNativeTarget "twoja_pogodaTests" */;
+			buildPhases = (
+				A000BA9F1F4B9B7C00AB967C /* Sources */,
+				A000BAA01F4B9B7C00AB967C /* Frameworks */,
+				A000BAA11F4B9B7C00AB967C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A000BAA51F4B9B7C00AB967C /* PBXTargetDependency */,
+			);
+			name = twoja_pogodaTests;
+			productName = twoja_pogodaTests;
+			productReference = A000BAA31F4B9B7C00AB967C /* twoja_pogodaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A000BAAD1F4B9B7C00AB967C /* twoja_pogodaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A000BABD1F4B9B7C00AB967C /* Build configuration list for PBXNativeTarget "twoja_pogodaUITests" */;
+			buildPhases = (
+				A000BAAA1F4B9B7C00AB967C /* Sources */,
+				A000BAAB1F4B9B7C00AB967C /* Frameworks */,
+				A000BAAC1F4B9B7C00AB967C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A000BAB01F4B9B7C00AB967C /* PBXTargetDependency */,
+			);
+			name = twoja_pogodaUITests;
+			productName = twoja_pogodaUITests;
+			productReference = A000BAAE1F4B9B7C00AB967C /* twoja_pogodaUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A000BA871F4B9B7C00AB967C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Krzysztof Glimos";
+				TargetAttributes = {
+					A000BA8E1F4B9B7C00AB967C = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = P52S5YCBTV;
+						ProvisioningStyle = Automatic;
+					};
+					A000BAA21F4B9B7C00AB967C = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = P52S5YCBTV;
+						ProvisioningStyle = Automatic;
+						TestTargetID = A000BA8E1F4B9B7C00AB967C;
+					};
+					A000BAAD1F4B9B7C00AB967C = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = P52S5YCBTV;
+						ProvisioningStyle = Automatic;
+						TestTargetID = A000BA8E1F4B9B7C00AB967C;
+					};
+				};
+			};
+			buildConfigurationList = A000BA8A1F4B9B7C00AB967C /* Build configuration list for PBXProject "twoja_pogoda" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A000BA861F4B9B7C00AB967C;
+			productRefGroup = A000BA901F4B9B7C00AB967C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A000BA8E1F4B9B7C00AB967C /* twoja_pogoda */,
+				A000BAA21F4B9B7C00AB967C /* twoja_pogodaTests */,
+				A000BAAD1F4B9B7C00AB967C /* twoja_pogodaUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A000BA8D1F4B9B7C00AB967C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A000BA9D1F4B9B7C00AB967C /* LaunchScreen.storyboard in Resources */,
+				A000BA9A1F4B9B7C00AB967C /* Assets.xcassets in Resources */,
+				A0F17D2D1F59EE87006D4E96 /* colorPalette.plist in Resources */,
+				A000BA981F4B9B7C00AB967C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A000BAA11F4B9B7C00AB967C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A000BAAC1F4B9B7C00AB967C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A000BA8B1F4B9B7C00AB967C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0B9AAEE1F6002F00022591D /* Pogoda.swift in Sources */,
+				A000BAC11F4B9CD600AB967C /* TabBar.swift in Sources */,
+				A0F17D191F596F22006D4E96 /* UstawieniaTableViewController.swift in Sources */,
+				A0F17D291F59C0DF006D4E96 /* ColorPickerViewController.swift in Sources */,
+				A000BAC51F4B9F0C00AB967C /* ZapisaneTableViewController.swift in Sources */,
+				A000BAD11F4CE45400AB967C /* PogodaTableViewController+delegate.swift in Sources */,
+				A000BAD51F4CE9E500AB967C /* SwiftyJSON.swift in Sources */,
+				A000BAD71F4DBF8F00AB967C /* MiejsceTableViewCell.swift in Sources */,
+				A083E69B1F5C26090080A8B4 /* rodzajJSON.swift in Sources */,
+				A000BAD91F4EFDCE00AB967C /* UIRefreshControl + beginRefreshingManually.swift in Sources */,
+				A0F17D251F599BE8006D4E96 /* KoloryPogoda.swift in Sources */,
+				A000BAD31F4CE50D00AB967C /* PogodaCollectionViewCell.swift in Sources */,
+				A0F17D311F5AFEAC006D4E96 /* apiKey.swift in Sources */,
+				A0F17D271F599FF2006D4E96 /* UIColor + hex.swift in Sources */,
+				A0F17D171F586085006D4E96 /* WyszukajViewController.swift in Sources */,
+				A000BACF1F4CE12F00AB967C /* PogodaTableViewCell.swift in Sources */,
+				A000BA931F4B9B7C00AB967C /* AppDelegate.swift in Sources */,
+				A0F17D331F5B0019006D4E96 /* Temperatura.swift in Sources */,
+				A000BACD1F4C467A00AB967C /* PogodaTableViewController.swift in Sources */,
+				A000BADF1F502A9C00AB967C /* Kolory.swift in Sources */,
+				A0F17D211F597B3C006D4E96 /* UstawieniaPogodaTableViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A000BA9F1F4B9B7C00AB967C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A000BAA81F4B9B7C00AB967C /* twoja_pogodaTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A000BAAA1F4B9B7C00AB967C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A000BAB31F4B9B7C00AB967C /* twoja_pogodaUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A000BAA51F4B9B7C00AB967C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A000BA8E1F4B9B7C00AB967C /* twoja_pogoda */;
+			targetProxy = A000BAA41F4B9B7C00AB967C /* PBXContainerItemProxy */;
+		};
+		A000BAB01F4B9B7C00AB967C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A000BA8E1F4B9B7C00AB967C /* twoja_pogoda */;
+			targetProxy = A000BAAF1F4B9B7C00AB967C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A000BA961F4B9B7C00AB967C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A000BA971F4B9B7C00AB967C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A000BA9B1F4B9B7C00AB967C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A000BA9C1F4B9B7C00AB967C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A000BAB51F4B9B7C00AB967C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		A000BAB61F4B9B7C00AB967C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A000BAB81F4B9B7C00AB967C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = P52S5YCBTV;
+				INFOPLIST_FILE = twoja_pogoda/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kglimos.twoja-pogoda";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A000BAB91F4B9B7C00AB967C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = P52S5YCBTV;
+				INFOPLIST_FILE = twoja_pogoda/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kglimos.twoja-pogoda";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A000BABB1F4B9B7C00AB967C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = P52S5YCBTV;
+				INFOPLIST_FILE = twoja_pogodaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kglimos.twoja-pogodaTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/twoja_pogoda.app/twoja_pogoda";
+			};
+			name = Debug;
+		};
+		A000BABC1F4B9B7C00AB967C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = P52S5YCBTV;
+				INFOPLIST_FILE = twoja_pogodaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kglimos.twoja-pogodaTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/twoja_pogoda.app/twoja_pogoda";
+			};
+			name = Release;
+		};
+		A000BABE1F4B9B7C00AB967C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = P52S5YCBTV;
+				INFOPLIST_FILE = twoja_pogodaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kglimos.twoja-pogodaUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = twoja_pogoda;
+			};
+			name = Debug;
+		};
+		A000BABF1F4B9B7C00AB967C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = P52S5YCBTV;
+				INFOPLIST_FILE = twoja_pogodaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kglimos.twoja-pogodaUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = twoja_pogoda;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A000BA8A1F4B9B7C00AB967C /* Build configuration list for PBXProject "twoja_pogoda" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A000BAB51F4B9B7C00AB967C /* Debug */,
+				A000BAB61F4B9B7C00AB967C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A000BAB71F4B9B7C00AB967C /* Build configuration list for PBXNativeTarget "twoja_pogoda" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A000BAB81F4B9B7C00AB967C /* Debug */,
+				A000BAB91F4B9B7C00AB967C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A000BABA1F4B9B7C00AB967C /* Build configuration list for PBXNativeTarget "twoja_pogodaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A000BABB1F4B9B7C00AB967C /* Debug */,
+				A000BABC1F4B9B7C00AB967C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A000BABD1F4B9B7C00AB967C /* Build configuration list for PBXNativeTarget "twoja_pogodaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A000BABE1F4B9B7C00AB967C /* Debug */,
+				A000BABF1F4B9B7C00AB967C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A000BA871F4B9B7C00AB967C /* Project object */;
+}
