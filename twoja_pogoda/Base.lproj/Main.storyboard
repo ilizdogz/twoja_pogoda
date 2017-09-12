@@ -183,7 +183,7 @@
                                             <subviews>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="7yv-sm-INt">
                                                     <rect key="frame" x="0.0" y="0.0" width="359" height="262"/>
-                                                    <color key="backgroundColor" red="0.047058823530000002" green="0.098039215690000001" blue="0.1764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="backgroundColor" red="0.047058823530000002" green="0.098039215690000001" blue="0.1764705882" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="NUt-P9-DSD">
                                                         <size key="itemSize" width="240" height="260"/>
                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -301,7 +301,7 @@
                                                     </cells>
                                                 </collectionView>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.047058823530000002" green="0.098039215690000001" blue="0.1764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" red="0.047058823530000002" green="0.098039215690000001" blue="0.1764705882" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="7yv-sm-INt" secondAttribute="trailing" id="4kX-Gz-vDu"/>
                                                 <constraint firstItem="7yv-sm-INt" firstAttribute="leading" secondItem="xyf-1Z-ZDM" secondAttribute="leading" id="D9C-Gw-LOh"/>
@@ -320,7 +320,7 @@
                                         <constraint firstItem="ACb-yN-ac4" firstAttribute="leading" secondItem="9sB-e6-Ajx" secondAttribute="leading" constant="8" id="pPF-sp-3fW"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" red="0.047058823530000002" green="0.098039215690000001" blue="0.1764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.047058823530000002" green="0.098039215690000001" blue="0.1764705882" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="collectionView" destination="7yv-sm-INt" id="NOt-Hq-o1o"/>
                                     <outlet property="dataLabel" destination="ACb-yN-ac4" id="mUW-4p-gog"/>
@@ -445,7 +445,7 @@
                             <tableViewSection headerTitle="jednostki" id="u9o-I7-oS3">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="QvT-eP-zgH">
-                                        <rect key="frame" x="0.0" y="56" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="55" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QvT-eP-zgH" id="ziY-5N-O3e">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -466,7 +466,7 @@
                                         <color key="backgroundColor" red="0.090196078430000007" green="0.18039215689999999" blue="0.3294117647" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ucy-1s-0Zm">
-                                        <rect key="frame" x="0.0" y="100" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="99" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ucy-1s-0Zm" id="Vlg-AA-oXe">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -523,7 +523,7 @@
                             <tableViewSection headerTitle="wygląd" id="L0k-kO-dKx">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="Tyr-Za-lgX">
-                                        <rect key="frame" x="0.0" y="200" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="199" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Tyr-Za-lgX" id="wwB-0H-BOf">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="44"/>
@@ -547,7 +547,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Xy7-4n-WPi">
-                                        <rect key="frame" x="0.0" y="244" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="243" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xy7-4n-WPi" id="xy0-Iv-erh">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>

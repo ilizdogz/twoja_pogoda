@@ -22,8 +22,7 @@
 		A000BAD51F4CE9E500AB967C /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A000BAD41F4CE9E500AB967C /* SwiftyJSON.swift */; };
 		A000BAD71F4DBF8F00AB967C /* MiejsceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A000BAD61F4DBF8F00AB967C /* MiejsceTableViewCell.swift */; };
 		A000BAD91F4EFDCE00AB967C /* UIRefreshControl + beginRefreshingManually.swift in Sources */ = {isa = PBXBuildFile; fileRef = A000BAD81F4EFDCE00AB967C /* UIRefreshControl + beginRefreshingManually.swift */; };
-		A000BADF1F502A9C00AB967C /* Kolory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A000BADE1F502A9C00AB967C /* Kolory.swift */; };
-		A031ED3D1F63472000CD908C /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = A031ED3C1F63472000CD908C /* .gitignore */; };
+		A07C2D771F68A14B006A9BD7 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = A07C2D761F68A14B006A9BD7 /* .gitignore */; };
 		A083E69B1F5C26090080A8B4 /* rodzajJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A083E69A1F5C26090080A8B4 /* rodzajJSON.swift */; };
 		A0B9AAEE1F6002F00022591D /* Pogoda.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B9AAED1F6002F00022591D /* Pogoda.swift */; };
 		A0F17D171F586085006D4E96 /* WyszukajViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F17D161F586085006D4E96 /* WyszukajViewController.swift */; };
@@ -76,8 +75,7 @@
 		A000BAD41F4CE9E500AB967C /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		A000BAD61F4DBF8F00AB967C /* MiejsceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MiejsceTableViewCell.swift; path = ../MiejsceTableViewCell.swift; sourceTree = "<group>"; };
 		A000BAD81F4EFDCE00AB967C /* UIRefreshControl + beginRefreshingManually.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIRefreshControl + beginRefreshingManually.swift"; sourceTree = "<group>"; };
-		A000BADE1F502A9C00AB967C /* Kolory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kolory.swift; sourceTree = "<group>"; };
-		A031ED3C1F63472000CD908C /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		A07C2D761F68A14B006A9BD7 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		A083E69A1F5C26090080A8B4 /* rodzajJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = rodzajJSON.swift; sourceTree = "<group>"; };
 		A0B9AAED1F6002F00022591D /* Pogoda.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pogoda.swift; sourceTree = "<group>"; };
 		A0F17D161F586085006D4E96 /* WyszukajViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WyszukajViewController.swift; sourceTree = "<group>"; };
@@ -119,6 +117,7 @@
 		A000BA861F4B9B7C00AB967C = {
 			isa = PBXGroup;
 			children = (
+				A07C2D761F68A14B006A9BD7 /* .gitignore */,
 				A031ED3E1F63472600CD908C /* Git */,
 				A000BA911F4B9B7C00AB967C /* twoja_pogoda */,
 				A000BAA61F4B9B7C00AB967C /* twoja_pogodaTests */,
@@ -151,7 +150,6 @@
 				A0F17D301F5AFEAC006D4E96 /* apiKey.swift */,
 				A000BAD81F4EFDCE00AB967C /* UIRefreshControl + beginRefreshingManually.swift */,
 				A0F17D261F599FF2006D4E96 /* UIColor + hex.swift */,
-				A000BADE1F502A9C00AB967C /* Kolory.swift */,
 				A000BAD41F4CE9E500AB967C /* SwiftyJSON.swift */,
 				A0F17D2C1F59EE87006D4E96 /* colorPalette.plist */,
 				A000BA991F4B9B7C00AB967C /* Assets.xcassets */,
@@ -182,7 +180,6 @@
 		A031ED3E1F63472600CD908C /* Git */ = {
 			isa = PBXGroup;
 			children = (
-				A031ED3C1F63472000CD908C /* .gitignore */,
 			);
 			name = Git;
 			path = twoja_pogoda;
@@ -339,10 +336,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A031ED3D1F63472000CD908C /* .gitignore in Resources */,
 				A000BA9D1F4B9B7C00AB967C /* LaunchScreen.storyboard in Resources */,
 				A000BA9A1F4B9B7C00AB967C /* Assets.xcassets in Resources */,
 				A0F17D2D1F59EE87006D4E96 /* colorPalette.plist in Resources */,
+				A07C2D771F68A14B006A9BD7 /* .gitignore in Resources */,
 				A000BA981F4B9B7C00AB967C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -387,7 +384,6 @@
 				A000BA931F4B9B7C00AB967C /* AppDelegate.swift in Sources */,
 				A0F17D331F5B0019006D4E96 /* Temperatura.swift in Sources */,
 				A000BACD1F4C467A00AB967C /* PogodaTableViewController.swift in Sources */,
-				A000BADF1F502A9C00AB967C /* Kolory.swift in Sources */,
 				A0F17D211F597B3C006D4E96 /* UstawieniaPogodaTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -83,6 +83,10 @@ class ZapisaneKolory: NSObject, NSCoding {
     static var domyslneUstawienia = ZapisaneKolory(dzien: Kolory.zoltyDzien, godzina: Kolory.bialy, temp: Kolory.zielonyDuze, opis: Kolory.zielonyDuze, cisnienie: Kolory.niebieskiMale, wilgotnosc: Kolory.niebieskiMale, zachmurzenie: Kolory.niebieskiMale, wiatr: Kolory.niebieskiMale, deszcz: Kolory.niebieskiDeszcz, zapisaneMiejsce: Kolory.bialy, tlo: Kolory.navCont)
 }
 
+enum CiemneJasne {
+    case ciemne, jasne
+}
+
 struct Kolory {
     static var navCont = UIColor(colorLiteralRed: 12/255, green: 25/255, blue: 45/255, alpha: 1)
     static var tableView = UIColor(colorLiteralRed: 23/255, green: 46/255, blue: 84/255, alpha: 1)
@@ -95,4 +99,19 @@ struct Kolory {
     static var niebieskiMale = UIColor(hexString: "61DAD2")
     static var niebieskiDeszcz = UIColor(hexString: "5E9CFF")
     
+    static func ciemneCzyJasne(kolorTla: UIColor) -> CiemneJasne {
+        let cgColor = kolorTla.cgColor
+        let jasnoscR = cgColor.components![0] * 0.299
+        let jasnoscG = cgColor.components![1] * 0.587
+        let jasnoscB = cgColor.components![2] * 0.114
+        //czy przyciski powinny być jasne czy ciemne?
+        let jasnoscTla = 1 - (jasnoscR + jasnoscG + jasnoscB)
+        if jasnoscTla < 0.5 {
+            //tło jest jasne - potrzebne są ciemne kolory
+            return .jasne
+        } else {
+            //tło jest ciemne - portrzebne są jasne kolory
+            return .ciemne
+        }
+    }
 }

@@ -35,7 +35,7 @@ class PogodaTableViewController: UITableViewController, UITabBarControllerDelega
         
         //przewijanie do gory przez tabBar
         self.tabBarController?.delegate = self
-        self.tableView.backgroundColor = zapisaneKolory!.tlo
+        
     }
     struct  PropertyKeys {
         //"godzina": godzina, "tempWK": tempWK, "opis": opis, "ciśnienie": ciśnienie, "wilgotność": wilgotność, "zachmurzenie": zachmurzenie, "wiatr": wiatr, "deszcz": deszcz
@@ -53,6 +53,18 @@ class PogodaTableViewController: UITableViewController, UITabBarControllerDelega
         super.viewWillDisappear(animated)
         self.refreshControl?.beginRefreshingManually()
         NotificationCenter.default.addObserver(self, selector: #selector(self.applicationDidBecomeActive(_:)), name: .UIApplicationDidBecomeActive, object: nil)
+        //kolory tutaj jakby ktos zmienil ustawienia i potem wrocil
+        self.tableView.backgroundColor = zapisaneKolory.tlo
+        self.tableView.backgroundView?.backgroundColor = zapisaneKolory.tlo
+        /*
+        let czyCiemne = Kolory.ciemneCzyJasne(kolorTla: zapisaneKolory.tlo)
+        switch czyCiemne {
+        case .ciemne:
+            return
+        case .jasne:
+            return
+        }
+        */
     }
     
     override func viewWillDisappear(_ animated: Bool) {

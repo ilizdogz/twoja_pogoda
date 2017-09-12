@@ -187,10 +187,12 @@ class UstawieniaPogodaTableViewController: UITableViewController, UIPopoverPrese
             //tło jest jasne - potrzebne są ciemne kolory
             zmienKolorTla.setTitleColor(Kolory.navCont, for: .normal)
             godzinaPodglad.backgroundColor = Kolory.czarnyPrzezr
+            zapisaneMiescePodglad.setTitleColor(Kolory.navCont, for: .normal)
         } else {
             //tło jest ciemne - portrzebne są jasne kolory
             zmienKolorTla.setTitleColor(Kolory.bialy, for: .normal)
             godzinaPodglad.backgroundColor = Kolory.godzinaBG
+            zapisaneMiescePodglad.setTitleColor(Kolory.bialy, for: .normal)
         }
     }
 

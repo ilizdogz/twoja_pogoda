@@ -25,7 +25,8 @@ class ZapisaneTableViewController: UITableViewController, UITabBarControllerDele
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         //wyglad to wszystko
-        navigationController?.navigationBar.barTintColor = Kolory.czarnyPrzezr
+        
+        
         //self.tableView.backgroundColor = Kolory.navCont
         dodaj.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Menlo", size: 15)!], for: .normal)
         edytuj.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Menlo", size: 15)!], for: .normal)
@@ -39,10 +40,7 @@ class ZapisaneTableViewController: UITableViewController, UITabBarControllerDele
         
         //wczytywanie/zapisywanie
         wczytajMiejsca()
-        /*
-        let defaults = UserDefaults.standard
-        let koloryData = defaults.object(forKey: "koloryPogoda") as! Data*/
-        self.tableView.backgroundColor = zapisaneKolory.tlo
+        navigationController?.navigationBar.barTintColor = Kolory.czarnyPrzezr
         self.zapisz()
         
     }
@@ -53,6 +51,21 @@ class ZapisaneTableViewController: UITableViewController, UITabBarControllerDele
         refreshControl?.beginRefreshingManually()
         //odswiez przy ponownym otwarciu
         NotificationCenter.default.addObserver(self, selector: #selector(self.applicationDidBecomeActive(_:)), name: .UIApplicationDidBecomeActive, object: nil)
+        self.tableView.backgroundColor = zapisaneKolory.tlo
+        /*
+        let czyCiemne = Kolory.ciemneCzyJasne(kolorTla: zapisaneKolory.tlo)
+        switch czyCiemne {
+        case .ciemne:
+        */
+            //navigationController?.navigationBar.barTintColor = Kolory.czarnyPrzezr
+        
+        /*
+        case .jasne:
+            navigationController?.navigationBar.barTintColor = Kolory.bialy
+            navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: Kolory.czarnyPrzezr, NSFontAttributeName: UIFont(name: "Menlo", size: 15)!]
+            navigationController?.navigationBar.barStyle = UIBarStyle.black
+        }
+        */
     }
     
     override func viewWillDisappear(_ animated: Bool) {

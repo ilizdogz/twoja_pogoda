@@ -63,18 +63,12 @@ class UstawieniaTableViewController: UITableViewController {
     
     func zmienTlo(kolor: UIColor) {
         tableView.backgroundColor = kolor
-        let tableCG = tableView.backgroundColor!.cgColor
-        let jasnoscR = tableCG.components![0] * 0.299
-        let jasnoscG = tableCG.components![1] * 0.587
-        let jasnoscB = tableCG.components![2] * 0.114
-        //czy przyciski powinny być jasne czy ciemne?
-        let jasnoscTla = 1 - (jasnoscR + jasnoscG + jasnoscB)
-        if jasnoscTla < 0.5 {
-            //tło jest jasne - potrzebne są ciemne kolory
+        let czyCiemne = Kolory.ciemneCzyJasne(kolorTla: kolor)
+        switch czyCiemne {
+        case .jasne:
             tempLabel.textColor = Kolory.navCont
             widokMiejscaLabel.textColor = Kolory.navCont
-        } else {
-            //tło jest ciemne - portrzebne są jasne kolory
+        case .ciemne:
             tempLabel.textColor = Kolory.bialy
             widokMiejscaLabel.textColor = Kolory.bialy
         }

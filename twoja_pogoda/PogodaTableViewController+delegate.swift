@@ -39,7 +39,6 @@ extension PogodaTableViewController: UICollectionViewDelegate, UICollectionViewD
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "pogoda",
                                                       for: indexPath) as! PogodaCollectionViewCell
         let godzina = model[collectionView.tag][indexPath.item]
-        print("[\(collectionView.tag), \(indexPath.item)]")
         //print(godzina)
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .none
