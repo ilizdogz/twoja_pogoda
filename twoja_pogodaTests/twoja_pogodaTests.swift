@@ -5,7 +5,7 @@
 //  Created by Krzysztof Glimos on 22.08.2017.
 //  Copyright © 2017 Krzysztof Glimos. All rights reserved.
 //
-
+/*
 import XCTest
 @testable import twoja_pogoda
 
@@ -34,3 +34,5 @@ class twoja_pogodaTests: XCTestCase {
     }
     
 }
+ */
+
