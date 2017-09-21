@@ -130,7 +130,7 @@ class PogodaTableViewController: UITableViewController, UITabBarControllerDelega
         }
     }
     
-    func sprawdzNazweMiasta() {
+    @objc func sprawdzNazweMiasta() {
         if let adres = miasto {
             //wybrane z zapisanych miejsc
             var adresLower = adres.lowercased()
@@ -340,12 +340,12 @@ class PogodaTableViewController: UITableViewController, UITabBarControllerDelega
         performSelector(inBackground: #selector(sprawdzNazweMiasta), with: nil)
     }
     
-    func applicationDidBecomeActive(_ notification: NSNotification) {
+    @objc func applicationDidBecomeActive(_ notification: NSNotification) {
         self.refreshControl?.beginRefreshingManually()
     }
     
     //pokaz blad jak cos pojdzie nie tak
-    func showError() {
+    @objc func showError() {
         let ac = UIAlertController(title: "Wystąpił błąd", message: "Nie udało się załadować danych. Spróbuj ponownie później.", preferredStyle: .alert)
         ac.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         self.present(ac, animated: true, completion: nil)

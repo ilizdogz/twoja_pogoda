@@ -25,7 +25,7 @@ class UstawieniaTableViewController: UITableViewController {
         navigationController?.navigationBar.barTintColor = Kolory.czarnyPrzezr
         
         let backButton = UIBarButtonItem(title: "wstecz", style: UIBarButtonItemStyle.plain, target: self, action: nil)
-        backButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Menlo", size: 15)!], for: .normal)
+        backButton.setTitleTextAttributes([NSAttributedStringKey.font: UIFont(name: "Menlo", size: 15)!], for: .normal)
         navigationItem.backBarButtonItem = backButton
         for button in przyciskiJedn {
             if button.titleLabel?.text == formatTemp.rawValue {

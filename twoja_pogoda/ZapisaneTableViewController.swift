@@ -28,14 +28,14 @@ class ZapisaneTableViewController: UITableViewController, UITabBarControllerDele
         
         
         //self.tableView.backgroundColor = Kolory.navCont
-        dodaj.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Menlo", size: 15)!], for: .normal)
-        edytuj.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Menlo", size: 15)!], for: .normal)
+        dodaj.setTitleTextAttributes([NSAttributedStringKey.font: UIFont(name: "Menlo", size: 15)!], for: .normal)
+        edytuj.setTitleTextAttributes([NSAttributedStringKey.font: UIFont(name: "Menlo", size: 15)!], for: .normal)
         
         //do przewijania do gory przez tabBar
         self.tabBarController?.delegate = self
         
         let backButton = UIBarButtonItem(title: "wstecz", style: UIBarButtonItemStyle.plain, target: self, action: nil)
-        backButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Menlo", size: 15)!], for: .normal)
+        backButton.setTitleTextAttributes([NSAttributedStringKey.font: UIFont(name: "Menlo", size: 15)!], for: .normal)
         navigationItem.backBarButtonItem = backButton
         
         //wczytywanie/zapisywanie
@@ -207,7 +207,7 @@ class ZapisaneTableViewController: UITableViewController, UITabBarControllerDele
     
     //zaladuj pogode z zapisaneMiejsca
     
-    func zaladujPogode() {
+    @objc func zaladujPogode() {
         for miejsce in zapisaneMiejsca {
             fetchJSONMiasta(adres: miejsce)
         }
@@ -257,7 +257,7 @@ class ZapisaneTableViewController: UITableViewController, UITabBarControllerDele
         tableView.performSelector(onMainThread: #selector(UITableView.reloadData), with: nil, waitUntilDone: false)
     }
     
-    func showError() {
+    @objc func showError() {
         let ac = UIAlertController(title: "Wystąpił błąd", message: "Nie udało się załadować danych. Spróbuj ponownie później.", preferredStyle: .alert)
         ac.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         self.present(ac, animated: true, completion: nil)
@@ -275,7 +275,7 @@ class ZapisaneTableViewController: UITableViewController, UITabBarControllerDele
         performSelector(inBackground: #selector(zaladujPogode), with: nil)
     }
     
-    func applicationDidBecomeActive(_ notification: NSNotification) {
+    @objc func applicationDidBecomeActive(_ notification: NSNotification) {
         refreshControl?.beginRefreshingManually()
     }
     // MARK: - Navigation

@@ -88,13 +88,13 @@ enum CiemneJasne {
 }
 
 struct Kolory {
-    static var navCont = UIColor(colorLiteralRed: 12/255, green: 25/255, blue: 45/255, alpha: 1)
-    static var tableView = UIColor(colorLiteralRed: 23/255, green: 46/255, blue: 84/255, alpha: 1)
-    static var czarnyPrzezr = UIColor(colorLiteralRed: 0, green: 0, blue: 0, alpha: 0.3)
-    static var bialyPrzezr = UIColor(colorLiteralRed: 1, green: 1, blue: 1, alpha: 0.2)
+    static var navCont = UIColor(red: 12/255, green: 25/255, blue: 45/255, alpha: 1)
+    static var tableView = UIColor(red: 23/255, green: 46/255, blue: 84/255, alpha: 1)
+    static var czarnyPrzezr = UIColor(red: 0, green: 0, blue: 0, alpha: 0.3)
+    static var bialyPrzezr = UIColor(red: 1, green: 1, blue: 1, alpha: 0.2)
     static var zoltyDzien = UIColor(hexString: "FFC70B")
     static var bialy = UIColor.white
-    static var godzinaBG = UIColor(colorLiteralRed: 0, green: 0, blue: 0, alpha: 0.4)
+    static var godzinaBG = UIColor(red: 0, green: 0, blue: 0, alpha: 0.4)
     static var zielonyDuze = UIColor(hexString: "3EFD86")
     static var niebieskiMale = UIColor(hexString: "61DAD2")
     static var niebieskiDeszcz = UIColor(hexString: "5E9CFF")
