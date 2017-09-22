@@ -13,14 +13,14 @@ import CoreLocation
 
 class PogodaTableViewController: UITableViewController, UITabBarControllerDelegate, CLLocationManagerDelegate {
     var locationManager = CLLocationManager()
-    
+    lazy var geocoder = CLGeocoder()
+    var lokalizacja: CLLocation?
     
     @IBOutlet weak var pogodaViewTrailing: NSLayoutConstraint!
     @IBOutlet weak var pogodaViewLeading: NSLayoutConstraint!
     //var model: [[[String: Any]]] = [[[String: Any]]]()
     var model: [[Pogoda]] = [[Pogoda]]()
     var miasto: String?
-    var koord: [String: String?] = ["lat": nil, "lon": nil]
     var adresMiasta = [RodzajJSON: String]()
     var znalazlLokalizacje = false
     var proba: Int = 0
@@ -139,6 +139,7 @@ class PogodaTableViewController: UITableViewController, UITabBarControllerDelega
             adresMiasta[.prognoza] = "https://api.openweathermap.org/data/2.5/forecast?q=\(adresLower)&appid=\(apiKey)&lang=pl"
             adresMiasta[.teraz] = "https://api.openweathermap.org/data/2.5/weather?q=\(adresLower)&appid=\(apiKey)&lang=pl"
             for (rodzaj, adres) in adresMiasta {
+                print(adres)
                 zaladujPogode(adres: adres, typ: rodzaj)
             }
         } else {
@@ -155,10 +156,8 @@ class PogodaTableViewController: UITableViewController, UITabBarControllerDelega
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let userLocation = locations[0]
+        lokalizacja = locations[0]
         proba += 1
-        koord["lat"] = String(userLocation.coordinate.latitude)
-        koord["lon"] = String(userLocation.coordinate.longitude)
         zrobUrl()
     }
     
@@ -181,11 +180,11 @@ class PogodaTableViewController: UITableViewController, UITabBarControllerDelega
     
     
     func zrobUrl() {
-        if let lat = koord["lat"] as? String,
-            let lon = koord["lon"] as? String,
+        if let lok = lokalizacja,
             proba == 1 {
-            adresMiasta[.prognoza] = "https://api.openweathermap.org/data/2.5/forecast?lat=\(lat)&lon=\(lon)&appid=\(apiKey)&lang=pl"
-            adresMiasta[.teraz] = "https://api.openweathermap.org/data/2.5/weather?q=lat=\(lat)&lon=\(lon)&appid=\(apiKey)&lang=pl"
+                geocoder.reverseGeocodeLocation(lok, completionHandler: { (placemarks, error) in
+                    self.processResponse(withPlacemarks: placemarks, error: error)
+                })
         } else if proba > 1 {
             return
         } else {
@@ -193,26 +192,28 @@ class PogodaTableViewController: UITableViewController, UITabBarControllerDelega
             refreshControl?.performSelector(onMainThread: #selector(UIRefreshControl.endRefreshing), with: nil, waitUntilDone: false)
             return
         }
-        for (rodzaj, adres) in adresMiasta {
-            zaladujPogode(adres: adres, typ: rodzaj)
-        }
-        /*
-        for i in 0 ..< model.count {
-            for j in 0 ..< model[i].count {
-                if model[i].count == 1 {
-                    model[i][j].okragleRogi = .allCorners
-                } else if j == 0 {
-                    model[i][j].okragleRogi = .topLeft
-                } else if j == model[i].count - 1 {
-                    model[i][j].okragleRogi = .topRight
+    }
+    
+    func processResponse(withPlacemarks placemarks: [CLPlacemark]?, error: Error?) {
+        if error != nil {
+            showError()
+        } else {
+            if let places = placemarks, let locality = places.first?.locality , let countryCode = places.first?.isoCountryCode {
+                if let urlArray = wczytajListy(name: locality, country: countryCode) {
+                    adresMiasta = urlArray
+                    for (rodzaj, adres) in adresMiasta {
+                        zaladujPogode(adres: adres, typ: rodzaj)
+                    }
+                } else {
+                    showError()
                 }
-                
+            } else {
+                showError()
             }
         }
-        */
+        
         refreshControl?.performSelector(onMainThread: #selector(UIRefreshControl.endRefreshing), with: nil, waitUntilDone: true)
         tableView.performSelector(onMainThread: #selector(UITableView.reloadData), with: nil, waitUntilDone: false)
-        
     }
     
     //JSON
@@ -320,10 +321,6 @@ class PogodaTableViewController: UITableViewController, UITabBarControllerDelega
                 }
             }
         }
-        
-        
-        
-        refreshControl?.performSelector(onMainThread: #selector(UIRefreshControl.endRefreshing), with: nil, waitUntilDone: true)
         tableView.performSelector(onMainThread: #selector(UITableView.reloadData), with: nil, waitUntilDone: false)
     }
     
@@ -332,8 +329,7 @@ class PogodaTableViewController: UITableViewController, UITabBarControllerDelega
         model.removeAll(keepingCapacity: false)
         self.tableView.reloadData()
         proba = 0
-        koord["lat"] = nil
-        koord["lon"] = nil
+        lokalizacja = nil
         adresMiasta.removeAll(keepingCapacity: false)
         objArray.removeAll(keepingCapacity: false)
         self.navigationItem.title = "ładowanie..."
@@ -343,6 +339,8 @@ class PogodaTableViewController: UITableViewController, UITabBarControllerDelega
     @objc func applicationDidBecomeActive(_ notification: NSNotification) {
         self.refreshControl?.beginRefreshingManually()
     }
+    
+    
     
     //pokaz blad jak cos pojdzie nie tak
     @objc func showError() {

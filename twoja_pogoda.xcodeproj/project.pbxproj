@@ -22,6 +22,9 @@
 		A000BAD51F4CE9E500AB967C /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A000BAD41F4CE9E500AB967C /* SwiftyJSON.swift */; };
 		A000BAD71F4DBF8F00AB967C /* MiejsceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A000BAD61F4DBF8F00AB967C /* MiejsceTableViewCell.swift */; };
 		A000BAD91F4EFDCE00AB967C /* UIRefreshControl + beginRefreshingManually.swift in Sources */ = {isa = PBXBuildFile; fileRef = A000BAD81F4EFDCE00AB967C /* UIRefreshControl + beginRefreshingManually.swift */; };
+		A047E9381F755490000C8C5A /* currentCityList.json in Resources */ = {isa = PBXBuildFile; fileRef = A047E9351F754455000C8C5A /* currentCityList.json */; };
+		A047E9391F755563000C8C5A /* cityList.json in Resources */ = {isa = PBXBuildFile; fileRef = A047E9361F75445D000C8C5A /* cityList.json */; };
+		A047E93B1F755D18000C8C5A /* wczytajListy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A047E93A1F755D18000C8C5A /* wczytajListy.swift */; };
 		A07C2D771F68A14B006A9BD7 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = A07C2D761F68A14B006A9BD7 /* .gitignore */; };
 		A083E69B1F5C26090080A8B4 /* rodzajJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A083E69A1F5C26090080A8B4 /* rodzajJSON.swift */; };
 		A0B9AAEE1F6002F00022591D /* Pogoda.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B9AAED1F6002F00022591D /* Pogoda.swift */; };
@@ -75,6 +78,9 @@
 		A000BAD41F4CE9E500AB967C /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		A000BAD61F4DBF8F00AB967C /* MiejsceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MiejsceTableViewCell.swift; path = ../MiejsceTableViewCell.swift; sourceTree = "<group>"; };
 		A000BAD81F4EFDCE00AB967C /* UIRefreshControl + beginRefreshingManually.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIRefreshControl + beginRefreshingManually.swift"; sourceTree = "<group>"; };
+		A047E9351F754455000C8C5A /* currentCityList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = currentCityList.json; sourceTree = "<group>"; };
+		A047E9361F75445D000C8C5A /* cityList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = cityList.json; sourceTree = "<group>"; };
+		A047E93A1F755D18000C8C5A /* wczytajListy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wczytajListy.swift; sourceTree = "<group>"; };
 		A07C2D761F68A14B006A9BD7 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		A083E69A1F5C26090080A8B4 /* rodzajJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = rodzajJSON.swift; sourceTree = "<group>"; };
 		A0B9AAED1F6002F00022591D /* Pogoda.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pogoda.swift; sourceTree = "<group>"; };
@@ -146,12 +152,15 @@
 				A0F17D1C1F596F41006D4E96 /* pogoda(1) */,
 				A0F17D1D1F596F5A006D4E96 /* zapisane */,
 				A000BAC01F4B9CD600AB967C /* TabBar.swift */,
+				A047E93A1F755D18000C8C5A /* wczytajListy.swift */,
 				A0F17D321F5B0019006D4E96 /* Temperatura.swift */,
 				A0F17D301F5AFEAC006D4E96 /* apiKey.swift */,
 				A000BAD81F4EFDCE00AB967C /* UIRefreshControl + beginRefreshingManually.swift */,
 				A0F17D261F599FF2006D4E96 /* UIColor + hex.swift */,
 				A000BAD41F4CE9E500AB967C /* SwiftyJSON.swift */,
 				A0F17D2C1F59EE87006D4E96 /* colorPalette.plist */,
+				A047E9361F75445D000C8C5A /* cityList.json */,
+				A047E9351F754455000C8C5A /* currentCityList.json */,
 				A000BA991F4B9B7C00AB967C /* Assets.xcassets */,
 				A000BA9B1F4B9B7C00AB967C /* LaunchScreen.storyboard */,
 				A000BA9E1F4B9B7C00AB967C /* Info.plist */,
@@ -336,8 +345,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A047E9381F755490000C8C5A /* currentCityList.json in Resources */,
 				A000BA9D1F4B9B7C00AB967C /* LaunchScreen.storyboard in Resources */,
 				A000BA9A1F4B9B7C00AB967C /* Assets.xcassets in Resources */,
+				A047E9391F755563000C8C5A /* cityList.json in Resources */,
 				A0F17D2D1F59EE87006D4E96 /* colorPalette.plist in Resources */,
 				A07C2D771F68A14B006A9BD7 /* .gitignore in Resources */,
 				A000BA981F4B9B7C00AB967C /* Main.storyboard in Resources */,
@@ -378,6 +389,7 @@
 				A0F17D251F599BE8006D4E96 /* KoloryPogoda.swift in Sources */,
 				A000BAD31F4CE50D00AB967C /* PogodaCollectionViewCell.swift in Sources */,
 				A0F17D311F5AFEAC006D4E96 /* apiKey.swift in Sources */,
+				A047E93B1F755D18000C8C5A /* wczytajListy.swift in Sources */,
 				A0F17D271F599FF2006D4E96 /* UIColor + hex.swift in Sources */,
 				A0F17D171F586085006D4E96 /* WyszukajViewController.swift in Sources */,
 				A000BACF1F4CE12F00AB967C /* PogodaTableViewCell.swift in Sources */,
