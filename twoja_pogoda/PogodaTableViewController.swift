@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import SwiftyJSON
 
 
 
@@ -21,7 +22,6 @@ class PogodaTableViewController: UITableViewController, UITabBarControllerDelega
     //var model: [[[String: Any]]] = [[[String: Any]]]()
     var model: [[Pogoda]] = [[Pogoda]]()
     var miasto: String?
-    var adresMiasta = [RodzajJSON: String]()
     var znalazlLokalizacje = false
     var proba: Int = 0
     var storedOffset = [Int: CGFloat]()
@@ -96,7 +96,7 @@ class PogodaTableViewController: UITableViewController, UITabBarControllerDelega
         dateFormatter.dateStyle = .short
         dateFormatter.timeStyle = .none
         cell.dataLabel.text = dateFormatter.string(from: model[indexPath.row][0].godzina)
-        cell.ustawRogi()
+        //cell.ustawRogi()
         cell.dataLabel.textColor = zapisaneKolory.dzien
         cell.backgroundColor = zapisaneKolory.tlo
         cell.pogodaView.backgroundColor = zapisaneKolory.tlo
@@ -133,14 +133,13 @@ class PogodaTableViewController: UITableViewController, UITabBarControllerDelega
     @objc func sprawdzNazweMiasta() {
         if let adres = miasto {
             //wybrane z zapisanych miejsc
-            var adresLower = adres.lowercased()
-            adresLower = adresLower.replacingOccurrences(of: " ", with: "-")
-            adresLower = adresLower.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
-            adresMiasta[.prognoza] = "https://api.openweathermap.org/data/2.5/forecast?q=\(adresLower)&appid=\(apiKey)&lang=pl"
-            adresMiasta[.teraz] = "https://api.openweathermap.org/data/2.5/weather?q=\(adresLower)&appid=\(apiKey)&lang=pl"
-            for (rodzaj, adres) in adresMiasta {
-                print(adres)
+            let urlArray = wczytajListy(name: adres, country: nil)!
+            for (rodzaj, adres) in urlArray {
                 zaladujPogode(adres: adres, typ: rodzaj)
+            }
+            DispatchQueue.main.async { [unowned self] in
+                self.refreshControl?.endRefreshing()
+                self.tableView.reloadData()
             }
         } else {
             zlokalizujMnie()
@@ -200,8 +199,7 @@ class PogodaTableViewController: UITableViewController, UITabBarControllerDelega
         } else {
             if let places = placemarks, let locality = places.first?.locality , let countryCode = places.first?.isoCountryCode {
                 if let urlArray = wczytajListy(name: locality, country: countryCode) {
-                    adresMiasta = urlArray
-                    for (rodzaj, adres) in adresMiasta {
+                    for (rodzaj, adres) in urlArray {
                         zaladujPogode(adres: adres, typ: rodzaj)
                     }
                 } else {
@@ -330,7 +328,6 @@ class PogodaTableViewController: UITableViewController, UITabBarControllerDelega
         self.tableView.reloadData()
         proba = 0
         lokalizacja = nil
-        adresMiasta.removeAll(keepingCapacity: false)
         objArray.removeAll(keepingCapacity: false)
         self.navigationItem.title = "ładowanie..."
         performSelector(inBackground: #selector(sprawdzNazweMiasta), with: nil)

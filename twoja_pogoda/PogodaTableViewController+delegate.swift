@@ -43,13 +43,6 @@ extension PogodaTableViewController: UICollectionViewDelegate, UICollectionViewD
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .none
         dateFormatter.timeStyle = .short
-        //pierwsze i ostatnie maja zaokraglone rogi
-        /*
-        if let okragleRogi = godzina.okragleRogi {
-            cell.roundCorners(okragleRogi, radius: 8)
-            print("Ustawiono rogi")
-        }
-        lolnope*/ 
         cell.dataGodz.text = dateFormatter.string(from: godzina.godzina)
         cell.temp.text = "\(String(format: "%.2f", godzina.temp.returnFormat())) \(formatTemp.rawValue)"
         cell.opis.text = (godzina.opis)

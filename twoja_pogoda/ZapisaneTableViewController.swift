@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class ZapisaneTableViewController: UITableViewController, UITabBarControllerDelegate {
     
     @IBOutlet weak var dodaj: UIBarButtonItem!
     @IBOutlet weak var edytuj: UIBarButtonItem!
-    
+    var timestamp: Date?
     
     var zapisaneMiejsca = [String]()
     var pogoda = [[String:Any]]()
@@ -47,25 +48,19 @@ class ZapisaneTableViewController: UITableViewController, UITabBarControllerDele
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         //uruchom odswiezanie UIRefreshControl - z extension
-        refreshControl?.beginRefreshingManually()
+        if let timestamp = timestamp {
+            if Date().timeIntervalSince1970 - timestamp.timeIntervalSince1970 >= 60 * 60 * 3 {
+                refreshControl?.beginRefreshingManually()
+            }
+        } else {
+            refreshControl?.beginRefreshingManually()
+        }
+        timestamp = Date()
         //odswiez przy ponownym otwarciu
         NotificationCenter.default.addObserver(self, selector: #selector(self.applicationDidBecomeActive(_:)), name: .UIApplicationDidBecomeActive, object: nil)
         self.tableView.backgroundColor = zapisaneKolory.tlo
-        /*
-        let czyCiemne = Kolory.ciemneCzyJasne(kolorTla: zapisaneKolory.tlo)
-        switch czyCiemne {
-        case .ciemne:
-        */
-            //navigationController?.navigationBar.barTintColor = Kolory.czarnyPrzezr
-        
-        /*
-        case .jasne:
-            navigationController?.navigationBar.barTintColor = Kolory.bialy
-            navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: Kolory.czarnyPrzezr, NSFontAttributeName: UIFont(name: "Menlo", size: 15)!]
-            navigationController?.navigationBar.barStyle = UIBarStyle.black
-        }
-        */
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -110,21 +105,7 @@ class ZapisaneTableViewController: UITableViewController, UITabBarControllerDele
             vc.miasto = zapisaneMiejsca[indexPath.row]
             navigationController?.pushViewController(vc, animated: true)
         }
-        /*
-        let vc = PogodaTableViewController()
-        let wybraneMiasto = zapisaneMiejsca[indexPath.row]
-        vc.miasto = wybraneMiasto
-        */
     }
-    
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
     
     //pozwala na usuwanie
     override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
@@ -164,7 +145,7 @@ class ZapisaneTableViewController: UITableViewController, UITabBarControllerDele
         zapisaneMiejsca.append(lowerMiasto)
         
         let indexPath = IndexPath(row: pogoda.count, section: 0)
-        fetchJSONMiasta(adres: lowerMiasto)
+        znajdzPogode(adres: lowerMiasto)
         tableView.insertRows(at: [indexPath], with: .automatic)
         self.zapisz()
     }
@@ -209,19 +190,27 @@ class ZapisaneTableViewController: UITableViewController, UITabBarControllerDele
     
     @objc func zaladujPogode() {
         for miejsce in zapisaneMiejsca {
-            fetchJSONMiasta(adres: miejsce)
+            znajdzPogode(adres: miejsce)
+        }
+        DispatchQueue.main.async { [unowned self] in
+            self.navigationItem.title = "zapisane miejsca"
+            self.refreshControl?.endRefreshing()
+            self.tableView.reloadData()
         }
     }
-    func fetchJSONMiasta(adres: String) {
-        var adresLower = adres.lowercased()
-        adresLower = adresLower.replacingOccurrences(of: " ", with: "-")
-        adresLower = adresLower.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
-        let adresMiasta = "https://api.openweathermap.org/data/2.5/weather?q=\(adresLower)&appid=94b98d6c81d5bf988f14280a4ee67236&lang=pl"
-        if let url = URL(string: adresMiasta) {
-            if let data = try? Data(contentsOf: url) {
-                let json = JSON(data: data)
-                if json["cod"] == 200 {
-                    self.parse(json: json)
+    func znajdzPogode(adres: String) {
+        let adres = wczytajListy(name: adres, country: nil)
+        if let adres = adres {
+            if let url = URL(string: adres[.teraz]!) {
+                if let data = try? Data(contentsOf: url) {
+                    let json = JSON(data: data)
+                    if json["cod"] == 200 {
+                        self.parse(json: json)
+                    } else {
+                        performSelector(onMainThread: #selector(showError), with: nil, waitUntilDone: false)
+                        refreshControl?.performSelector(onMainThread: #selector(UIRefreshControl.endRefreshing), with: nil, waitUntilDone: true)
+
+                    }
                 } else {
                     performSelector(onMainThread: #selector(showError), with: nil, waitUntilDone: false)
                     refreshControl?.performSelector(onMainThread: #selector(UIRefreshControl.endRefreshing), with: nil, waitUntilDone: true)
@@ -230,13 +219,11 @@ class ZapisaneTableViewController: UITableViewController, UITabBarControllerDele
             } else {
                 performSelector(onMainThread: #selector(showError), with: nil, waitUntilDone: false)
                 refreshControl?.performSelector(onMainThread: #selector(UIRefreshControl.endRefreshing), with: nil, waitUntilDone: true)
-
             }
         } else {
-            performSelector(onMainThread: #selector(showError), with: nil, waitUntilDone: false)
-            refreshControl?.performSelector(onMainThread: #selector(UIRefreshControl.endRefreshing), with: nil, waitUntilDone: true)
-
-
+            let ac = UIAlertController(title: "Nie znaleziono miasta", message: "Nie znaleziono miasta o podanej nazwie. Czy wpisałeś ją poprawnie?", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(ac, animated: true, completion: nil)
         }
     }
     
@@ -250,11 +237,6 @@ class ZapisaneTableViewController: UITableViewController, UITabBarControllerDele
         let deszcz = json["rain"]["3h"].doubleValue
         let obj = ["miasto": miasto, "temp": temp, "deszcz": deszcz] as [String : Any]
         pogoda.append(obj)
-        DispatchQueue.main.async { [unowned self] in
-            self.navigationItem.title = "zapisane miejsca"
-        }
-        refreshControl?.performSelector(onMainThread: #selector(UIRefreshControl.endRefreshing), with: nil, waitUntilDone: true)
-        tableView.performSelector(onMainThread: #selector(UITableView.reloadData), with: nil, waitUntilDone: false)
     }
     
     @objc func showError() {
@@ -278,18 +260,5 @@ class ZapisaneTableViewController: UITableViewController, UITabBarControllerDele
     @objc func applicationDidBecomeActive(_ notification: NSNotification) {
         refreshControl?.beginRefreshingManually()
     }
-    // MARK: - Navigation
-    /*
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        guard segue.identifier == "pokazZapisane" else { return }
-        let destination = segue.destination as! PogodaTableViewController
-        let indexPath = tableView.indexPathForSelectedRow
-        // Pass the selected object to the new view controller.
-        destination.miasto = zapisaneMiejsca[indexPath!.row]
-    }
-    */
-   
-
+    
 }

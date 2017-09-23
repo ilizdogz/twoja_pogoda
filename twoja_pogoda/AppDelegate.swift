@@ -25,10 +25,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIApplication.shared.statusBarStyle = .lightContent
         
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white, NSAttributedStringKey.font: UIFont(name: "Menlo", size: 15)!]
+        //po zaladowaniu otwiera sie karta "teraz"
         if self.window!.rootViewController as? UITabBarController != nil {
             let tabBarController = self.window!.rootViewController as! UITabBarController
             tabBarController.selectedIndex = 1
         }
+        //wczytywanie zapisanych kolorow/ustawianie domyslnych jesli ich nie ma
         let defaults = UserDefaults.standard
         if defaults.object(forKey: "zapisaneKolory") == nil {
             let zapisaneDomyslne = NSKeyedArchiver.archivedData(withRootObject: ZapisaneKolory.domyslneUstawienia)
@@ -38,6 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let koloryData = defaults.object(forKey: "zapisaneKolory") as! Data
             zapisaneKolory = NSKeyedUnarchiver.unarchiveObject(with: koloryData) as! ZapisaneKolory
         }
+        //wczytywanie ustawionej jednostki temperatury/ustawianie domyslne na C
         if defaults.object(forKey: "temperatura") == nil {
             let temp: Stopien = .c
             defaults.set(temp.rawValue, forKey: "temperatura")
@@ -46,12 +49,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let tempRaw = defaults.object(forKey: "temperatura") as! String
             formatTemp = Stopien(rawValue: tempRaw)
         }
-        
-        /*
-        if let koloryData = defaults.object(forKey: "koloryPogoda") as? Data {
-            let kolory = NSKeyedUnarchiver.unarchiveObject(with: koloryData) as! KoloryPogoda
-        }
-        */
         return true
     }
 
