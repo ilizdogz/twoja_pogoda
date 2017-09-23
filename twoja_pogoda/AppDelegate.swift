@@ -49,6 +49,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let tempRaw = defaults.object(forKey: "temperatura") as! String
             formatTemp = Stopien(rawValue: tempRaw)
         }
+        let stack = CoreDataStack()
+        stack.preloadDbData()
         return true
     }
 
