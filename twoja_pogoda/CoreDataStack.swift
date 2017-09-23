@@ -82,12 +82,10 @@ class CoreDataStack {
         request.sortDescriptors = [sort]
         do {
             let data = try persistentContainer.viewContext.fetch(request)
-            print("Received \(data.count) items.")
             return data
         } catch {
-            print("Fetch failed")
+            return nil
         }
-        return nil
     }
     
     func preloadDbData() {
@@ -109,19 +107,9 @@ class CoreDataStack {
                 try FileManager.default.copyItem(at: URL2, to: URL5)
                 try FileManager.default.copyItem(at: URL3, to: URL6)
                 
-                print("=======================")
-                print("FILES COPIED")
-                print("=======================")
-                
             } catch {
-                print("=======================")
-                print("ERROR IN COPY OPERATION")
-                print("=======================")
             }
         } else {
-            print("=======================")
-            print("FILES EXIST")
-            print("=======================")
         }
     }
 }

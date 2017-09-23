@@ -345,8 +345,12 @@
                             <action selector="refreshControlActivated:" destination="Yq9-mT-dNh" eventType="valueChanged" id="tZQ-BS-YuP"/>
                         </connections>
                     </refreshControl>
+                    <connections>
+                        <segue destination="xZn-bs-xuf" kind="unwind" identifier="unwindToSearch" unwindAction="prepareForUnwindWithSegue:" id="UJc-OO-siG"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZV8-bU-k3S" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="xZn-bs-xuf" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2721.739130434783" y="-140.21739130434784"/>
         </scene>

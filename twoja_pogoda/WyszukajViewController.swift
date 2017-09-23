@@ -36,6 +36,17 @@ class WyszukajViewController: UIViewController {
         }
     }
     
+    //schowaj klawiature po dotknieciu ekranu
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        self.view.endEditing(true)
+    }
+    
+    //powrot jesli nie znajdzie miasta
+    @IBAction func prepareForUnwind(segue: UIStoryboardSegue) {
+        
+    }
+    
 
     /*
     // MARK: - Navigation

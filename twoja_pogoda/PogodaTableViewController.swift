@@ -133,13 +133,23 @@ class PogodaTableViewController: UITableViewController, UITabBarControllerDelega
     @objc func sprawdzNazweMiasta() {
         if let adres = miasto {
             //wybrane z zapisanych miejsc
-            let urlArray = wczytajListy(name: adres, country: nil)!
-            for (rodzaj, adres) in urlArray {
-                zaladujPogode(adres: adres, typ: rodzaj)
-            }
-            DispatchQueue.main.async { [unowned self] in
-                self.refreshControl?.endRefreshing()
-                self.tableView.reloadData()
+            if let urlArray = wczytajListy(name: adres, country: nil) {
+                for (rodzaj, adres) in urlArray {
+                    zaladujPogode(adres: adres, typ: rodzaj)
+                }
+                DispatchQueue.main.async { [unowned self] in
+                    self.refreshControl?.endRefreshing()
+                    self.tableView.reloadData()
+                }
+            } else {
+                DispatchQueue.main.async { [unowned self] in
+                    self.refreshControl?.endRefreshing()
+                    let ac = UIAlertController(title: "Wystąpił błąd", message: "nie znaleziono miasta. czy wpisałeś nazwę poprawnie?", preferredStyle: .alert)
+                    ac.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                        self.performSegue(withIdentifier: "unwindToSearch", sender: self)
+                    }))
+                    self.present(ac, animated: true, completion: nil)
+                }
             }
         } else {
             zlokalizujMnie()
@@ -161,7 +171,7 @@ class PogodaTableViewController: UITableViewController, UITabBarControllerDelega
     }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        if status == .authorizedWhenInUse {
+        if status == .authorizedWhenInUse || status == .authorizedAlways {
             return
         } else {
             let ac = UIAlertController(title: "Wystąpił błąd", message: "Aplikacja nie ma zgody na uzyskanie lokalizacji. Użyj innej opcji lub zmień to ustawienie.", preferredStyle: .alert)
