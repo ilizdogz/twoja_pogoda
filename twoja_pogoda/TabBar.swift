@@ -10,8 +10,12 @@ import Foundation
 import UIKit
 
 class TabBar: UITabBar {
+    
+    /*
     override func sizeThatFits(_ size: CGSize) -> CGSize {
         let sizeThatFits = super.sizeThatFits(size)
-        return CGSize(width: sizeThatFits.width, height: 30)
+        return CGSize(width: sizeThatFits.width, height: 75)
     }
+ */
+    
 }
