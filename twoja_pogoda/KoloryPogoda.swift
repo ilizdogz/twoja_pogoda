@@ -88,7 +88,7 @@ enum CiemneJasne {
 }
 
 struct Kolory {
-    static var navCont = UIColor(red: 12/255, green: 25/255, blue: 45/255, alpha: 1)
+    static var navCont = UIColor(red: 40/255, green: 42/255, blue: 54/255, alpha: 1)
     static var tableView = UIColor(red: 23/255, green: 46/255, blue: 84/255, alpha: 1)
     static var czarnyPrzezr = UIColor(red: 0, green: 0, blue: 0, alpha: 0.3)
     static var bialyPrzezr = UIColor(red: 1, green: 1, blue: 1, alpha: 0.2)

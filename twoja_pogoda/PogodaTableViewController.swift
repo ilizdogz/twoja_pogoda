@@ -95,7 +95,10 @@ class PogodaTableViewController: UITableViewController, UITabBarControllerDelega
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .short
         dateFormatter.timeStyle = .none
-        cell.dataLabel.text = dateFormatter.string(from: model[indexPath.row][0].godzina)
+        let weekFormatter = DateFormatter()
+        weekFormatter.dateFormat = "EEEE"
+        let weekDay = weekFormatter.string(from: model[indexPath.row][0].godzina)
+        cell.dataLabel.text = "\(weekDay), \(dateFormatter.string(from: model[indexPath.row][0].godzina))"
         //cell.ustawRogi()
         cell.dataLabel.textColor = zapisaneKolory.dzien
         cell.backgroundColor = zapisaneKolory.tlo
