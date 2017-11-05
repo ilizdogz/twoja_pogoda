@@ -21,7 +21,8 @@ class PogodaTableViewController: UITableViewController, UITabBarControllerDelega
     @IBOutlet weak var pogodaViewLeading: NSLayoutConstraint!
     //var model: [[[String: Any]]] = [[[String: Any]]]()
     var model: [[Pogoda]] = [[Pogoda]]()
-    var miasto: String?
+    //var miasto: String?
+    var idMiasta: String?
     var znalazlLokalizacje = false
     var proba: Int = 0
     var storedOffset = [Int: CGFloat]()
@@ -35,7 +36,6 @@ class PogodaTableViewController: UITableViewController, UITabBarControllerDelega
         
         //przewijanie do gory przez tabBar
         self.tabBarController?.delegate = self
-        
     }
     struct  PropertyKeys {
         //"godzina": godzina, "tempWK": tempWK, "opis": opis, "ciśnienie": ciśnienie, "wilgotność": wilgotność, "zachmurzenie": zachmurzenie, "wiatr": wiatr, "deszcz": deszcz
@@ -134,8 +134,13 @@ class PogodaTableViewController: UITableViewController, UITabBarControllerDelega
     }
     
     @objc func sprawdzNazweMiasta() {
-        if let adres = miasto {
-            //wybrane z zapisanych miejsc
+        if let id = idMiasta {
+            let urlArray = idToUrl(id: id)
+            for (rodzaj, adres) in urlArray {
+                zaladujPogode(adres: adres, typ: rodzaj)
+            }
+            //wybrane z zapisanych miejsc lub wyszukane
+            /*
             if let urlArray = wczytajListy(name: adres, country: nil) {
                 for (rodzaj, adres) in urlArray {
                     zaladujPogode(adres: adres, typ: rodzaj)
@@ -154,6 +159,7 @@ class PogodaTableViewController: UITableViewController, UITabBarControllerDelega
                     self.present(ac, animated: true, completion: nil)
                 }
             }
+            */
         } else {
             zlokalizujMnie()
         }
@@ -192,12 +198,25 @@ class PogodaTableViewController: UITableViewController, UITabBarControllerDelega
     
     
     func zrobUrl() {
+        //uzywa lat i lon z lokalizacji do zrobienia 2 URL - obecnej pogody i progozy
         if let lok = lokalizacja,
             proba == 1 {
+                let lat = lok.coordinate.latitude
+                let lon = lok.coordinate.longitude
+            let urlArray: [RodzajJSON: String] = [.prognoza: "https://api.openweathermap.org/data/2.5/forecast?lat=\(lat)&lon=\(lon)&appid=\(apiKey)&lang=pl", .teraz: "https://api.openweathermap.org/data/2.5/weather?lat=\(lat)&lon=\(lon)&appid=\(apiKey)&lang=pl"]
+            for (rodzaj, adres) in urlArray {
+                zaladujPogode(adres: adres, typ: rodzaj)
+            }
+            /*
+            refreshControl?.performSelector(onMainThread: #selector(UIRefreshControl.endRefreshing), with: nil, waitUntilDone: true)
+            tableView.performSelector(onMainThread: #selector(UITableView.reloadData), with: nil, waitUntilDone: false)
+            
                 geocoder.reverseGeocodeLocation(lok, completionHandler: { (placemarks, error) in
                     self.processResponse(withPlacemarks: placemarks, error: error)
                 })
+                */
         } else if proba > 1 {
+            //zeby sie nie odswiezalo pare razy po tym jak juz znalazlo miejsce, zwykle dokladnosc 1 wystarcza
             return
         } else {
             performSelector(onMainThread: #selector(showError), with: nil, waitUntilDone: false)
@@ -206,10 +225,12 @@ class PogodaTableViewController: UITableViewController, UITabBarControllerDelega
         }
     }
     
+    /*
     func processResponse(withPlacemarks placemarks: [CLPlacemark]?, error: Error?) {
         if error != nil {
             showError()
         } else {
+            /*
             if let places = placemarks, let locality = places.first?.locality , let countryCode = places.first?.isoCountryCode {
                 if let urlArray = wczytajListy(name: locality, country: countryCode) {
                     for (rodzaj, adres) in urlArray {
@@ -221,11 +242,16 @@ class PogodaTableViewController: UITableViewController, UITabBarControllerDelega
             } else {
                 showError()
             }
+            */
+            
+                
+            }
         }
         
         refreshControl?.performSelector(onMainThread: #selector(UIRefreshControl.endRefreshing), with: nil, waitUntilDone: true)
         tableView.performSelector(onMainThread: #selector(UITableView.reloadData), with: nil, waitUntilDone: false)
     }
+    */
     
     //JSON
     func zaladujPogode(adres: String, typ: RodzajJSON) {
@@ -332,6 +358,7 @@ class PogodaTableViewController: UITableViewController, UITabBarControllerDelega
                 }
             }
         }
+        refreshControl?.performSelector(onMainThread: #selector(UIRefreshControl.endRefreshing), with: nil, waitUntilDone: true)
         tableView.performSelector(onMainThread: #selector(UITableView.reloadData), with: nil, waitUntilDone: false)
     }
     

@@ -6,6 +6,9 @@
 //  Copyright © 2017 Krzysztof Glimos. All rights reserved.
 //
 
+//WIP WIP WIP
+//do usuniecia jak tylko bedzie dzialac UITableController z UISearchController
+
 import UIKit
 
 class WyszukajViewController: UIViewController {
@@ -28,11 +31,24 @@ class WyszukajViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    //wip wip wip
+    //w planie usunac to wszystko w chuj i zmienic na TableController z wyszukiwaniem
     @IBAction func wyszukaj(_ sender: UITextField) {
         sender.endEditing(false)
+        guard let text = sender.text else { return }
+        let stack = CoreDataStack()
         if let vc = storyboard?.instantiateViewController(withIdentifier: "Pogoda") as? PogodaTableViewController {
-            vc.miasto = sender.text
-            navigationController?.pushViewController(vc, animated: true)
+            if let result = stack.loadSavedData(name: text) {
+            //if let id = wczytajListy(name: text) {
+                let id = result.first!.id!
+                vc.idMiasta = id
+                navigationController?.pushViewController(vc, animated: true)
+            } else {
+                let ac = UIAlertController(title: "Nie znaleziono", message: "Nie znaleziono miasta", preferredStyle: .alert)
+                ac.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            }
+            //vc.idMiasta = sender.text
+            
         }
     }
     

@@ -19,12 +19,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UITabBarItem.appearance().titlePositionAdjustment = UIOffset(horizontal: 0, vertical: -(49 / 2 - 10))
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor : UIColor(red: 91/255, green: 154/255, blue: 1, alpha: 1), NSAttributedStringKey.font: UIFont(name: "Menlo", size: 15)!], for: UIControlState.normal) // changes the default color
-        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor : UIColor.orange, NSAttributedStringKey.font: UIFont(name: "Menlo", size: 15)!], for: UIControlState.selected)
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor : UIColor.orange, NSAttributedStringKey.font: UIFont(name: "Menlo", size: 17)!], for: UIControlState.selected)
         UITabBar.appearance().tintColor = UIColor(red: 12/255, green: 25/255, blue: 45/255, alpha: 1)
         
         UIApplication.shared.statusBarStyle = .lightContent
         
-        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white, NSAttributedStringKey.font: UIFont(name: "Menlo", size: 15)!]
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white, NSAttributedStringKey.font: UIFont(name: "Avenir Next", size: 15)!]
         //po zaladowaniu otwiera sie karta "teraz"
         if self.window!.rootViewController as? UITabBarController != nil {
             let tabBarController = self.window!.rootViewController as! UITabBarController

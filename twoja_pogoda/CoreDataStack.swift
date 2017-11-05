@@ -68,16 +68,32 @@ class CoreDataStack {
     }
      */
     
-    func loadSavedData(name: String, country: String?) -> [CityListItem]? {
+    func searchForIds(input: String) -> [CityListItem]? {
+        let request = CityListItem.createFetchRequest()
+        let predicate = NSPredicate(format: "name BEGINSWITH[cd] %@", input)
+        request.predicate = predicate
+        let sort = NSSortDescriptor(key: "name", ascending: true)
+        request.sortDescriptors = [sort]
+        do {
+            let data = try persistentContainer.viewContext.fetch(request)
+            return data
+        } catch {
+            return nil
+        }
+    }
+    
+    func loadSavedData(name: String/*, country: String?*/) -> [CityListItem]? {
         let request = CityListItem.createFetchRequest()
         let namePredicate = NSPredicate(format: "name == %@", name)
+        /*
         if let country = country {
             let countryPredicate = NSPredicate(format: "country == %@", country)
             let andPredicate = NSCompoundPredicate(type: .and, subpredicates: [namePredicate, countryPredicate])
             request.predicate = andPredicate
         } else {
+        */
             request.predicate = namePredicate
-        }
+        //}
         let sort = NSSortDescriptor(key: "id", ascending: true)
         request.sortDescriptors = [sort]
         do {
