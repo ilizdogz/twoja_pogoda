@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PogodaTableViewCell: UITableViewCell {
+class Nast24hTableViewCell: UITableViewCell {
 
     @IBOutlet weak var dataLabel: UILabel!
     @IBOutlet weak var pogodaView: UIView!
@@ -42,10 +42,6 @@ class PogodaTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
-    }
-    
-    func ustawRogi() {
-        collectionView.layer.cornerRadius = 8
     }
     
 }

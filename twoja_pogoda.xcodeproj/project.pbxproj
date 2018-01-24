@@ -17,11 +17,13 @@
 		A000BAC11F4B9CD600AB967C /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A000BAC01F4B9CD600AB967C /* TabBar.swift */; };
 		A000BAC51F4B9F0C00AB967C /* ZapisaneTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A000BAC41F4B9F0C00AB967C /* ZapisaneTableViewController.swift */; };
 		A000BACD1F4C467A00AB967C /* PogodaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A000BACC1F4C467A00AB967C /* PogodaTableViewController.swift */; };
-		A000BACF1F4CE12F00AB967C /* PogodaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A000BACE1F4CE12F00AB967C /* PogodaTableViewCell.swift */; };
+		A000BACF1F4CE12F00AB967C /* Nast24hTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A000BACE1F4CE12F00AB967C /* Nast24hTableViewCell.swift */; };
 		A000BAD11F4CE45400AB967C /* PogodaTableViewController+delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A000BAD01F4CE45400AB967C /* PogodaTableViewController+delegate.swift */; };
 		A000BAD31F4CE50D00AB967C /* PogodaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A000BAD21F4CE50D00AB967C /* PogodaCollectionViewCell.swift */; };
 		A000BAD71F4DBF8F00AB967C /* MiejsceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A000BAD61F4DBF8F00AB967C /* MiejsceTableViewCell.swift */; };
 		A000BAD91F4EFDCE00AB967C /* UIRefreshControl + beginRefreshingManually.swift in Sources */ = {isa = PBXBuildFile; fileRef = A000BAD81F4EFDCE00AB967C /* UIRefreshControl + beginRefreshingManually.swift */; };
+		A00D8D30201934FA00DF59F9 /* DzisiajTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00D8D2F201934FA00DF59F9 /* DzisiajTableViewCell.swift */; };
+		A00D8D322019350700DF59F9 /* PozniejTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00D8D312019350700DF59F9 /* PozniejTableViewCell.swift */; };
 		A047E93B1F755D18000C8C5A /* wczytajListy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A047E93A1F755D18000C8C5A /* wczytajListy.swift */; };
 		A047E9401F75BF62000C8C5A /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = A047E93F1F75BF62000C8C5A /* Podfile */; };
 		A07C2D771F68A14B006A9BD7 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = A07C2D761F68A14B006A9BD7 /* .gitignore */; };
@@ -36,7 +38,7 @@
 		A08C1F4D1F76A2BA00B605DB /* coreDataManualImport.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = A08C1F4A1F76A29A00B605DB /* coreDataManualImport.sqlite */; };
 		A08C1F4E1F76A2BC00B605DB /* coreDataManualImport.sqlite-shm in Resources */ = {isa = PBXBuildFile; fileRef = A08C1F4B1F76A29A00B605DB /* coreDataManualImport.sqlite-shm */; };
 		A08C1F4F1F76A2BF00B605DB /* coreDataManualImport.sqlite-wal in Resources */ = {isa = PBXBuildFile; fileRef = A08C1F4C1F76A29B00B605DB /* coreDataManualImport.sqlite-wal */; };
-		A0B9AAEE1F6002F00022591D /* Pogoda.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B9AAED1F6002F00022591D /* Pogoda.swift */; };
+		A0B9AAEE1F6002F00022591D /* PogodaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B9AAED1F6002F00022591D /* PogodaModel.swift */; };
 		A0F17D171F586085006D4E96 /* WyszukajViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F17D161F586085006D4E96 /* WyszukajViewController.swift */; };
 		A0F17D191F596F22006D4E96 /* UstawieniaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F17D181F596F22006D4E96 /* UstawieniaTableViewController.swift */; };
 		A0F17D211F597B3C006D4E96 /* UstawieniaPogodaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F17D201F597B3C006D4E96 /* UstawieniaPogodaTableViewController.swift */; };
@@ -83,11 +85,13 @@
 		A000BAC01F4B9CD600AB967C /* TabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		A000BAC41F4B9F0C00AB967C /* ZapisaneTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZapisaneTableViewController.swift; sourceTree = "<group>"; };
 		A000BACC1F4C467A00AB967C /* PogodaTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PogodaTableViewController.swift; sourceTree = "<group>"; };
-		A000BACE1F4CE12F00AB967C /* PogodaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PogodaTableViewCell.swift; sourceTree = "<group>"; };
+		A000BACE1F4CE12F00AB967C /* Nast24hTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Nast24hTableViewCell.swift; sourceTree = "<group>"; };
 		A000BAD01F4CE45400AB967C /* PogodaTableViewController+delegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PogodaTableViewController+delegate.swift"; sourceTree = "<group>"; };
 		A000BAD21F4CE50D00AB967C /* PogodaCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PogodaCollectionViewCell.swift; sourceTree = "<group>"; };
 		A000BAD61F4DBF8F00AB967C /* MiejsceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MiejsceTableViewCell.swift; path = ../MiejsceTableViewCell.swift; sourceTree = "<group>"; };
 		A000BAD81F4EFDCE00AB967C /* UIRefreshControl + beginRefreshingManually.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIRefreshControl + beginRefreshingManually.swift"; sourceTree = "<group>"; };
+		A00D8D2F201934FA00DF59F9 /* DzisiajTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DzisiajTableViewCell.swift; sourceTree = "<group>"; };
+		A00D8D312019350700DF59F9 /* PozniejTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PozniejTableViewCell.swift; sourceTree = "<group>"; };
 		A047E93A1F755D18000C8C5A /* wczytajListy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wczytajListy.swift; sourceTree = "<group>"; };
 		A047E93F1F75BF62000C8C5A /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A07C2D761F68A14B006A9BD7 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -102,7 +106,7 @@
 		A08C1F4A1F76A29A00B605DB /* coreDataManualImport.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = coreDataManualImport.sqlite; sourceTree = "<group>"; };
 		A08C1F4B1F76A29A00B605DB /* coreDataManualImport.sqlite-shm */ = {isa = PBXFileReference; lastKnownFileType = file; path = "coreDataManualImport.sqlite-shm"; sourceTree = "<group>"; };
 		A08C1F4C1F76A29B00B605DB /* coreDataManualImport.sqlite-wal */ = {isa = PBXFileReference; lastKnownFileType = file; path = "coreDataManualImport.sqlite-wal"; sourceTree = "<group>"; };
-		A0B9AAED1F6002F00022591D /* Pogoda.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pogoda.swift; sourceTree = "<group>"; };
+		A0B9AAED1F6002F00022591D /* PogodaModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PogodaModel.swift; sourceTree = "<group>"; };
 		A0F17D161F586085006D4E96 /* WyszukajViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WyszukajViewController.swift; sourceTree = "<group>"; };
 		A0F17D181F596F22006D4E96 /* UstawieniaTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UstawieniaTableViewController.swift; sourceTree = "<group>"; };
 		A0F17D201F597B3C006D4E96 /* UstawieniaPogodaTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UstawieniaPogodaTableViewController.swift; sourceTree = "<group>"; };
@@ -283,9 +287,11 @@
 				A000BACC1F4C467A00AB967C /* PogodaTableViewController.swift */,
 				A083E69A1F5C26090080A8B4 /* rodzajJSON.swift */,
 				A000BAD01F4CE45400AB967C /* PogodaTableViewController+delegate.swift */,
-				A000BACE1F4CE12F00AB967C /* PogodaTableViewCell.swift */,
+				A000BACE1F4CE12F00AB967C /* Nast24hTableViewCell.swift */,
+				A00D8D2F201934FA00DF59F9 /* DzisiajTableViewCell.swift */,
+				A00D8D312019350700DF59F9 /* PozniejTableViewCell.swift */,
 				A000BAD21F4CE50D00AB967C /* PogodaCollectionViewCell.swift */,
-				A0B9AAED1F6002F00022591D /* Pogoda.swift */,
+				A0B9AAED1F6002F00022591D /* PogodaModel.swift */,
 			);
 			name = "pogoda(1)";
 			sourceTree = "<group>";
@@ -468,10 +474,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-twoja_pogoda/Pods-twoja_pogoda-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/Timepiece/Timepiece.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Timepiece.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -500,7 +508,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0B9AAEE1F6002F00022591D /* Pogoda.swift in Sources */,
+				A0B9AAEE1F6002F00022591D /* PogodaModel.swift in Sources */,
 				A000BAC11F4B9CD600AB967C /* TabBar.swift in Sources */,
 				A0F17D191F596F22006D4E96 /* UstawieniaTableViewController.swift in Sources */,
 				A0F17D291F59C0DF006D4E96 /* ColorPickerViewController.swift in Sources */,
@@ -518,8 +526,10 @@
 				A047E93B1F755D18000C8C5A /* wczytajListy.swift in Sources */,
 				A0F17D271F599FF2006D4E96 /* UIColor + hex.swift in Sources */,
 				A07EEA621FABD7700005DCE5 /* WyszukajTableViewController.swift in Sources */,
+				A00D8D30201934FA00DF59F9 /* DzisiajTableViewCell.swift in Sources */,
+				A00D8D322019350700DF59F9 /* PozniejTableViewCell.swift in Sources */,
 				A0F17D171F586085006D4E96 /* WyszukajViewController.swift in Sources */,
-				A000BACF1F4CE12F00AB967C /* PogodaTableViewCell.swift in Sources */,
+				A000BACF1F4CE12F00AB967C /* Nast24hTableViewCell.swift in Sources */,
 				A000BA931F4B9B7C00AB967C /* AppDelegate.swift in Sources */,
 				A0F17D331F5B0019006D4E96 /* Temperatura.swift in Sources */,
 				A07EEA661FAD1FF10005DCE5 /* UISearchBar+textColor.swift in Sources */,

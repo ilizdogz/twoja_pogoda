@@ -3,4 +3,5 @@ use_frameworks!
 
 target 'twoja_pogoda' do
 pod 'SwiftyJSON'
+pod 'Timepiece'
 end
