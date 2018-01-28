@@ -10,6 +10,10 @@ import UIKit
 
 class DzisiajTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var wiatrLabel: UILabel!
+    @IBOutlet weak var deszczLabel: UILabel!
+    @IBOutlet weak var opisLabel: UILabel!
+    @IBOutlet weak var tempLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

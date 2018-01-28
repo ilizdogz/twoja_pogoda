@@ -14,11 +14,6 @@ class PogodaCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var dataGodz: UILabel!
     @IBOutlet weak var temp: UILabel!
     @IBOutlet weak var opis: UILabel!
-    @IBOutlet weak var ciśnienie: UILabel!
-    @IBOutlet weak var wilgotność: UILabel!
-    @IBOutlet weak var zachmurzenie: UILabel!
-    @IBOutlet weak var wiatr: UILabel!
-    @IBOutlet weak var deszcz: UILabel!
     /*
     func roundCorners(_ corners: UIRectCorner, radius: CGFloat) {
         let path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))

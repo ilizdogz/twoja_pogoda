@@ -20,6 +20,9 @@ class PogodaTableViewController: UITableViewController, UITabBarControllerDelega
     @IBOutlet weak var pogodaViewLeading: NSLayoutConstraint!
     //var model: [[[String: Any]]] = [[[String: Any]]]()
     var model: PogodaModel?
+    var dzisiaj: ModelDzisiaj?
+    var nast24h: [ModelNast24h]?
+    var pozniej: [ModelPozniej]?
     //var miasto: String?
     var idMiasta: String?
     var znalazlLokalizacje = false
@@ -30,7 +33,9 @@ class PogodaTableViewController: UITableViewController, UITabBarControllerDelega
         super.viewDidLoad()
         //wyglad to wszystko
         navigationController?.navigationBar.barTintColor = Kolory.czarnyPrzezr
-
+        
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 120
         
         
         //przewijanie do gory przez tabBar
@@ -95,12 +100,28 @@ class PogodaTableViewController: UITableViewController, UITabBarControllerDelega
         switch indexPath.row {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "DzisiajCell", for: indexPath) as! DzisiajTableViewCell
+            let dzisiaj = model!.dzisiaj
+            cell.tempLabel.text = "\(String(format: "%.2f", dzisiaj.temp.returnFormat())), \(formatTemp.rawValue)"
+            cell.opisLabel.text = dzisiaj.opis
+            cell.deszczLabel.text = "deszcz: \(String(format: "%.2f", dzisiaj.deszcz)) mm"
+            cell.wiatrLabel.text = "wiatr: \(String(format: "%.2f", dzisiaj.wiatr)) m/s"
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "Nast24Cell", for: indexPath) as! Nast24hTableViewCell
+            cell.backgroundColor = zapisaneKolory.tlo
+            cell.pogodaView.backgroundColor = zapisaneKolory.tlo
             return cell
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: "PozniejCell", for: indexPath) as! PozniejTableViewCell
+            let item = model!.pozniej[indexPath.row - 2]
+            if let tempDzien = item.tempDzien, let opisDzien = item.opisDzien {
+                cell.dzienTempLabel.text = "\(String(format: "%.2f", tempDzien.returnFormat())) \(formatTemp.rawValue)"
+                cell.dzienOpisLabel.text = opisDzien
+            }
+            if let tempNoc = item.tempNoc, let opisNoc = item.opisNoc {
+                cell.nocTempLabel.text = "\(String(format: "%.2f", tempNoc.returnFormat())) \(formatTemp.rawValue)"
+                cell.nocOpisLabel.text = opisNoc
+            }
             return cell
         }
 //        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! PogodaTableViewCell
@@ -274,9 +295,6 @@ class PogodaTableViewController: UITableViewController, UITabBarControllerDelega
         }
     }
     func parse(json: JSON, typ: RodzajJSON) {
-        var dzisiaj: ModelDzisiaj?
-        var nast24h =  [ModelNast24h]()
-        var pozniej = [ModelPozniej]()
         switch typ {
         case .prognoza:
             var miasto = json["city"]["name"].stringValue
@@ -288,6 +306,7 @@ class PogodaTableViewController: UITableViewController, UITabBarControllerDelega
             let dateFormatter = DateFormatter()
             dateFormatter.dateStyle = .short
             dateFormatter.timeStyle = .long
+            var tempNast24h = [ModelNast24h]()
             var tempPozniej = [ModelPozniej]()
             for index in 0...json["list"].count {
                 let obj = json["list"][index]
@@ -298,7 +317,7 @@ class PogodaTableViewController: UITableViewController, UITabBarControllerDelega
                 if (index < 8) {
 //                    let wiatr = obj["wind"]["speed"].doubleValue
 //                    let deszcz = obj["rain"]["3h"].doubleValue
-                    nast24h.append(ModelNast24h(godz: godzina, opis: opis, temp: temp))
+                    tempNast24h.append(ModelNast24h(godz: godzina, opis: opis, temp: temp))
                 } else {
                     if (godzina.hour < 2) {
                         tempPozniej.append(ModelPozniej(data: godzina, tempNoc: temp, opisNoc: opis))
@@ -324,26 +343,31 @@ class PogodaTableViewController: UITableViewController, UITabBarControllerDelega
                                 modelPozniej.opisDzien = opisDzien
                             }
                         }
-                        pozniej.append(modelPozniej)
+                        tempPozniej.append(modelPozniej)
                     } else {
-                        pozniej.append(item[0])
+                        tempPozniej.append(item[0])
                     }
                 }
+                nast24h = tempNast24h
+                pozniej = tempPozniej
+                makeModel()
             }
         case .teraz:
-//            let godzinawInt = json["dt"].intValue
-//            let godzina = Date(timeIntervalSince1970: TimeInterval(godzinawInt))
             let temp = Temperatura(k: json["main"]["temp"].doubleValue)
             let opis = json["weather"][0]["description"].stringValue
-//            let ciśnienie = json["main"]["pressure"].intValue
-//            let wilgotność = json["main"]["humidity"].stringValue
-//            let zachmurzenie = json["clouds"]["all"].stringValue
             let wiatr = json["wind"]["speed"].doubleValue
             let deszcz = json["rain"]["3h"].doubleValue
             dzisiaj = ModelDzisiaj(temp: temp, opis: opis, deszcz: deszcz, wiatr: wiatr)
+            makeModel()
         }
-        refreshControl?.performSelector(onMainThread: #selector(UIRefreshControl.endRefreshing), with: nil, waitUntilDone: true)
-        tableView.performSelector(onMainThread: #selector(UITableView.reloadData), with: nil, waitUntilDone: false)
+    }
+    
+    func makeModel() {
+        if let dzisiaj = dzisiaj, let nast24h = nast24h, let pozniej = pozniej {
+            model = PogodaModel(dzisiaj: dzisiaj, nast24h: nast24h, pozniej: pozniej)
+            refreshControl?.performSelector(onMainThread: #selector(UIRefreshControl.endRefreshing), with: nil, waitUntilDone: true)
+            tableView.performSelector(onMainThread: #selector(UITableView.reloadData), with: nil, waitUntilDone: false)
+        }
     }
     
     //odswiez, pokaz wskaznik ladowania

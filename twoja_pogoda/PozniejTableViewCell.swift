@@ -10,6 +10,11 @@ import UIKit
 
 class PozniejTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var dzienOpisLabel: UILabel!
+    @IBOutlet weak var dzienTempLabel: UILabel!
+    @IBOutlet weak var nocTempLabel: UILabel!
+    @IBOutlet weak var nocOpisLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
