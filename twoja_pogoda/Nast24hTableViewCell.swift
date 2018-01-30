@@ -10,7 +10,7 @@ import UIKit
 
 class Nast24hTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var dataLabel: UILabel!
+    @IBOutlet weak var nast24hLabel: UILabel!
     @IBOutlet weak var pogodaView: UIView!
     @IBOutlet private weak var collectionView: UICollectionView!
     

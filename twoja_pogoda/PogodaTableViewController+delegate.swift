@@ -16,15 +16,6 @@ extension PogodaTableViewController: UICollectionViewDelegate, UICollectionViewD
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .long
         dateFormatter.timeStyle = .none
-//        if dateFormatter.string(from: model[collectionView.tag][0].godzina) != dateFormatter.string(from: Date()) {
-//            if let offset = storedOffset[collectionView.tag] {
-//                collectionView.contentOffset.x = offset
-//            } else {
-//                collectionView.contentOffset.x = 2 * 240
-//                storedOffset[collectionView.tag] = collectionView.contentOffset.x
-//            }
-//
-//        } else {
         if let offset = storedOffset[collectionView.tag] {
             collectionView.contentOffset.x = offset
         } else {
