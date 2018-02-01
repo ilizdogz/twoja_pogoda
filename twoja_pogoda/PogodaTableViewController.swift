@@ -101,7 +101,7 @@ class PogodaTableViewController: UITableViewController, UITabBarControllerDelega
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "DzisiajCell", for: indexPath) as! DzisiajTableViewCell
             let dzisiaj = model!.dzisiaj
-            cell.tempLabel.text = "\(String(format: "%.2f", dzisiaj.temp.returnFormat())), \(formatTemp.rawValue)"
+            cell.tempLabel.text = "\(String(format: "%.2f", dzisiaj.temp.returnFormat())) \(formatTemp.rawValue)"
             cell.opisLabel.text = dzisiaj.opis
             cell.deszczLabel.text = "deszcz: \(String(format: "%.2f", dzisiaj.deszcz)) mm"
             cell.wiatrLabel.text = "wiatr: \(String(format: "%.2f", dzisiaj.wiatr)) m/s"
@@ -320,8 +320,8 @@ class PogodaTableViewController: UITableViewController, UITabBarControllerDelega
                     }
                     list.append(modelPozniej)
                 } else if (i == 1) {
-                    //pierwszy element to poprzedni dzien w nocy
-                    list.insert(ModelPozniej(data: prevItem.data, tempNoc: prevItem.tempNoc!, opisNoc: prevItem.opisNoc!), at: 0)
+                    //pierwszy element to poprzedni dzien
+                    list.insert(ModelPozniej(data: prevItem.data, tempDzien: prevItem.tempDzien!, opisDzien: prevItem.opisDzien!), at: 0)
                 }
             }
             nast24h = tempNast24h
