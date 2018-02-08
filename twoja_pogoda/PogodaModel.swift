@@ -29,6 +29,7 @@ struct ModelDzisiaj {
     var temp: Temperatura
     var opis: String
     var deszcz: Double
+    var snieg: Double?
     var wiatr: Double
 }
 

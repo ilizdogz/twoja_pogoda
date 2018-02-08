@@ -103,7 +103,11 @@ class PogodaTableViewController: UITableViewController, UITabBarControllerDelega
             let dzisiaj = model!.dzisiaj
             cell.tempLabel.text = "\(String(format: "%.2f", dzisiaj.temp.returnFormat())) \(formatTemp.rawValue)"
             cell.opisLabel.text = dzisiaj.opis
-            cell.deszczLabel.text = "deszcz: \(String(format: "%.2f", dzisiaj.deszcz)) mm"
+            if let snieg = dzisiaj.snieg {
+                cell.deszczLabel.text = "śnieg: \(String(format: "%.2f", snieg)) mm"
+            } else {
+                cell.deszczLabel.text = "deszcz: \(String(format: "%.2f", dzisiaj.deszcz)) mm"
+            }
             cell.wiatrLabel.text = "wiatr: \(String(format: "%.2f", dzisiaj.wiatr)) m/s"
             cell.ustawKolory()
             return cell
@@ -331,8 +335,14 @@ class PogodaTableViewController: UITableViewController, UITabBarControllerDelega
             let temp = Temperatura(k: json["main"]["temp"].doubleValue)
             let opis = json["weather"][0]["description"].stringValue
             let wiatr = json["wind"]["speed"].doubleValue
-            let deszcz = json["rain"]["3h"].doubleValue
-            dzisiaj = ModelDzisiaj(temp: temp, opis: opis, deszcz: deszcz, wiatr: wiatr)
+            var deszcz: Double = 0
+            var snieg: Double?
+            if (json["snow"]["3h"].doubleValue != 0) {
+                snieg = json["snow"]["3h"].doubleValue
+            } else {
+                deszcz = json["rain"]["3h"].doubleValue
+            }
+            dzisiaj = ModelDzisiaj(temp: temp, opis: opis, deszcz: deszcz, snieg: snieg, wiatr: wiatr)
             makeModel()
         }
     }
