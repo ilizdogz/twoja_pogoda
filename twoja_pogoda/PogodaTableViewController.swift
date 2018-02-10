@@ -106,7 +106,11 @@ class PogodaTableViewController: UITableViewController, UITabBarControllerDelega
             if let snieg = dzisiaj.snieg {
                 cell.deszczLabel.text = "śnieg: \(String(format: "%.2f", snieg)) mm"
             } else {
-                cell.deszczLabel.text = "deszcz: \(String(format: "%.2f", dzisiaj.deszcz)) mm"
+                if (dzisiaj.temp.c <= 0 && dzisiaj.deszcz == 0) {
+                    cell.deszczLabel.text = "śnieg: 0.00 mm"
+                } else {
+                    cell.deszczLabel.text = "deszcz: \(String(format: "%.2f", dzisiaj.deszcz)) mm"
+                }
             }
             cell.wiatrLabel.text = "wiatr: \(String(format: "%.2f", dzisiaj.wiatr)) m/s"
             cell.ustawKolory()
@@ -296,9 +300,8 @@ class PogodaTableViewController: UITableViewController, UITabBarControllerDelega
                 if (index < 8) {
                     tempNast24h.append(ModelNast24h(godz: godzina, opis: opis, temp: temp))
                 } else {
-                    if (godzina.hour < 2) {
+                    if (godzina.hour >= 21) {
                         tempPozniej.append(ModelPozniej(data: godzina, tempNoc: temp, opisNoc: opis))
-                        
                     } else if (godzina.hour > 11 && godzina.hour < 15) {
                         tempPozniej.append(ModelPozniej(data: godzina, tempDzien: temp, opisDzien: opis))
                     }
@@ -324,8 +327,8 @@ class PogodaTableViewController: UITableViewController, UITabBarControllerDelega
                     }
                     list.append(modelPozniej)
                 } else if (i == 1) {
-                    //pierwszy element to poprzedni dzien
-                    list.insert(ModelPozniej(data: prevItem.data, tempDzien: prevItem.tempDzien!, opisDzien: prevItem.opisDzien!), at: 0)
+                    //pierwszy element to poprzednia noc
+                    list.insert(ModelPozniej(data: prevItem.data, tempNoc: prevItem.tempNoc!, opisNoc: prevItem.opisNoc!), at: 0)
                 }
             }
             nast24h = tempNast24h

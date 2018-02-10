@@ -103,7 +103,7 @@ class ZapisaneTableViewController: UITableViewController, UITabBarControllerDele
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let vc = storyboard?.instantiateViewController(withIdentifier: "Pogoda") as? PogodaTableViewController {
-            //vc.miasto = zapisaneMiejsca[indexPath.row]
+            vc.idMiasta = zapisaneId[indexPath.row]
             navigationController?.pushViewController(vc, animated: true)
         }
     }
