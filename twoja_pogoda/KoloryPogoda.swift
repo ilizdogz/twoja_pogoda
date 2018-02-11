@@ -16,22 +16,16 @@ class ZapisaneKolory: NSObject, NSCoding {
     var godzina: UIColor
     var temp: UIColor
     var opis: UIColor
-    var cisnienie: UIColor
-    var wilgotnosc: UIColor
-    var zachmurzenie: UIColor
     var wiatr: UIColor
     var deszcz: UIColor
     var zapisaneMiejsce: UIColor
     var tlo: UIColor
     
-    init(dzien: UIColor, godzina: UIColor, temp: UIColor, opis: UIColor, cisnienie: UIColor, wilgotnosc: UIColor, zachmurzenie: UIColor, wiatr: UIColor, deszcz: UIColor, zapisaneMiejsce: UIColor, tlo: UIColor) {
+    init(dzien: UIColor, godzina: UIColor, temp: UIColor, opis: UIColor, wiatr: UIColor, deszcz: UIColor, zapisaneMiejsce: UIColor, tlo: UIColor) {
         self.dzien = dzien
         self.godzina = godzina
         self.temp = temp
         self.opis = opis
-        self.cisnienie = cisnienie
-        self.wilgotnosc = wilgotnosc
-        self.zachmurzenie = zachmurzenie
         self.wiatr = wiatr
         self.deszcz = deszcz
         self.zapisaneMiejsce = zapisaneMiejsce
@@ -43,9 +37,6 @@ class ZapisaneKolory: NSObject, NSCoding {
         static var godzina = "godzina"
         static var temp = "temp"
         static var opis = "opis"
-        static var cisnienie = "cisnienie"
-        static var wilgotnosc = "wilgotnosc"
-        static var zachmurzenie = "zachmurzenie"
         static var wiatr = "wiatr"
         static var deszcz = "deszcz"
         static var zapisaneMiejsce = "zapisaneMiejsce"
@@ -57,9 +48,6 @@ class ZapisaneKolory: NSObject, NSCoding {
         godzina = aDecoder.decodeObject(forKey: PropertyKeys.godzina) as! UIColor
         temp = aDecoder.decodeObject(forKey: PropertyKeys.temp) as! UIColor
         opis = aDecoder.decodeObject(forKey: PropertyKeys.opis) as! UIColor
-        cisnienie = aDecoder.decodeObject(forKey: PropertyKeys.cisnienie) as! UIColor
-        wilgotnosc = aDecoder.decodeObject(forKey: PropertyKeys.wilgotnosc) as! UIColor
-        zachmurzenie = aDecoder.decodeObject(forKey: PropertyKeys.zachmurzenie) as! UIColor
         wiatr = aDecoder.decodeObject(forKey: PropertyKeys.wiatr) as! UIColor
         deszcz = aDecoder.decodeObject(forKey: PropertyKeys.deszcz) as! UIColor
         zapisaneMiejsce = aDecoder.decodeObject(forKey: PropertyKeys.zapisaneMiejsce) as! UIColor
@@ -71,16 +59,13 @@ class ZapisaneKolory: NSObject, NSCoding {
         aCoder.encode(godzina, forKey: PropertyKeys.godzina)
         aCoder.encode(temp, forKey: PropertyKeys.temp)
         aCoder.encode(opis, forKey: PropertyKeys.opis)
-        aCoder.encode(cisnienie, forKey: PropertyKeys.cisnienie)
-        aCoder.encode(wilgotnosc, forKey: PropertyKeys.wilgotnosc)
-        aCoder.encode(zachmurzenie, forKey: PropertyKeys.zachmurzenie)
         aCoder.encode(wiatr, forKey: PropertyKeys.wiatr)
         aCoder.encode(deszcz, forKey: PropertyKeys.deszcz)
         aCoder.encode(zapisaneMiejsce, forKey: PropertyKeys.zapisaneMiejsce)
         aCoder.encode(tlo, forKey: PropertyKeys.tlo)
     }
     
-    static var domyslneUstawienia = ZapisaneKolory(dzien: Kolory.zoltyDzien, godzina: Kolory.bialy, temp: Kolory.zielonyDuze, opis: Kolory.zielonyDuze, cisnienie: Kolory.niebieskiMale, wilgotnosc: Kolory.niebieskiMale, zachmurzenie: Kolory.niebieskiMale, wiatr: Kolory.niebieskiMale, deszcz: Kolory.niebieskiDeszcz, zapisaneMiejsce: Kolory.bialy, tlo: Kolory.navCont)
+    static var domyslneUstawienia = ZapisaneKolory(dzien: Kolory.zoltyDzien, godzina: Kolory.bialy, temp: Kolory.zielonyDuze, opis: Kolory.zielonyDuze, wiatr: Kolory.niebieskiMale, deszcz: Kolory.niebieskiDeszcz, zapisaneMiejsce: Kolory.bialy, tlo: Kolory.navCont)
 }
 
 enum CiemneJasne {

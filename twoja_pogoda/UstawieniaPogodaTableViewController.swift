@@ -11,15 +11,12 @@ import UIKit
 class UstawieniaPogodaTableViewController: UITableViewController, UIPopoverPresentationControllerDelegate {
 
     @IBOutlet weak var kartaPodglad: UIView!
-    @IBOutlet weak var dzienPodglad: UIButton!
-    @IBOutlet weak var godzinaPodglad: UIButton!
-    @IBOutlet weak var tempPodglad: UIButton!
-    @IBOutlet weak var opisPodglad: UIButton!
-    @IBOutlet weak var cisnieniePodglad: UIButton!
-    @IBOutlet weak var wilgotnoscPodglad: UIButton!
-    @IBOutlet weak var zachmurzeniePodglad: UIButton!
-    @IBOutlet weak var wiatrPodglad: UIButton!
     @IBOutlet weak var deszczPodglad: UIButton!
+    @IBOutlet weak var wiatrPodglad: UIButton!
+    @IBOutlet var dzienPodglad: [UIButton]!
+    @IBOutlet var tempPodglad: [UIButton]!
+    @IBOutlet var opisPodglad: [UIButton]!
+    @IBOutlet var godzPodglad: [UIButton]!
     @IBOutlet weak var zapisaneMiescePodglad: UIButton!
     @IBOutlet weak var zapisaneTempPodglad: UIButton!
     @IBOutlet weak var zapisaneDeszczPodglad: UIButton!
@@ -67,7 +64,7 @@ class UstawieniaPogodaTableViewController: UITableViewController, UIPopoverPrese
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
-            return 1
+            return 3
         case 1:
             return 1
         case 2:
@@ -85,19 +82,23 @@ class UstawieniaPogodaTableViewController: UITableViewController, UIPopoverPrese
 
     //zmien wyglad
     func updateView() {
-        dzienPodglad.setTitleColor(tempKolory.dzien, for: .normal)
-        godzinaPodglad.setTitleColor(tempKolory.godzina, for: .normal)
-        tempPodglad.setTitleColor(tempKolory.temp, for: .normal)
-        opisPodglad.setTitleColor(tempKolory.opis, for: .normal)
-        cisnieniePodglad.setTitleColor(tempKolory.cisnienie, for: .normal)
-        wilgotnoscPodglad.setTitleColor(tempKolory.wilgotnosc, for: .normal)
-        zachmurzeniePodglad.setTitleColor(tempKolory.zachmurzenie, for: .normal)
+        for item in dzienPodglad {
+            item.setTitleColor(tempKolory.dzien, for: .normal)
+        }
+        for item in tempPodglad {
+            item.setTitleColor(tempKolory.temp, for: .normal)
+        }
+        for item in opisPodglad {
+            item.setTitleColor(tempKolory.opis, for: .normal)
+        }
+        for item in godzPodglad {
+            item.setTitleColor(tempKolory.godzina, for: .normal)
+        }
         wiatrPodglad.setTitleColor(tempKolory.wiatr, for: .normal)
         deszczPodglad.setTitleColor(tempKolory.deszcz, for: .normal)
         zapisaneMiescePodglad.setTitleColor(tempKolory.zapisaneMiejsce, for: .normal)
         zapisaneTempPodglad.setTitleColor(tempKolory.temp, for: .normal)
         zapisaneDeszczPodglad.setTitleColor(tempKolory.deszcz, for: .normal)
-        zapisaneTempPodglad.setTitleColor(tempKolory.temp, for: .normal)
         zmienTlo(kolor: tempKolory.tlo)
     }
     
@@ -124,7 +125,6 @@ class UstawieniaPogodaTableViewController: UITableViewController, UIPopoverPrese
             popoverVC.delegate = self
         }
         present(popoverVC, animated: true, completion: nil)
-        
     }
     
     func zmienZapisane(_ kolor: UIColor) {
@@ -133,28 +133,19 @@ class UstawieniaPogodaTableViewController: UITableViewController, UIPopoverPrese
         case 1000:
             tempKolory.dzien = kolor
         case 1001:
-            tempKolory.godzina = kolor
+            tempKolory.temp = kolor
         case 1002:
-            tempKolory.temp = kolor
-        case 1003:
             tempKolory.opis = kolor
+        case 1003:
+            tempKolory.deszcz = kolor
         case 1004:
-            tempKolory.cisnienie = kolor
-        case 1005:
-            tempKolory.wilgotnosc = kolor
-        case 1006:
-            tempKolory.zachmurzenie = kolor
-        case 1007:
             tempKolory.wiatr = kolor
-        case 1008:
-            tempKolory.deszcz = kolor
-        case 1009:
+        case 1005:
+            tempKolory.godzina = kolor
+        case 1006:
             tempKolory.zapisaneMiejsce = kolor
-        case 1010:
-            tempKolory.deszcz = kolor
-        case 1011:
-            tempKolory.temp = kolor
-        case 1012:
+            print(tempKolory.zapisaneMiejsce)
+        case 1007:
             tempKolory.tlo = kolor
         default:
             break
@@ -186,12 +177,10 @@ class UstawieniaPogodaTableViewController: UITableViewController, UIPopoverPrese
         if jasnoscTla < 0.5 {
             //tło jest jasne - potrzebne są ciemne kolory
             zmienKolorTla.setTitleColor(Kolory.navCont, for: .normal)
-            godzinaPodglad.backgroundColor = Kolory.czarnyPrzezr
             zapisaneMiescePodglad.setTitleColor(Kolory.navCont, for: .normal)
         } else {
             //tło jest ciemne - portrzebne są jasne kolory
             zmienKolorTla.setTitleColor(Kolory.bialy, for: .normal)
-            godzinaPodglad.backgroundColor = Kolory.godzinaBG
             zapisaneMiescePodglad.setTitleColor(Kolory.bialy, for: .normal)
         }
     }
