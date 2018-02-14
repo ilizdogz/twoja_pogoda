@@ -297,6 +297,13 @@ class PogodaTableViewController: UITableViewController, UITabBarControllerDelega
                 let godzina = Date(timeIntervalSince1970: TimeInterval(godzinaWInt))
                 let temp = Temperatura(k: obj["main"]["temp"].doubleValue)
                 let opis = obj["weather"][0]["description"].stringValue
+                if (dzisiaj != nil && index == 0) {
+                    if (obj["snow"]["3h"].doubleValue != 0 && dzisiaj!.snieg != 0) {
+                        dzisiaj!.snieg = obj["snow"]["3h"].doubleValue
+                    } else if (obj["rain"]["3h"].doubleValue != 0 && dzisiaj!.deszcz != 0) {
+                        dzisiaj!.deszcz = obj["rain"]["3h"].doubleValue
+                    }
+                }
                 if (index < 8) {
                     tempNast24h.append(ModelNast24h(godz: godzina, opis: opis, temp: temp))
                 } else {
@@ -309,6 +316,7 @@ class PogodaTableViewController: UITableViewController, UITabBarControllerDelega
                 
             }
             var list = [ModelPozniej]()
+//            od 2, bo i tak bierzemy wczesniejszy
             for i in 1 ..< tempPozniej.count {
                 let item = tempPozniej[i]
                 let prevItem = tempPozniej[i - 1]
