@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import SafariServices
 
 class UstawieniaTableViewController: UITableViewController {
 
     @IBOutlet weak var tempLabel: UILabel!
     @IBOutlet weak var widokMiejscaLabel: UILabel!
     @IBOutlet var przyciskiJedn: [UIButton]!
+    @IBOutlet weak var createdByLabel: UILabel!
+    @IBOutlet weak var dataFromLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +27,7 @@ class UstawieniaTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         navigationController?.navigationBar.barTintColor = Kolory.czarnyPrzezr
         
-        let backButton = UIBarButtonItem(title: "wstecz", style: UIBarButtonItemStyle.plain, target: self, action: nil)
+        let backButton = UIBarButtonItem(title: NSLocalizedString("back", comment: "back"), style: UIBarButtonItemStyle.plain, target: self, action: nil)
         backButton.setTitleTextAttributes([NSAttributedStringKey.font: UIFont(name: "Menlo", size: 15)!], for: .normal)
         navigationItem.backBarButtonItem = backButton
         for button in przyciskiJedn {
@@ -47,7 +50,7 @@ class UstawieniaTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 3
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -55,6 +58,8 @@ class UstawieniaTableViewController: UITableViewController {
         case 0:
             return 2
         case 1:
+            return 2
+        case 2:
             return 2
         default:
             return 0
@@ -94,14 +99,24 @@ class UstawieniaTableViewController: UITableViewController {
         defaults.set(formatTemp.rawValue, forKey: "temperatura")
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        if (indexPath.section == 2 && indexPath.row == 1) {
+            let url = URL(string: "https://openweathermap.org")
+            let vc = SFSafariViewController(url: url!)
+            present(vc, animated: true)
+            
+        }
+    }
+    
 
     //przywróć domyślne
     @IBAction func przywrocDomyslne(_ sender: UIButton) {
-        let ac = UIAlertController(title: "Na pewno?", message: "Czy na pewno chcesz przywrócić domyślne?", preferredStyle: .alert)
-        ac.addAction(UIAlertAction(title: "Przywróć domyślne", style: .default) { [unowned self] (action: UIAlertAction)  in
+        let ac = UIAlertController(title: NSLocalizedString("are_you_sure", comment: "are_you_sure"), message: NSLocalizedString("restore_def", comment: "restore_def_msg"), preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: NSLocalizedString("restore_def", comment: "restore_def"), style: .default) { [unowned self] (action: UIAlertAction)  in
             self.domyslneUstawienia()
         })
-        ac.addAction(UIAlertAction(title: "Anuluj", style: .cancel, handler: nil))
+        ac.addAction(UIAlertAction(title: NSLocalizedString("cancel", comment: "cancel"), style: .cancel, handler: nil))
         present(ac, animated: true, completion: nil)
     }
     

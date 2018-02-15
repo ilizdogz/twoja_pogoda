@@ -104,15 +104,15 @@ class PogodaTableViewController: UITableViewController, UITabBarControllerDelega
             cell.tempLabel.text = "\(String(format: "%.2f", dzisiaj.temp.returnFormat())) \(formatTemp.rawValue)"
             cell.opisLabel.text = dzisiaj.opis
             if let snieg = dzisiaj.snieg {
-                cell.deszczLabel.text = "śnieg: \(String(format: "%.2f", snieg)) mm"
+                cell.deszczLabel.text = "\(NSLocalizedString("snow", comment: "snow")): \(String(format: "%.2f", snieg)) mm"
             } else {
                 if (dzisiaj.temp.c <= 0 && dzisiaj.deszcz == 0) {
-                    cell.deszczLabel.text = "śnieg: 0.00 mm"
+                    cell.deszczLabel.text = "\(NSLocalizedString("snow", comment: "snow")): 0.00 mm"
                 } else {
-                    cell.deszczLabel.text = "deszcz: \(String(format: "%.2f", dzisiaj.deszcz)) mm"
+                    cell.deszczLabel.text = "\(NSLocalizedString("rain", comment: "rain")): \(String(format: "%.2f", dzisiaj.deszcz)) mm"
                 }
             }
-            cell.wiatrLabel.text = "wiatr: \(String(format: "%.2f", dzisiaj.wiatr)) m/s"
+            cell.wiatrLabel.text = "\(NSLocalizedString("wind", comment: "wind")): \(String(format: "%.2f", dzisiaj.wiatr)) m/s"
             cell.ustawKolory()
             return cell
         case 1:
@@ -124,10 +124,12 @@ class PogodaTableViewController: UITableViewController, UITabBarControllerDelega
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: "PozniejCell", for: indexPath) as! PozniejTableViewCell
             let formatter = DateFormatter()
-            formatter.dateStyle = .short
-            formatter.timeStyle = .none
+            formatter.dateFormat = "EEEE, dd/MM/yyyy"
+            formatter.locale = Locale(identifier: Locale.current.identifier)
+//            let weekFormatter = DateFormatter()
+//            weekFormatter.dateFormat = "EEEE"
             let item = model!.pozniej[indexPath.row - 2]
-            cell.dataLabel.text = formatter.string(from: item.data)
+            cell.dataLabel.text = formatter.string(from: item.data).lowercased()
             if let tempDzien = item.tempDzien, let opisDzien = item.opisDzien {
                 cell.dzienTempLabel.text = "\(String(format: "%.2f", tempDzien.returnFormat())) \(formatTemp.rawValue)"
                 cell.dzienOpisLabel.text = opisDzien
@@ -216,7 +218,7 @@ class PogodaTableViewController: UITableViewController, UITabBarControllerDelega
         if status == .authorizedWhenInUse || status == .authorizedAlways {
             return
         } else {
-            let ac = UIAlertController(title: "Wystąpił błąd", message: "Aplikacja nie ma zgody na uzyskanie lokalizacji. Użyj innej opcji lub zmień to ustawienie.", preferredStyle: .alert)
+            let ac = UIAlertController(title: NSLocalizedString("errorHeader", comment: "errorHeader"), message: NSLocalizedString("permissionError", comment: "permissionError"), preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             present(ac, animated: true, completion: nil)
             refreshControl?.performSelector(onMainThread: #selector(UIRefreshControl.endRefreshing), with: nil, waitUntilDone: false)
@@ -236,7 +238,11 @@ class PogodaTableViewController: UITableViewController, UITabBarControllerDelega
             proba == 1 {
                 let lat = lok.coordinate.latitude
                 let lon = lok.coordinate.longitude
-            let urlArray: [RodzajJSON: String] = [.prognoza: "https://api.openweathermap.org/data/2.5/forecast?lat=\(lat)&lon=\(lon)&appid=\(apiKey)&lang=pl", .teraz: "https://api.openweathermap.org/data/2.5/weather?lat=\(lat)&lon=\(lon)&appid=\(apiKey)&lang=pl"]
+            var lang = ""
+            if (Locale.current.identifier == ("pl_PL")) {
+                lang = "&lang=pl"
+            }
+            let urlArray: [RodzajJSON: String] = [.prognoza: "https://api.openweathermap.org/data/2.5/forecast?lat=\(lat)&lon=\(lon)&appid=\(apiKey)\(lang)", .teraz: "https://api.openweathermap.org/data/2.5/weather?lat=\(lat)&lon=\(lon)&appid=\(apiKey)\(lang)"]
             for (rodzaj, adres) in urlArray {
                 zaladujPogode(adres: adres, typ: rodzaj)
             }
@@ -373,7 +379,7 @@ class PogodaTableViewController: UITableViewController, UITabBarControllerDelega
         proba = 0
         lokalizacja = nil
 //        objArray.removeAll(keepingCapacity: false)
-        self.navigationItem.title = "ładowanie..."
+        self.navigationItem.title = NSLocalizedString("loading", comment: "loading")
         performSelector(inBackground: #selector(sprawdzNazweMiasta), with: nil)
     }
     
@@ -385,7 +391,7 @@ class PogodaTableViewController: UITableViewController, UITabBarControllerDelega
     
     //pokaz blad jak cos pojdzie nie tak
     @objc func showError() {
-        let ac = UIAlertController(title: "Wystąpił błąd", message: "Nie udało się załadować danych. Spróbuj ponownie później.", preferredStyle: .alert)
+        let ac = UIAlertController(title: NSLocalizedString("error_header", comment: "errorHeader"), message: NSLocalizedString("loading_error", comment: "loadingError"), preferredStyle: .alert)
         ac.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         self.present(ac, animated: true, completion: nil)
     }

@@ -20,7 +20,7 @@ class WyszukajViewController: UIViewController {
         navigationController?.navigationBar.barTintColor = Kolory.czarnyPrzezr
         // Do any additional setup after loading the view.
         
-        let backButton = UIBarButtonItem(title: "wstecz", style: UIBarButtonItemStyle.plain, target: self, action: nil)
+        let backButton = UIBarButtonItem(title: NSLocalizedString("back", comment: "back"), style: UIBarButtonItemStyle.plain, target: self, action: nil)
         //backButton.setTitleTextAttributes([NSAttributedStringKey.font: UIFont(name: "Menlo", size: 15)!], for: .normal)
         navigationItem.backBarButtonItem = backButton
         view.backgroundColor = zapisaneKolory.tlo
@@ -44,7 +44,7 @@ class WyszukajViewController: UIViewController {
                 vc.idMiasta = id
                 navigationController?.pushViewController(vc, animated: true)
             } else {
-                let ac = UIAlertController(title: "Nie znaleziono", message: "Nie znaleziono miasta", preferredStyle: .alert)
+                let ac = UIAlertController(title: NSLocalizedString("not_found_header", comment: "not_found_header"), message: NSLocalizedString("not_found_msg", comment: "not_found_msg"), preferredStyle: .alert)
                 ac.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             }
             //vc.idMiasta = sender.text

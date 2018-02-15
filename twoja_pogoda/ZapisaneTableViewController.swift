@@ -36,7 +36,7 @@ class ZapisaneTableViewController: UITableViewController, UITabBarControllerDele
         //do przewijania do gory przez tabBar
         self.tabBarController?.delegate = self
         
-        let backButton = UIBarButtonItem(title: "wstecz", style: UIBarButtonItemStyle.plain, target: self, action: nil)
+        let backButton = UIBarButtonItem(title: NSLocalizedString("back", comment: "back"), style: UIBarButtonItemStyle.plain, target: self, action: nil)
         //backButton.setTitleTextAttributes([NSAttributedStringKey.font: UIFont(name: "Menlo", size: 15)!], for: .normal)
         navigationItem.backBarButtonItem = backButton
         
@@ -160,7 +160,7 @@ class ZapisaneTableViewController: UITableViewController, UITabBarControllerDele
             tableView.insertRows(at: [indexPath], with: .automatic)
             self.zapisz()
         } else {
-            let ac = UIAlertController(title: "nie znaleziono", message: "Nie znaleziono miejsca o podanej nazwie.", preferredStyle: .alert)
+            let ac = UIAlertController(title: NSLocalizedString("not_found_header", comment: "not_found_header"), message: NSLocalizedString("not_found_msg", comment: "not_found_msg"), preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: "OK", style: .default,handler: nil))
             self.present(ac, animated: true, completion: nil)
         }
@@ -209,7 +209,7 @@ class ZapisaneTableViewController: UITableViewController, UITabBarControllerDele
             znajdzPogode(id: miejsce)
         }
         DispatchQueue.main.async { [unowned self] in
-            self.navigationItem.title = "zapisane miejsca"
+            self.navigationItem.title = NSLocalizedString("saved_places_header", comment: "saved_places_header")
             self.refreshControl?.endRefreshing()
             self.tableView.reloadData()
         }
@@ -258,7 +258,7 @@ class ZapisaneTableViewController: UITableViewController, UITabBarControllerDele
     }
     
     @objc func showError() {
-        let ac = UIAlertController(title: "Wystąpił błąd", message: "Nie udało się załadować danych. Spróbuj ponownie później.", preferredStyle: .alert)
+        let ac = UIAlertController(title: NSLocalizedString("error_header", comment: "error_header"), message: NSLocalizedString("loading_error", comment: "loading_error"), preferredStyle: .alert)
         ac.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         self.present(ac, animated: true, completion: nil)
     }
@@ -271,7 +271,7 @@ class ZapisaneTableViewController: UITableViewController, UITabBarControllerDele
         zapisaneId.removeAll(keepingCapacity: false)
         tableView.reloadData()
         zapisaneId = miejsca
-        self.navigationItem.title = "ładowanie..."
+        self.navigationItem.title = NSLocalizedString("loading", comment: "loading")
         performSelector(inBackground: #selector(zaladujPogode), with: nil)
     }
     

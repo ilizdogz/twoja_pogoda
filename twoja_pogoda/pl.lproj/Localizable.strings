@@ -1,0 +1,22 @@
+/* 
+  Localizable.strings
+  twoja_pogoda
+
+  Created by Krzysztof Glimos on 15.02.2018.
+  Copyright © 2018 Krzysztof Glimos. All rights reserved.
+*/
+"loading" = "ładowanie…";
+"back" = "wstecz";
+"loading_error" = "Nie udało się załadować danych. Spróbuj ponownie później.";
+"permission_error" = "Aplikacja nie ma zgody na lokalizację. Zmień to ustawienie lub wybierz inną opcję.";
+"error_header" = "Wystąpił błąd";
+"snow" = "śnieg";
+"rain" = "deszcz";
+"wind" = "wiatr";
+"are_you_sure" = "Czy jesteś pewny?";
+"restore_def_msg" = "Czy na pewno chcesz przywrócić domyślne?";
+"restore_def" = "Przywróć domyślne";
+"cancel" = "Anuluj";
+"not_found_header" = "Nie znaleziono";
+"not_found_msg" = "Nie znaleziono miasta";
+"saved_places_header" = "zapisane miejsca";

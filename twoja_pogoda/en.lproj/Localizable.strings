@@ -1,0 +1,22 @@
+/* 
+  Localizable.strings
+  twoja_pogoda
+
+  Created by Krzysztof Glimos on 15.02.2018.
+  Copyright © 2018 Krzysztof Glimos. All rights reserved.
+*/
+"loading" = "loading…";
+"back" = "back";
+"loading_error" = "Failed to get data. Try again later.";
+"permission_error" = "The app doesn't have the permission to access location. Change this setting or use another option.";
+"error_header" = "An error occured";
+"snow" = "snow";
+"rain" = "rain";
+"wind" = "wind";
+"are_you_sure" = "Are you sure?";
+"restore_def_msg" = "Are you sure you want to restore defaults?";
+"restore_def" = "Restore defaults";
+"cancel" = "Cancel";
+"not_found_header" = "Not found";
+"not_found_msg" = "City not found";
+"saved_places_header" = "saved places";

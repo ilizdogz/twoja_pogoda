@@ -1,0 +1,177 @@
+
+/* Class = "UIButton"; normalTitle = "K"; ObjectID = "0td-DS-gWo"; */
+"0td-DS-gWo.normalTitle" = "K";
+
+/* Class = "UILabel"; text = "data"; ObjectID = "1ep-zA-Tuu"; */
+"1ep-zA-Tuu.text" = "data";
+
+/* Class = "UILabel"; text = "deszcz"; ObjectID = "1yl-DJ-ea8"; */
+"1yl-DJ-ea8.text" = "deszcz";
+
+/* Class = "UIButton"; normalTitle = "℉"; ObjectID = "3yM-aY-GmH"; */
+"3yM-aY-GmH.normalTitle" = "℉";
+
+/* Class = "UIButton"; normalTitle = "noc"; ObjectID = "4pc-xg-gdk"; */
+"4pc-xg-gdk.normalTitle" = "noc";
+
+/* Class = "UIButton"; normalTitle = "dzień"; ObjectID = "7me-1L-v9z"; */
+"7me-1L-v9z.normalTitle" = "dzień";
+
+/* Class = "UIButton"; normalTitle = "teraz"; ObjectID = "8OQ-Tz-Vc7"; */
+"8OQ-Tz-Vc7.normalTitle" = "teraz";
+
+/* Class = "UIButton"; normalTitle = "bezchmurnie"; ObjectID = "AbM-9n-BTv"; */
+"AbM-9n-BTv.normalTitle" = "bezchmurnie";
+
+/* Class = "UIButton"; normalTitle = "wiatr: 0.00 m/s"; ObjectID = "BMQ-mn-cBn"; */
+"BMQ-mn-cBn.normalTitle" = "wiatr: 0.00 m/s";
+
+/* Class = "UITableViewSection"; headerTitle = "zapisane miejsca"; ObjectID = "Bz4-GZ-ltf"; */
+"Bz4-GZ-ltf.headerTitle" = "zapisane miejsca";
+
+/* Class = "UIButton"; normalTitle = "zmień kolor tła"; ObjectID = "CTN-lp-cs4"; */
+"CTN-lp-cs4.normalTitle" = "zmień kolor tła";
+
+/* Class = "UILabel"; text = "deszcz: 0,00 mm"; ObjectID = "DMi-uq-MAH"; */
+"DMi-uq-MAH.text" = "deszcz: 0,00 mm";
+
+/* Class = "UILabel"; text = "bezchmurnie"; ObjectID = "ET5-z6-Zs7"; */
+"ET5-z6-Zs7.text" = "bezchmurnie";
+
+/* Class = "UIButton"; normalTitle = "22.50 ℃"; ObjectID = "Fl9-4b-fJ0"; */
+"Fl9-4b-fJ0.normalTitle" = "22.50 ℃";
+
+/* Class = "UIButton"; normalTitle = "bezchmurnie"; ObjectID = "FzJ-8v-JEn"; */
+"FzJ-8v-JEn.normalTitle" = "bezchmurnie";
+
+/* Class = "UIButton"; normalTitle = "22.50 ℃"; ObjectID = "HNl-pm-Yc4"; */
+"HNl-pm-Yc4.normalTitle" = "22.50 ℃";
+
+/* Class = "UIBarButtonItem"; title = "wstecz"; ObjectID = "Hac-Wu-3gu"; */
+"Hac-Wu-3gu.title" = "wstecz";
+
+/* Class = "UITableViewSection"; headerTitle = "wygląd"; ObjectID = "L0k-kO-dKx"; */
+"L0k-kO-dKx.headerTitle" = "wygląd";
+
+/* Class = "UIButton"; normalTitle = "0.00 mm"; ObjectID = "L7j-ig-JL6"; */
+"L7j-ig-JL6.normalTitle" = "0.00 mm";
+
+/* Class = "UILabel"; text = "miejsce"; ObjectID = "Lnn-4X-IMP"; */
+"Lnn-4X-IMP.text" = "miejsce";
+
+/* Class = "UILabel"; text = "noc"; ObjectID = "MJo-IA-ZRd"; */
+"MJo-IA-ZRd.text" = "noc";
+
+/* Class = "UILabel"; text = "widok miejsca"; ObjectID = "McA-ti-3Vn"; */
+"McA-ti-3Vn.text" = "widok miejsca";
+
+/* Class = "UIButton"; normalTitle = "przywróć domyślny motyw"; ObjectID = "MiX-Vc-5xc"; */
+"MiX-Vc-5xc.normalTitle" = "przywróć domyślny motyw";
+
+/* Class = "UITableViewSection"; headerTitle = "podgląd"; ObjectID = "QzB-nH-wfv"; */
+"QzB-nH-wfv.headerTitle" = "podgląd";
+
+/* Class = "UIButton"; normalTitle = "10.00 °C"; ObjectID = "T4z-jU-IBc"; */
+"T4z-jU-IBc.normalTitle" = "10.00 °C";
+
+/* Class = "UIBarButtonItem"; title = "dodaj"; ObjectID = "TG1-gN-zD3"; */
+"TG1-gN-zD3.title" = "dodaj";
+
+/* Class = "UIButton"; normalTitle = "następne 24h"; ObjectID = "TaM-0W-LlD"; */
+"TaM-0W-LlD.normalTitle" = "następne 24h";
+
+/* Class = "UIButton"; normalTitle = "godzina"; ObjectID = "U7n-12-ws0"; */
+"U7n-12-ws0.normalTitle" = "godzina";
+
+/* Class = "UITabBarItem"; title = "wyszukaj"; ObjectID = "Vcj-t0-Rc5"; */
+"Vcj-t0-Rc5.title" = "wyszukaj";
+
+/* Class = "UILabel"; text = "bezchmurnie"; ObjectID = "Vdh-9b-tGV"; */
+"Vdh-9b-tGV.text" = "bezchmurnie";
+
+/* Class = "UILabel"; text = "-5,92 °C"; ObjectID = "Vnh-Gs-u2i"; */
+"Vnh-Gs-u2i.text" = "-5,92 °C";
+
+/* Class = "UIButton"; normalTitle = "22.50 °C"; ObjectID = "WGA-kz-XGS"; */
+"WGA-kz-XGS.normalTitle" = "22.50 °C";
+
+/* Class = "UIButton"; normalTitle = "℃"; ObjectID = "WeX-B4-nk8"; */
+"WeX-B4-nk8.normalTitle" = "℃";
+
+/* Class = "UIButton"; normalTitle = "bezchmurnie"; ObjectID = "Z02-lF-nVY"; */
+"Z02-lF-nVY.normalTitle" = "bezchmurnie";
+
+/* Class = "UILabel"; text = "temp"; ObjectID = "aIC-vF-Vcb"; */
+"aIC-vF-Vcb.text" = "temp";
+
+/* Class = "UILabel"; text = "godzina"; ObjectID = "bIl-b6-bvv"; */
+"bIl-b6-bvv.text" = "godzina";
+
+/* Class = "UIButton"; normalTitle = "miejsce"; ObjectID = "cVR-QQ-KBd"; */
+"cVR-QQ-KBd.normalTitle" = "miejsce";
+
+/* Class = "UILabel"; text = "5,63 °C"; ObjectID = "caF-o9-yf1"; */
+"caF-o9-yf1.text" = "5,63 °C";
+
+/* Class = "UILabel"; text = "dzień"; ObjectID = "cbf-yu-YBw"; */
+"cbf-yu-YBw.text" = "dzień";
+
+/* Class = "UIButton"; normalTitle = "bezchmurnie"; ObjectID = "cwH-ql-ck7"; */
+"cwH-ql-ck7.normalTitle" = "bezchmurnie";
+
+/* Class = "UILabel"; text = "teraz"; ObjectID = "eAX-lI-1aI"; */
+"eAX-lI-1aI.text" = "teraz";
+
+/* Class = "UIButton"; normalTitle = "22.50 ℃"; ObjectID = "f26-PG-4Yk"; */
+"f26-PG-4Yk.normalTitle" = "22.50 ℃";
+
+/* Class = "UILabel"; text = "wiatr: 2,11 m/s"; ObjectID = "g7e-w7-fAD"; */
+"g7e-w7-fAD.text" = "wiatr: 2,11 m/s";
+
+/* Class = "UITabBarItem"; title = "ustawienia"; ObjectID = "jjg-cB-VnZ"; */
+"jjg-cB-VnZ.title" = "ustawienia";
+
+/* Class = "UITabBarItem"; title = "tutaj"; ObjectID = "k8v-Et-uFC"; */
+"k8v-Et-uFC.title" = "tutaj";
+
+/* Class = "UILabel"; text = "temp"; ObjectID = "mkA-q8-NOT"; */
+"mkA-q8-NOT.text" = "temp";
+
+/* Class = "UILabel"; text = "rozproszone chmury"; ObjectID = "nB7-WX-MHz"; */
+"nB7-WX-MHz.text" = "rozproszone chmury";
+
+/* Class = "UILabel"; text = "następne 24h"; ObjectID = "nsV-eP-0uf"; */
+"nsV-eP-0uf.text" = "następne 24h";
+
+/* Class = "UIBarButtonItem"; title = "edytuj"; ObjectID = "oha-WS-Cx8"; */
+"oha-WS-Cx8.title" = "edytuj";
+
+/* Class = "UINavigationItem"; title = "wyszukaj"; ObjectID = "q8o-te-2oD"; */
+"q8o-te-2oD.title" = "wyszukaj";
+
+/* Class = "UINavigationItem"; title = "ustawienia"; ObjectID = "rMS-Mu-fWa"; */
+"rMS-Mu-fWa.title" = "ustawienia";
+
+/* Class = "UIButton"; normalTitle = "później"; ObjectID = "rdU-E6-V3I"; */
+"rdU-E6-V3I.normalTitle" = "później";
+
+/* Class = "UIButton"; normalTitle = "deszcz: 0.00 mm"; ObjectID = "sL8-cZ-LRW"; */
+"sL8-cZ-LRW.normalTitle" = "deszcz: 0.00 mm";
+
+/* Class = "UILabel"; text = "-1,59 °C"; ObjectID = "sdO-gZ-Cj8"; */
+"sdO-gZ-Cj8.text" = "-1,59 °C";
+
+/* Class = "UITableViewSection"; headerTitle = "jednostki"; ObjectID = "u9o-I7-oS3"; */
+"u9o-I7-oS3.headerTitle" = "jednostki";
+
+/* Class = "UILabel"; text = "temperatura"; ObjectID = "vtI-QF-Nr5"; */
+"vtI-QF-Nr5.text" = "temperatura";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "wjH-lx-yip"; */
+"wjH-lx-yip.text" = "Title";
+
+/* Class = "UILabel"; text = "opis"; ObjectID = "wkb-FL-uqE"; */
+"wkb-FL-uqE.text" = "opis";
+
+/* Class = "UITabBarItem"; title = "zapisane"; ObjectID = "zBz-Jb-0Lq"; */
+"zBz-Jb-0Lq.title" = "zapisane";
