@@ -8,8 +8,7 @@
 
 import UIKit
 import CoreLocation
-import SwiftyJSON
-import Timepiece
+import YourWeatherFramework
 
 class PogodaTableViewController: UITableViewController, UITabBarControllerDelegate, CLLocationManagerDelegate {
     var locationManager = CLLocationManager()
@@ -20,9 +19,6 @@ class PogodaTableViewController: UITableViewController, UITabBarControllerDelega
     @IBOutlet weak var pogodaViewLeading: NSLayoutConstraint!
     //var model: [[[String: Any]]] = [[[String: Any]]]()
     var model: PogodaModel?
-    var dzisiaj: ModelDzisiaj?
-    var nast24h: [ModelNast24h]?
-    var pozniej: [ModelPozniej]?
     //var miasto: String?
     var idMiasta: String?
     var znalazlLokalizacje = false
@@ -101,7 +97,7 @@ class PogodaTableViewController: UITableViewController, UITabBarControllerDelega
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "DzisiajCell", for: indexPath) as! DzisiajTableViewCell
             let dzisiaj = model!.dzisiaj
-            cell.tempLabel.text = "\(String(format: "%.2f", dzisiaj.temp.returnFormat())) \(formatTemp.rawValue)"
+            cell.tempLabel.text = "\(String(format: "%.2f", dzisiaj.temp.returnFormat(formatTemp))) \(formatTemp.rawValue)"
             cell.opisLabel.text = dzisiaj.opis
             if let snieg = dzisiaj.snieg {
                 cell.deszczLabel.text = "\(NSLocalizedString("snow", comment: "snow")): \(String(format: "%.2f", snieg)) mm"
@@ -126,18 +122,16 @@ class PogodaTableViewController: UITableViewController, UITabBarControllerDelega
             let formatter = DateFormatter()
             formatter.dateFormat = "EEEE, dd/MM/yyyy"
             formatter.locale = Locale(identifier: Locale.current.identifier)
-//            let weekFormatter = DateFormatter()
-//            weekFormatter.dateFormat = "EEEE"
             let item = model!.pozniej[indexPath.row - 2]
             cell.dataLabel.text = formatter.string(from: item.data).lowercased()
             if let tempDzien = item.tempDzien, let opisDzien = item.opisDzien {
-                cell.dzienTempLabel.text = "\(String(format: "%.2f", tempDzien.returnFormat())) \(formatTemp.rawValue)"
+                cell.dzienTempLabel.text = "\(String(format: "%.2f", tempDzien.returnFormat(formatTemp))) \(formatTemp.rawValue)"
                 cell.dzienOpisLabel.text = opisDzien
             } else {
                 cell.dzienView.isHidden = true
             }
             if let tempNoc = item.tempNoc, let opisNoc = item.opisNoc {
-                cell.nocTempLabel.text = "\(String(format: "%.2f", tempNoc.returnFormat())) \(formatTemp.rawValue)"
+                cell.nocTempLabel.text = "\(String(format: "%.2f", tempNoc.returnFormat(formatTemp))) \(formatTemp.rawValue)"
                 cell.nocOpisLabel.text = opisNoc
             } else {
                 cell.nocView.isHidden = true
@@ -191,9 +185,14 @@ class PogodaTableViewController: UITableViewController, UITabBarControllerDelega
     
     @objc func sprawdzNazweMiasta() {
         if let id = idMiasta {
-            let urlArray = idToUrl(id: id)
-            for (rodzaj, adres) in urlArray {
-                zaladujPogode(adres: adres, typ: rodzaj)
+            if let data = getDataWithId(id: id, apiKey: apiKey) {
+                model = data
+                navigationItem.title = model!.cityName
+                refreshControl?.performSelector(onMainThread: #selector(UIRefreshControl.endRefreshing), with: nil, waitUntilDone: false)
+                tableView.reloadData()
+            } else {
+                showError()
+                refreshControl?.endRefreshing()
             }
         } else {
             zlokalizujMnie()
@@ -238,13 +237,14 @@ class PogodaTableViewController: UITableViewController, UITabBarControllerDelega
             proba == 1 {
                 let lat = lok.coordinate.latitude
                 let lon = lok.coordinate.longitude
-            var lang = ""
-            if (Locale.current.identifier == ("pl_PL")) {
-                lang = "&lang=pl"
-            }
-            let urlArray: [RodzajJSON: String] = [.prognoza: "https://api.openweathermap.org/data/2.5/forecast?lat=\(lat)&lon=\(lon)&appid=\(apiKey)\(lang)", .teraz: "https://api.openweathermap.org/data/2.5/weather?lat=\(lat)&lon=\(lon)&appid=\(apiKey)\(lang)"]
-            for (rodzaj, adres) in urlArray {
-                zaladujPogode(adres: adres, typ: rodzaj)
+            if let data = getDataWithLocation(lat: lat, lon: lon, apiKey: apiKey) {
+                model = data
+                navigationItem.title = model!.cityName
+                refreshControl?.endRefreshing()
+                tableView.reloadData()
+            } else {
+                performSelector(onMainThread: #selector(showError), with: nil, waitUntilDone: false)
+                refreshControl?.performSelector(onMainThread: #selector(UIRefreshControl.endRefreshing), with: nil, waitUntilDone: false)
             }
         } else if proba > 1 {
             //zeby sie nie odswiezalo pare razy po tym jak juz znalazlo miejsce, zwykle dokladnosc 1 wystarcza
@@ -253,122 +253,6 @@ class PogodaTableViewController: UITableViewController, UITabBarControllerDelega
             performSelector(onMainThread: #selector(showError), with: nil, waitUntilDone: false)
             refreshControl?.performSelector(onMainThread: #selector(UIRefreshControl.endRefreshing), with: nil, waitUntilDone: false)
             return
-        }
-    }
-    
-    //JSON
-    func zaladujPogode(adres: String, typ: RodzajJSON) {
-        if let url = URL(string: adres) {
-            if let data = try? Data(contentsOf: url) {
-                let json = JSON(data: data)
-                if json["cod"].intValue == 200 {
-                    self.parse(json: json, typ: typ)
-                    return
-                } else {
-                    performSelector(onMainThread: #selector(showError), with: nil, waitUntilDone: false)
-                    refreshControl?.performSelector(onMainThread: #selector(UIRefreshControl.endRefreshing), with: nil, waitUntilDone: false)
-                    return
-
-                }
-            } else {
-                performSelector(onMainThread: #selector(showError), with: nil, waitUntilDone: false)
-                refreshControl?.performSelector(onMainThread: #selector(UIRefreshControl.endRefreshing), with: nil, waitUntilDone: false)
-                return
-
-            }
-        } else {
-            performSelector(onMainThread: #selector(showError), with: nil, waitUntilDone: false)
-            refreshControl?.performSelector(onMainThread: #selector(UIRefreshControl.endRefreshing), with: nil, waitUntilDone: false)
-            return
-
-        }
-    }
-    func parse(json: JSON, typ: RodzajJSON) {
-        switch typ {
-        case .prognoza:
-            var miasto = json["city"]["name"].stringValue
-            miasto += ", "
-            miasto += json["city"]["country"].stringValue
-            DispatchQueue.main.async { [unowned self] in
-                self.navigationItem.title = miasto.lowercased()
-            }
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateStyle = .short
-            dateFormatter.timeStyle = .long
-            var tempNast24h = [ModelNast24h]()
-            var tempPozniej = [ModelPozniej]()
-            for index in 0...json["list"].count {
-                let obj = json["list"][index]
-                let godzinaWInt = obj["dt"].intValue
-                let godzina = Date(timeIntervalSince1970: TimeInterval(godzinaWInt))
-                let temp = Temperatura(k: obj["main"]["temp"].doubleValue)
-                let opis = obj["weather"][0]["description"].stringValue
-                if (dzisiaj != nil && index == 0) {
-                    if (obj["snow"]["3h"].doubleValue != 0 && dzisiaj!.snieg != 0) {
-                        dzisiaj!.snieg = obj["snow"]["3h"].doubleValue
-                    } else if (obj["rain"]["3h"].doubleValue != 0 && dzisiaj!.deszcz != 0) {
-                        dzisiaj!.deszcz = obj["rain"]["3h"].doubleValue
-                    }
-                }
-                if (index < 8) {
-                    tempNast24h.append(ModelNast24h(godz: godzina, opis: opis, temp: temp))
-                } else {
-                    if (godzina.hour >= 21) {
-                        tempPozniej.append(ModelPozniej(data: godzina, tempNoc: temp, opisNoc: opis))
-                    } else if (godzina.hour > 11 && godzina.hour < 15) {
-                        tempPozniej.append(ModelPozniej(data: godzina, tempDzien: temp, opisDzien: opis))
-                    }
-                }
-                
-            }
-            var list = [ModelPozniej]()
-//            od 2, bo i tak bierzemy wczesniejszy
-            for i in 1 ..< tempPozniej.count {
-                let item = tempPozniej[i]
-                let prevItem = tempPozniej[i - 1]
-                if (item.data.day == prevItem.data.day && item.data.month == prevItem.data.month && item.data.year == prevItem.data.year) {
-                    let items = [item, prevItem]
-                    var modelPozniej = ModelPozniej(data: item.data)
-                    for thing in items {
-                        if let opisDzien = thing.opisDzien, let tempDzien = thing.tempDzien {
-                            modelPozniej.opisDzien = opisDzien
-                            modelPozniej.tempDzien = tempDzien
-                        }
-                        if let opisNoc = thing.opisNoc, let tempNoc = thing.tempNoc {
-                            modelPozniej.opisNoc = opisNoc
-                            modelPozniej.tempNoc = tempNoc
-                        }
-                    }
-                    list.append(modelPozniej)
-                } else if (i == 1) {
-                    //pierwszy element to poprzednia noc
-                    list.insert(ModelPozniej(data: prevItem.data, tempNoc: prevItem.tempNoc!, opisNoc: prevItem.opisNoc!), at: 0)
-                }
-            }
-            nast24h = tempNast24h
-            pozniej = list
-            makeModel()
-        case .teraz:
-            let temp = Temperatura(k: json["main"]["temp"].doubleValue)
-            let opis = json["weather"][0]["description"].stringValue
-            let wiatr = json["wind"]["speed"].doubleValue
-            var deszcz: Double = 0
-            var snieg: Double?
-            if (json["snow"]["3h"].doubleValue != 0) {
-                snieg = json["snow"]["3h"].doubleValue
-            } else {
-                deszcz = json["rain"]["3h"].doubleValue
-            }
-            dzisiaj = ModelDzisiaj(temp: temp, opis: opis, deszcz: deszcz, snieg: snieg, wiatr: wiatr)
-            makeModel()
-        }
-    }
-    
-    func makeModel() {
-        if let dzisiaj = dzisiaj, let nast24h = nast24h, let pozniej = pozniej {
-            model = PogodaModel(dzisiaj: dzisiaj, nast24h: nast24h, pozniej: pozniej)
-            refreshControl?.performSelector(onMainThread: #selector(UIRefreshControl.endRefreshing), with: nil, waitUntilDone: true)
-            tableView.performSelector(onMainThread: #selector(UITableView.reloadData), with: nil, waitUntilDone: false)
         }
     }
     

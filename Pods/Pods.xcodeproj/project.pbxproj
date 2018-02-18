@@ -7,96 +7,152 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		13D6D247CE8D02160F6CB0FDD690DDFB /* Int+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734A3725FA7DF7A8EC1A8FA181CE0F5F /* Int+Timepiece.swift */; };
-		1BF23D0431CFACF9D0D0EED6B671B0BD /* Timepiece-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 97E75E065121E141708EC27720A81079 /* Timepiece-dummy.m */; };
-		55EA81EE6E62E6BE4E940EB7F270D7E5 /* Timepiece-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F95D25CEE50E7E45372C8755E2C0D18 /* Timepiece-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		57DE2574E4F2C6A1F6821332A61042DB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		71C44F1FEE62C29E2B0DAB5656668AC5 /* SwiftyJSON-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 833C096895C7EEB5884993205314CD38 /* SwiftyJSON-dummy.m */; };
-		7C122098ACFC8B2AA41BE89809B39C0B /* Pods-twoja_pogoda-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E20BFD511B6846BB08AEC7AB32082378 /* Pods-twoja_pogoda-dummy.m */; };
-		84CAE5D82DA0818AB7F4DC1CE2F5E0C2 /* SwiftyJSON-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 38DE8C1C22357BBA576EC4DE7B873E81 /* SwiftyJSON-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9650A1CB30BCD47AC1CCFC1377ABAB86 /* String+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1507FC60DD6E42B57656AB23F4B851EE /* String+Timepiece.swift */; };
-		AA0C44A0CE9F8AAF933ECD5D3855DFEE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		AACE3FD3ACE946C05AADB7E32A3477A6 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961ADE31D5E992CDB2339D5FF3C15996 /* SwiftyJSON.swift */; };
-		C2875A1530F5789B5C7C32431DEB3D0D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		C28C044FAF5DBE4839A45D5AF908C6BE /* DateComponents+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2444FDCB1BE97765EBE107A0A31E56 /* DateComponents+Timepiece.swift */; };
-		C2B836B5944EC38C75A404F90D62AD2C /* Pods-twoja_pogoda-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6520D9191A359D6410E1D38BCD51DED9 /* Pods-twoja_pogoda-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F327A6C5B8F9BE5DEE608294D96FCC51 /* Date+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = D026A31BAD3B68248EFC4415AE3AD29C /* Date+Timepiece.swift */; };
+		0D50479394A936A08D973D50FF9C059D /* Pods-twoja_pogoda-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6520D9191A359D6410E1D38BCD51DED9 /* Pods-twoja_pogoda-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2B8730E1EADCD4C8B2A977EC15EBE641 /* Timepiece-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 97E75E065121E141708EC27720A81079 /* Timepiece-dummy.m */; };
+		37E9968EB7DE023750E8B68B8F6929F1 /* SwiftyJSON-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 833C096895C7EEB5884993205314CD38 /* SwiftyJSON-dummy.m */; };
+		3F03CE5B799617F3B2427F9E5259BBDC /* Timepiece.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F89CC856AFA9CBF270F2BEA23E1238F9 /* Timepiece.framework */; };
+		4472FCBE99D0AFFCAA4AD6F8343693B0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 205DEE32480A3F8408E7FBB26526F410 /* Foundation.framework */; };
+		4F0E9ADC66D84BA1DE55AC7B8BEA4E9F /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961ADE31D5E992CDB2339D5FF3C15996 /* SwiftyJSON.swift */; };
+		500668FDBF525F3B201F82F191F66692 /* Int+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734A3725FA7DF7A8EC1A8FA181CE0F5F /* Int+Timepiece.swift */; };
+		52D62DE139145992E0ACF9E21CA7EB26 /* PogodaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50386FB8DF0CBF1B6D08F53D334EA4DB /* PogodaModel.swift */; };
+		589F5C5CDFFF57E0137BE0C027F3148E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 205DEE32480A3F8408E7FBB26526F410 /* Foundation.framework */; };
+		69E9B5AF2C2C51F03CA0850D5F6D7CF0 /* SwiftyJSON-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 38DE8C1C22357BBA576EC4DE7B873E81 /* SwiftyJSON-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6F9AD6A037F198B5EE275A5B0EEA0B21 /* Date+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = D026A31BAD3B68248EFC4415AE3AD29C /* Date+Timepiece.swift */; };
+		897E598036A66678DFE4ED591F00327C /* Timepiece-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F95D25CEE50E7E45372C8755E2C0D18 /* Timepiece-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8D9BC8C37AAC753AC4BA9E6EDEFA8699 /* GetWeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0D445F08606F9C74A61BEBCEB9CD10 /* GetWeatherData.swift */; };
+		8D9EBD1ABC93880EC5C355C9DAB7E972 /* YourWeatherFramework-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A83C00885CB3FD9C371937B8BD8E865C /* YourWeatherFramework-dummy.m */; };
+		8FA5328EB63E9BB7BC0FEC75B6D351A3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D29459EE4A7DB532989F54FE7643DEF3 /* UIKit.framework */; };
+		A477DA0313B7535AEB2BA642CC7357D4 /* Pods-twoja_pogoda-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E20BFD511B6846BB08AEC7AB32082378 /* Pods-twoja_pogoda-dummy.m */; };
+		A8E1640071EEC0ED7350C393EEE6B7BE /* Temperatura.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8975AE01611C283E73B4F24BF5C7937 /* Temperatura.swift */; };
+		B4A764080EE1CB3AA9DA6D38319C18DC /* YourWeatherFramework-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A953A6AAA1A0A051BF2C332E99AB072 /* YourWeatherFramework-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C3FE999DB0640809712F856768AA2CBB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 205DEE32480A3F8408E7FBB26526F410 /* Foundation.framework */; };
+		D440166786B93040A7C657A1AFE93978 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25E2EA6C7D74C4CC130CADE59C965D93 /* SwiftyJSON.framework */; };
+		D470193F69E7E61ADBF696A7B50C7188 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 205DEE32480A3F8408E7FBB26526F410 /* Foundation.framework */; };
+		D6C8EE2FAC5E29BE6573547DDE7004A8 /* DateComponents+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2444FDCB1BE97765EBE107A0A31E56 /* DateComponents+Timepiece.swift */; };
+		F72A95E747B531C22154FC8C8978DFDF /* String+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1507FC60DD6E42B57656AB23F4B851EE /* String+Timepiece.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		A81E9A24BC124744E536B7704AEF5FC2 /* PBXContainerItemProxy */ = {
+		0AC9206220289CB50B80E2A85E434D4A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 7F6200811E73474545DB6FED9A8A098D;
+			remoteGlobalIDString = 7A46982BE448DBE75581590368929931;
+			remoteInfo = Timepiece;
+		};
+		56EE65C3C43A526CA6336556BF772621 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6A6C874BC35DF51E052E7AB42D5D6B39;
+			remoteInfo = YourWeatherFramework;
+		};
+		AE6F36DA7D6D8E3EDE7B77CD87806224 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 70B8EF209D52C60B83C74534F878520E;
 			remoteInfo = SwiftyJSON;
 		};
-		C15137A7DC26E0EF2F3715F7243AC27F /* PBXContainerItemProxy */ = {
+		B7AF9E3459159936F2F2B6B70268E18B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 12E36B2001701771DD40D79683D89BCE;
+			remoteGlobalIDString = 7A46982BE448DBE75581590368929931;
 			remoteInfo = Timepiece;
+		};
+		C992AE7803A12016657526274FCABF53 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 70B8EF209D52C60B83C74534F878520E;
+			remoteInfo = SwiftyJSON;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0E46509ECDAD625ED1B24D14AABB12A8 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftyJSON.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		10DC0FF67C80AD30B00194BA5017BEED /* Timepiece.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Timepiece.framework; path = Timepiece.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A953A6AAA1A0A051BF2C332E99AB072 /* YourWeatherFramework-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "YourWeatherFramework-umbrella.h"; sourceTree = "<group>"; };
 		12E8F08DEA3B594C7B324B58CEC80FF9 /* Pods-twoja_pogoda-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-twoja_pogoda-acknowledgements.markdown"; sourceTree = "<group>"; };
 		1507FC60DD6E42B57656AB23F4B851EE /* String+Timepiece.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+Timepiece.swift"; path = "Sources/String+Timepiece.swift"; sourceTree = "<group>"; };
+		205DEE32480A3F8408E7FBB26526F410 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		25E2EA6C7D74C4CC130CADE59C965D93 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		38DE8C1C22357BBA576EC4DE7B873E81 /* SwiftyJSON-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyJSON-umbrella.h"; sourceTree = "<group>"; };
+		50386FB8DF0CBF1B6D08F53D334EA4DB /* PogodaModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PogodaModel.swift; path = WeatherFramework/PogodaModel.swift; sourceTree = "<group>"; };
 		55E1030944CE949E97896954C4AC7F5A /* Pods-twoja_pogoda.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-twoja_pogoda.debug.xcconfig"; sourceTree = "<group>"; };
+		5BFAC0BAB0A7CF1FD87FE2D3B1FB3892 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftyJSON.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D5C817815FBEB3F27A3451FD2A62D77 /* YourWeatherFramework.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = YourWeatherFramework.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		5F95D25CEE50E7E45372C8755E2C0D18 /* Timepiece-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Timepiece-umbrella.h"; sourceTree = "<group>"; };
 		6520D9191A359D6410E1D38BCD51DED9 /* Pods-twoja_pogoda-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-twoja_pogoda-umbrella.h"; sourceTree = "<group>"; };
-		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		67C8430CDFDA5A2404FB12EADAC540E1 /* Pods_twoja_pogoda.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_twoja_pogoda.framework; path = "Pods-twoja_pogoda.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		67FFAD0511731DB286515C1E97706CBA /* Timepiece.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Timepiece.modulemap; sourceTree = "<group>"; };
 		6CE69E0715754A0F7063A2632A4BCD1E /* Pods-twoja_pogoda-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-twoja_pogoda-frameworks.sh"; sourceTree = "<group>"; };
 		6DE963BAF158B8C2E03890BDB77E7EE6 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		734A3725FA7DF7A8EC1A8FA181CE0F5F /* Int+Timepiece.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Int+Timepiece.swift"; path = "Sources/Int+Timepiece.swift"; sourceTree = "<group>"; };
+		739022AE3657C42A5AFCE6985C0553BC /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		749058185A125B08842EB83B92C3B2A8 /* YourWeatherFramework.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = YourWeatherFramework.xcconfig; sourceTree = "<group>"; };
 		77C381539EBB2EE2D20502BBC4455407 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7940EB364684C6EC32EF426E76A95670 /* Pods-twoja_pogoda-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-twoja_pogoda-acknowledgements.plist"; sourceTree = "<group>"; };
 		833C096895C7EEB5884993205314CD38 /* SwiftyJSON-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyJSON-dummy.m"; sourceTree = "<group>"; };
 		886A159F887B43063E629DB65848488B /* Pods-twoja_pogoda.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-twoja_pogoda.modulemap"; sourceTree = "<group>"; };
 		8C9B3F3A2ABC1ED90E94E7B09668556B /* Pods-twoja_pogoda.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-twoja_pogoda.release.xcconfig"; sourceTree = "<group>"; };
+		8E5B5DA71979035BA1764092557912F2 /* YourWeatherFramework-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "YourWeatherFramework-prefix.pch"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		961ADE31D5E992CDB2339D5FF3C15996 /* SwiftyJSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = Source/SwiftyJSON.swift; sourceTree = "<group>"; };
+		970B3B8F1FB9AACA191E10260C0E6940 /* Timepiece.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Timepiece.framework; path = Timepiece.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		97E75E065121E141708EC27720A81079 /* Timepiece-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Timepiece-dummy.m"; sourceTree = "<group>"; };
 		9E7BAD4C8D773921FC3D25799857B5CB /* Pods-twoja_pogoda-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-twoja_pogoda-resources.sh"; sourceTree = "<group>"; };
 		A0A38588589C4C8FECA5D1ACF0B829AD /* SwiftyJSON.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = SwiftyJSON.modulemap; sourceTree = "<group>"; };
 		A5B1A24D2CC85A0C786A00A47D59CEFE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A71DD3B162D2259B6A1E6BB0BDEF97BB /* Pods_twoja_pogoda.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_twoja_pogoda.framework; path = "Pods-twoja_pogoda.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A83C00885CB3FD9C371937B8BD8E865C /* YourWeatherFramework-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "YourWeatherFramework-dummy.m"; sourceTree = "<group>"; };
+		A8975AE01611C283E73B4F24BF5C7937 /* Temperatura.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Temperatura.swift; path = WeatherFramework/Temperatura.swift; sourceTree = "<group>"; };
+		B53982A5A94FA9F31323B93E87197EE7 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		B7CB7E39110E59E0DEE69A3273AD479A /* YourWeatherFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = YourWeatherFramework.framework; path = YourWeatherFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C16CD99B66E8A1B469EFABF935DB231C /* Timepiece.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Timepiece.xcconfig; sourceTree = "<group>"; };
 		C2CB27D719BE84067DE35AE8B59249D9 /* SwiftyJSON.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyJSON.xcconfig; sourceTree = "<group>"; };
+		CC0D445F08606F9C74A61BEBCEB9CD10 /* GetWeatherData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GetWeatherData.swift; path = WeatherFramework/GetWeatherData.swift; sourceTree = "<group>"; };
 		CF2444FDCB1BE97765EBE107A0A31E56 /* DateComponents+Timepiece.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DateComponents+Timepiece.swift"; path = "Sources/DateComponents+Timepiece.swift"; sourceTree = "<group>"; };
 		D026A31BAD3B68248EFC4415AE3AD29C /* Date+Timepiece.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Date+Timepiece.swift"; path = "Sources/Date+Timepiece.swift"; sourceTree = "<group>"; };
+		D29459EE4A7DB532989F54FE7643DEF3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		D3E0C5971157124BDA872EBE3A78C932 /* YourWeatherFramework.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = YourWeatherFramework.modulemap; sourceTree = "<group>"; };
 		E20BFD511B6846BB08AEC7AB32082378 /* Pods-twoja_pogoda-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-twoja_pogoda-dummy.m"; sourceTree = "<group>"; };
 		EC2FE63D7A449C486D3B068C735F6531 /* SwiftyJSON-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyJSON-prefix.pch"; sourceTree = "<group>"; };
 		F497F304D3C3C6F17D635C25241F6EC6 /* Timepiece-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Timepiece-prefix.pch"; sourceTree = "<group>"; };
+		F89CC856AFA9CBF270F2BEA23E1238F9 /* Timepiece.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Timepiece.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		1B5168D1B4F92F65AFA94B28B187A1ED /* Frameworks */ = {
+		0E6D2DF2DBBC8FEB7B2113C9910BF897 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA0C44A0CE9F8AAF933ECD5D3855DFEE /* Foundation.framework in Frameworks */,
+				C3FE999DB0640809712F856768AA2CBB /* Foundation.framework in Frameworks */,
+				D440166786B93040A7C657A1AFE93978 /* SwiftyJSON.framework in Frameworks */,
+				3F03CE5B799617F3B2427F9E5259BBDC /* Timepiece.framework in Frameworks */,
+				8FA5328EB63E9BB7BC0FEC75B6D351A3 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A05510B70B8CC69D33D1A3289356DBBD /* Frameworks */ = {
+		1C30F91DB3C2C6E168431E80D16702D5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C2875A1530F5789B5C7C32431DEB3D0D /* Foundation.framework in Frameworks */,
+				D470193F69E7E61ADBF696A7B50C7188 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AE35451D592F59590B3D5D6517EEB3D7 /* Frameworks */ = {
+		881E8205CB7DD358D4780453547ECE7A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57DE2574E4F2C6A1F6821332A61042DB /* Foundation.framework in Frameworks */,
+				589F5C5CDFFF57E0137BE0C027F3148E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCC04C626D611CA224AD3F1D7334472F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4472FCBE99D0AFFCAA4AD6F8343693B0 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,6 +209,35 @@
 			path = Timepiece;
 			sourceTree = "<group>";
 		};
+		2D332D6050D0CCF35E8F4A70F8863AFA /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				82775F0C1C44DA653C15E21AAAA11EA8 /* YourWeatherFramework */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		4BF43242A266FFC2D37225CECEF85F11 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				25E2EA6C7D74C4CC130CADE59C965D93 /* SwiftyJSON.framework */,
+				F89CC856AFA9CBF270F2BEA23E1238F9 /* Timepiece.framework */,
+				F8A42DBCDE5C6885561942BE73BD41E4 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4CE5D4F08F7961FE9A3F3C30EEB6FC6C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				67C8430CDFDA5A2404FB12EADAC540E1 /* Pods_twoja_pogoda.framework */,
+				5BFAC0BAB0A7CF1FD87FE2D3B1FB3892 /* SwiftyJSON.framework */,
+				970B3B8F1FB9AACA191E10260C0E6940 /* Timepiece.framework */,
+				B7CB7E39110E59E0DEE69A3273AD479A /* YourWeatherFramework.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		75AB1F52CCB4DB1C70F570FDF105F300 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -165,11 +250,39 @@
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				2D332D6050D0CCF35E8F4A70F8863AFA /* Development Pods */,
+				4BF43242A266FFC2D37225CECEF85F11 /* Frameworks */,
 				0A9D2F6C4468889784C0949571BDC617 /* Pods */,
-				AE68491DF682A003A49F84E59FA8EF2C /* Products */,
+				4CE5D4F08F7961FE9A3F3C30EEB6FC6C /* Products */,
 				75AB1F52CCB4DB1C70F570FDF105F300 /* Targets Support Files */,
 			);
+			sourceTree = "<group>";
+		};
+		82775F0C1C44DA653C15E21AAAA11EA8 /* YourWeatherFramework */ = {
+			isa = PBXGroup;
+			children = (
+				CC0D445F08606F9C74A61BEBCEB9CD10 /* GetWeatherData.swift */,
+				50386FB8DF0CBF1B6D08F53D334EA4DB /* PogodaModel.swift */,
+				A8975AE01611C283E73B4F24BF5C7937 /* Temperatura.swift */,
+				EAA8730165FB088AB9711B6579969D91 /* Pod */,
+				8793E100AF9FC92037EDE65DD2542E81 /* Support Files */,
+			);
+			name = YourWeatherFramework;
+			path = /Users/ilizdogz/Documents/Libraries/WeatherFramework;
+			sourceTree = "<absolute>";
+		};
+		8793E100AF9FC92037EDE65DD2542E81 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				739022AE3657C42A5AFCE6985C0553BC /* Info.plist */,
+				D3E0C5971157124BDA872EBE3A78C932 /* YourWeatherFramework.modulemap */,
+				749058185A125B08842EB83B92C3B2A8 /* YourWeatherFramework.xcconfig */,
+				A83C00885CB3FD9C371937B8BD8E865C /* YourWeatherFramework-dummy.m */,
+				8E5B5DA71979035BA1764092557912F2 /* YourWeatherFramework-prefix.pch */,
+				0A953A6AAA1A0A051BF2C332E99AB072 /* YourWeatherFramework-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../../../Library/Mobile Documents/com~apple~CloudDocs/Documents/xcode/twoja_pogoda/Pods/Target Support Files/YourWeatherFramework";
 			sourceTree = "<group>";
 		};
 		A8DFE1E528696705253FBC348F4AF67D /* SwiftyJSON */ = {
@@ -180,24 +293,6 @@
 			);
 			name = SwiftyJSON;
 			path = SwiftyJSON;
-			sourceTree = "<group>";
-		};
-		AE68491DF682A003A49F84E59FA8EF2C /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				A71DD3B162D2259B6A1E6BB0BDEF97BB /* Pods_twoja_pogoda.framework */,
-				0E46509ECDAD625ED1B24D14AABB12A8 /* SwiftyJSON.framework */,
-				10DC0FF67C80AD30B00194BA5017BEED /* Timepiece.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		C167725C05B7EBA84B0CDDD55D7EB29B /* Pods-twoja_pogoda */ = {
@@ -218,10 +313,20 @@
 			path = "Target Support Files/Pods-twoja_pogoda";
 			sourceTree = "<group>";
 		};
-		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
+		EAA8730165FB088AB9711B6579969D91 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */,
+				B53982A5A94FA9F31323B93E87197EE7 /* LICENSE */,
+				5D5C817815FBEB3F27A3451FD2A62D77 /* YourWeatherFramework.podspec */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		F8A42DBCDE5C6885561942BE73BD41E4 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				205DEE32480A3F8408E7FBB26526F410 /* Foundation.framework */,
+				D29459EE4A7DB532989F54FE7643DEF3 /* UIKit.framework */,
 			);
 			name = iOS;
 			sourceTree = "<group>";
@@ -229,76 +334,87 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		5307CDECE1FC3265DBFD7EF543B7E847 /* Headers */ = {
+		25F2D54E1B3809F70B2233043300233E /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84CAE5D82DA0818AB7F4DC1CE2F5E0C2 /* SwiftyJSON-umbrella.h in Headers */,
+				0D50479394A936A08D973D50FF9C059D /* Pods-twoja_pogoda-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		741B9E5D443EA71B41C6A5713B0AA19F /* Headers */ = {
+		5D7FACE6B0EB8712424744DB02CD0B24 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C2B836B5944EC38C75A404F90D62AD2C /* Pods-twoja_pogoda-umbrella.h in Headers */,
+				B4A764080EE1CB3AA9DA6D38319C18DC /* YourWeatherFramework-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DAA79415015CA34DCD4F491CDEA6903F /* Headers */ = {
+		7CCF85D84F906B5C6B50CB0637D24281 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				55EA81EE6E62E6BE4E940EB7F270D7E5 /* Timepiece-umbrella.h in Headers */,
+				897E598036A66678DFE4ED591F00327C /* Timepiece-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8C23FC5DF164A2C597D8A6EBA206C36 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69E9B5AF2C2C51F03CA0850D5F6D7CF0 /* SwiftyJSON-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		12E36B2001701771DD40D79683D89BCE /* Timepiece */ = {
+		036ECFFB0AF585A0F8AD99ED0D361F3D /* Pods-twoja_pogoda */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D29043DD7BD320EC16748168EF7A52C1 /* Build configuration list for PBXNativeTarget "Timepiece" */;
+			buildConfigurationList = 0BF54DFCB84272E9DD834E1130431B90 /* Build configuration list for PBXNativeTarget "Pods-twoja_pogoda" */;
 			buildPhases = (
-				ABD3E7C17B43D57A9081B9254D820CB7 /* Sources */,
-				AE35451D592F59590B3D5D6517EEB3D7 /* Frameworks */,
-				DAA79415015CA34DCD4F491CDEA6903F /* Headers */,
+				FB2DBAB0A76356B3F5ADEDC5385CAEF7 /* Sources */,
+				881E8205CB7DD358D4780453547ECE7A /* Frameworks */,
+				25F2D54E1B3809F70B2233043300233E /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-			);
-			name = Timepiece;
-			productName = Timepiece;
-			productReference = 10DC0FF67C80AD30B00194BA5017BEED /* Timepiece.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		58F4CEF5556E69E898CF0F7758EC527F /* Pods-twoja_pogoda */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 66EA21E2B49451584B7E1CFDE10F169D /* Build configuration list for PBXNativeTarget "Pods-twoja_pogoda" */;
-			buildPhases = (
-				A3A05E5D70B1FA985326258B7A055203 /* Sources */,
-				1B5168D1B4F92F65AFA94B28B187A1ED /* Frameworks */,
-				741B9E5D443EA71B41C6A5713B0AA19F /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				BB4CCC03021A45AD5B38A3C974FB2CCA /* PBXTargetDependency */,
-				D36EDEC95C90A756E19A78A677B1FC48 /* PBXTargetDependency */,
+				CA482D24B53BE33C43781B5F585CFC0B /* PBXTargetDependency */,
+				F5D8CA36F546D0503D26B71B40B62538 /* PBXTargetDependency */,
+				A25FFD357E156DFFB495D344E873E0C7 /* PBXTargetDependency */,
 			);
 			name = "Pods-twoja_pogoda";
 			productName = "Pods-twoja_pogoda";
-			productReference = A71DD3B162D2259B6A1E6BB0BDEF97BB /* Pods_twoja_pogoda.framework */;
+			productReference = 67C8430CDFDA5A2404FB12EADAC540E1 /* Pods_twoja_pogoda.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		7F6200811E73474545DB6FED9A8A098D /* SwiftyJSON */ = {
+		6A6C874BC35DF51E052E7AB42D5D6B39 /* YourWeatherFramework */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2436E952358F5C939EFC86211ED046FE /* Build configuration list for PBXNativeTarget "SwiftyJSON" */;
+			buildConfigurationList = 6BFF3852CD7D8F10C6CFF5569B5865F2 /* Build configuration list for PBXNativeTarget "YourWeatherFramework" */;
 			buildPhases = (
-				A2CE8E53691851BF9301585714B86531 /* Sources */,
-				A05510B70B8CC69D33D1A3289356DBBD /* Frameworks */,
-				5307CDECE1FC3265DBFD7EF543B7E847 /* Headers */,
+				E804CDF7D0CF9DFB9992E85EE948E9B6 /* Sources */,
+				0E6D2DF2DBBC8FEB7B2113C9910BF897 /* Frameworks */,
+				5D7FACE6B0EB8712424744DB02CD0B24 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				88A7DB6DA6780E0B1078969D4DC303B7 /* PBXTargetDependency */,
+				CA5C3C02C1E9A82029980AFE959119C6 /* PBXTargetDependency */,
+			);
+			name = YourWeatherFramework;
+			productName = YourWeatherFramework;
+			productReference = B7CB7E39110E59E0DEE69A3273AD479A /* YourWeatherFramework.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		70B8EF209D52C60B83C74534F878520E /* SwiftyJSON */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 39CA3A2EE75DC6E7613C85BD7432F7B0 /* Build configuration list for PBXNativeTarget "SwiftyJSON" */;
+			buildPhases = (
+				24466945DE8958F7F0EB1B6AB59D0125 /* Sources */,
+				DCC04C626D611CA224AD3F1D7334472F /* Frameworks */,
+				E8C23FC5DF164A2C597D8A6EBA206C36 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -306,7 +422,24 @@
 			);
 			name = SwiftyJSON;
 			productName = SwiftyJSON;
-			productReference = 0E46509ECDAD625ED1B24D14AABB12A8 /* SwiftyJSON.framework */;
+			productReference = 5BFAC0BAB0A7CF1FD87FE2D3B1FB3892 /* SwiftyJSON.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		7A46982BE448DBE75581590368929931 /* Timepiece */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 118BDB983DFB80160185B9A4C3196625 /* Build configuration list for PBXNativeTarget "Timepiece" */;
+			buildPhases = (
+				6329E28F0B942BA2C24EEE8A37FD876F /* Sources */,
+				1C30F91DB3C2C6E168431E80D16702D5 /* Frameworks */,
+				7CCF85D84F906B5C6B50CB0637D24281 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Timepiece;
+			productName = Timepiece;
+			productReference = 970B3B8F1FB9AACA191E10260C0E6940 /* Timepiece.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -326,66 +459,128 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = AE68491DF682A003A49F84E59FA8EF2C /* Products */;
+			productRefGroup = 4CE5D4F08F7961FE9A3F3C30EEB6FC6C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				58F4CEF5556E69E898CF0F7758EC527F /* Pods-twoja_pogoda */,
-				7F6200811E73474545DB6FED9A8A098D /* SwiftyJSON */,
-				12E36B2001701771DD40D79683D89BCE /* Timepiece */,
+				036ECFFB0AF585A0F8AD99ED0D361F3D /* Pods-twoja_pogoda */,
+				70B8EF209D52C60B83C74534F878520E /* SwiftyJSON */,
+				7A46982BE448DBE75581590368929931 /* Timepiece */,
+				6A6C874BC35DF51E052E7AB42D5D6B39 /* YourWeatherFramework */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		A2CE8E53691851BF9301585714B86531 /* Sources */ = {
+		24466945DE8958F7F0EB1B6AB59D0125 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				71C44F1FEE62C29E2B0DAB5656668AC5 /* SwiftyJSON-dummy.m in Sources */,
-				AACE3FD3ACE946C05AADB7E32A3477A6 /* SwiftyJSON.swift in Sources */,
+				37E9968EB7DE023750E8B68B8F6929F1 /* SwiftyJSON-dummy.m in Sources */,
+				4F0E9ADC66D84BA1DE55AC7B8BEA4E9F /* SwiftyJSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A3A05E5D70B1FA985326258B7A055203 /* Sources */ = {
+		6329E28F0B942BA2C24EEE8A37FD876F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7C122098ACFC8B2AA41BE89809B39C0B /* Pods-twoja_pogoda-dummy.m in Sources */,
+				6F9AD6A037F198B5EE275A5B0EEA0B21 /* Date+Timepiece.swift in Sources */,
+				D6C8EE2FAC5E29BE6573547DDE7004A8 /* DateComponents+Timepiece.swift in Sources */,
+				500668FDBF525F3B201F82F191F66692 /* Int+Timepiece.swift in Sources */,
+				F72A95E747B531C22154FC8C8978DFDF /* String+Timepiece.swift in Sources */,
+				2B8730E1EADCD4C8B2A977EC15EBE641 /* Timepiece-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		ABD3E7C17B43D57A9081B9254D820CB7 /* Sources */ = {
+		E804CDF7D0CF9DFB9992E85EE948E9B6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F327A6C5B8F9BE5DEE608294D96FCC51 /* Date+Timepiece.swift in Sources */,
-				C28C044FAF5DBE4839A45D5AF908C6BE /* DateComponents+Timepiece.swift in Sources */,
-				13D6D247CE8D02160F6CB0FDD690DDFB /* Int+Timepiece.swift in Sources */,
-				9650A1CB30BCD47AC1CCFC1377ABAB86 /* String+Timepiece.swift in Sources */,
-				1BF23D0431CFACF9D0D0EED6B671B0BD /* Timepiece-dummy.m in Sources */,
+				8D9BC8C37AAC753AC4BA9E6EDEFA8699 /* GetWeatherData.swift in Sources */,
+				52D62DE139145992E0ACF9E21CA7EB26 /* PogodaModel.swift in Sources */,
+				A8E1640071EEC0ED7350C393EEE6B7BE /* Temperatura.swift in Sources */,
+				8D9EBD1ABC93880EC5C355C9DAB7E972 /* YourWeatherFramework-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB2DBAB0A76356B3F5ADEDC5385CAEF7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A477DA0313B7535AEB2BA642CC7357D4 /* Pods-twoja_pogoda-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		BB4CCC03021A45AD5B38A3C974FB2CCA /* PBXTargetDependency */ = {
+		88A7DB6DA6780E0B1078969D4DC303B7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SwiftyJSON;
-			target = 7F6200811E73474545DB6FED9A8A098D /* SwiftyJSON */;
-			targetProxy = A81E9A24BC124744E536B7704AEF5FC2 /* PBXContainerItemProxy */;
+			target = 70B8EF209D52C60B83C74534F878520E /* SwiftyJSON */;
+			targetProxy = C992AE7803A12016657526274FCABF53 /* PBXContainerItemProxy */;
 		};
-		D36EDEC95C90A756E19A78A677B1FC48 /* PBXTargetDependency */ = {
+		A25FFD357E156DFFB495D344E873E0C7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = YourWeatherFramework;
+			target = 6A6C874BC35DF51E052E7AB42D5D6B39 /* YourWeatherFramework */;
+			targetProxy = 56EE65C3C43A526CA6336556BF772621 /* PBXContainerItemProxy */;
+		};
+		CA482D24B53BE33C43781B5F585CFC0B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftyJSON;
+			target = 70B8EF209D52C60B83C74534F878520E /* SwiftyJSON */;
+			targetProxy = AE6F36DA7D6D8E3EDE7B77CD87806224 /* PBXContainerItemProxy */;
+		};
+		CA5C3C02C1E9A82029980AFE959119C6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Timepiece;
-			target = 12E36B2001701771DD40D79683D89BCE /* Timepiece */;
-			targetProxy = C15137A7DC26E0EF2F3715F7243AC27F /* PBXContainerItemProxy */;
+			target = 7A46982BE448DBE75581590368929931 /* Timepiece */;
+			targetProxy = B7AF9E3459159936F2F2B6B70268E18B /* PBXContainerItemProxy */;
+		};
+		F5D8CA36F546D0503D26B71B40B62538 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Timepiece;
+			target = 7A46982BE448DBE75581590368929931 /* Timepiece */;
+			targetProxy = 0AC9206220289CB50B80E2A85E434D4A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0151481965E830EBBC93ABD291EEEEBC /* Release */ = {
+		1B2B8ECE8FDAB0EDF2AAF4AC65316607 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C16CD99B66E8A1B469EFABF935DB231C /* Timepiece.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Timepiece/Timepiece-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Timepiece/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Timepiece/Timepiece.modulemap";
+				PRODUCT_NAME = Timepiece;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		221A9590408139884489AFBB9868B130 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C2CB27D719BE84067DE35AE8B59249D9 /* SwiftyJSON.xcconfig */;
 			buildSettings = {
@@ -408,127 +603,6 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		12C4B864767C59600DBFA238F1E2F8BC /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_REQUIRED = NO;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"POD_CONFIGURATION_RELEASE=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
-				STRIP_INSTALLED_PRODUCT = NO;
-				SYMROOT = "${SRCROOT}/../build";
-			};
-			name = Release;
-		};
-		161B7C363A1AA82C8DCA6456AA536467 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 55E1030944CE949E97896954C4AC7F5A /* Pods-twoja_pogoda.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-twoja_pogoda/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-twoja_pogoda/Pods-twoja_pogoda.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_twoja_pogoda;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		1DC295E46CE49123239507642962F394 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C16CD99B66E8A1B469EFABF935DB231C /* Timepiece.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/Timepiece/Timepiece-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Timepiece/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Timepiece/Timepiece.modulemap";
-				PRODUCT_NAME = Timepiece;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -537,39 +611,7 @@
 			};
 			name = Debug;
 		};
-		26CF950A4BE6B92753FBA6824001CAE0 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C16CD99B66E8A1B469EFABF935DB231C /* Timepiece.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/Timepiece/Timepiece-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Timepiece/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Timepiece/Timepiece.modulemap";
-				PRODUCT_NAME = Timepiece;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		37CAE62CC2B322080DDD8B535748AAE6 /* Release */ = {
+		38C9F0EF34726D39FCE8F76433E1B2E1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8C9B3F3A2ABC1ED90E94E7B09668556B /* Pods-twoja_pogoda.release.xcconfig */;
 			buildSettings = {
@@ -584,7 +626,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-twoja_pogoda/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-twoja_pogoda/Pods-twoja_pogoda.modulemap";
@@ -603,7 +645,7 @@
 			};
 			name = Release;
 		};
-		59F0302F2371FCC6B73EF0A418D40734 /* Debug */ = {
+		39C5BC78A31CDE101068C530CAC7FA0F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -652,7 +694,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -663,7 +705,41 @@
 			};
 			name = Debug;
 		};
-		90D72ED7E4993025D819F9535FCF6751 /* Debug */ = {
+		646D719EDC70019B70268520310C4549 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55E1030944CE949E97896954C4AC7F5A /* Pods-twoja_pogoda.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-twoja_pogoda/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-twoja_pogoda/Pods-twoja_pogoda.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_twoja_pogoda;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		864652159E2AB13E578ECBECF6F462C4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C2CB27D719BE84067DE35AE8B59249D9 /* SwiftyJSON.xcconfig */;
 			buildSettings = {
@@ -686,8 +762,158 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		89C8BB24E37B25BAEEB8FBA01EE05DAF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		B7A415D597D09A7E5D83B8A7F6C2ABCA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C16CD99B66E8A1B469EFABF935DB231C /* Timepiece.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Timepiece/Timepiece-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Timepiece/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Timepiece/Timepiece.modulemap";
+				PRODUCT_NAME = Timepiece;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C0480319250CE72522BD148F0FD9EE26 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 749058185A125B08842EB83B92C3B2A8 /* YourWeatherFramework.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/YourWeatherFramework/YourWeatherFramework-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/YourWeatherFramework/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/YourWeatherFramework/YourWeatherFramework.modulemap";
+				PRODUCT_NAME = YourWeatherFramework;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		CA7BC2565602E8EEB4C75981E5ECF307 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 749058185A125B08842EB83B92C3B2A8 /* YourWeatherFramework.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/YourWeatherFramework/YourWeatherFramework-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/YourWeatherFramework/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/YourWeatherFramework/YourWeatherFramework.modulemap";
+				PRODUCT_NAME = YourWeatherFramework;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -697,11 +923,20 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2436E952358F5C939EFC86211ED046FE /* Build configuration list for PBXNativeTarget "SwiftyJSON" */ = {
+		0BF54DFCB84272E9DD834E1130431B90 /* Build configuration list for PBXNativeTarget "Pods-twoja_pogoda" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				90D72ED7E4993025D819F9535FCF6751 /* Debug */,
-				0151481965E830EBBC93ABD291EEEEBC /* Release */,
+				646D719EDC70019B70268520310C4549 /* Debug */,
+				38C9F0EF34726D39FCE8F76433E1B2E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		118BDB983DFB80160185B9A4C3196625 /* Build configuration list for PBXNativeTarget "Timepiece" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B7A415D597D09A7E5D83B8A7F6C2ABCA /* Debug */,
+				1B2B8ECE8FDAB0EDF2AAF4AC65316607 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -709,26 +944,26 @@
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				59F0302F2371FCC6B73EF0A418D40734 /* Debug */,
-				12C4B864767C59600DBFA238F1E2F8BC /* Release */,
+				39C5BC78A31CDE101068C530CAC7FA0F /* Debug */,
+				89C8BB24E37B25BAEEB8FBA01EE05DAF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		66EA21E2B49451584B7E1CFDE10F169D /* Build configuration list for PBXNativeTarget "Pods-twoja_pogoda" */ = {
+		39CA3A2EE75DC6E7613C85BD7432F7B0 /* Build configuration list for PBXNativeTarget "SwiftyJSON" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				161B7C363A1AA82C8DCA6456AA536467 /* Debug */,
-				37CAE62CC2B322080DDD8B535748AAE6 /* Release */,
+				221A9590408139884489AFBB9868B130 /* Debug */,
+				864652159E2AB13E578ECBECF6F462C4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D29043DD7BD320EC16748168EF7A52C1 /* Build configuration list for PBXNativeTarget "Timepiece" */ = {
+		6BFF3852CD7D8F10C6CFF5569B5865F2 /* Build configuration list for PBXNativeTarget "YourWeatherFramework" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1DC295E46CE49123239507642962F394 /* Debug */,
-				26CF950A4BE6B92753FBA6824001CAE0 /* Release */,
+				CA7BC2565602E8EEB4C75981E5ECF307 /* Debug */,
+				C0480319250CE72522BD148F0FD9EE26 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

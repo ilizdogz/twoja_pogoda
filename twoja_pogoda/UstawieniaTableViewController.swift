@@ -8,6 +8,7 @@
 
 import UIKit
 import SafariServices
+import YourWeatherFramework
 
 class UstawieniaTableViewController: UITableViewController {
 

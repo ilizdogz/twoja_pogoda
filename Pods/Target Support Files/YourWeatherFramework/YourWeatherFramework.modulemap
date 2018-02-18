@@ -1,0 +1,6 @@
+framework module YourWeatherFramework {
+  umbrella header "YourWeatherFramework-umbrella.h"
+
+  export *
+  module * { export * }
+}

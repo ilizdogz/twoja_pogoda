@@ -1,15 +1,22 @@
 PODS:
-  - SwiftyJSON (3.1.4)
+  - SwiftyJSON (4.0.0)
   - Timepiece (1.3.1)
+  - YourWeatherFramework (0.3.10):
+    - SwiftyJSON (~> 4.0.0)
+    - Timepiece (~> 1.3.1)
 
 DEPENDENCIES:
-  - SwiftyJSON
-  - Timepiece
+  - YourWeatherFramework (from `~/Documents/Libraries/WeatherFramework`)
+
+EXTERNAL SOURCES:
+  YourWeatherFramework:
+    :path: ~/Documents/Libraries/WeatherFramework
 
 SPEC CHECKSUMS:
-  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+  SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
   Timepiece: c0760ec0e545697d86b80424dcd2b4d5ef66cf51
+  YourWeatherFramework: 2517207b55192c90f7fd47e7a7c0f4ff2886202c
 
-PODFILE CHECKSUM: df42853875d01a2769c5e9c7f29492846d6719f9
+PODFILE CHECKSUM: 9eb6d933538d2303cee2b641e4faff0cfc3014dd
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.4.0

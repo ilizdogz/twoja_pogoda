@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import YourWeatherFramework
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

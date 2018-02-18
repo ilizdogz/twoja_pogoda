@@ -37,7 +37,7 @@ extension PogodaTableViewController: UICollectionViewDelegate, UICollectionViewD
         dateFormatter.dateStyle = .none
         dateFormatter.timeStyle = .short
         cell.dataGodz.text = dateFormatter.string(from: godzina.godz)
-        cell.temp.text = "\(String(format: "%.2f", godzina.temp.returnFormat())) \(formatTemp.rawValue)"
+        cell.temp.text = "\(String(format: "%.2f", godzina.temp.returnFormat(formatTemp))) \(formatTemp.rawValue)"
         cell.opis.text = (godzina.opis)
         cell.dataGodz.textColor = zapisaneKolory.godzina
         cell.temp.textColor = zapisaneKolory.temp

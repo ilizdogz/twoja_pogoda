@@ -1,0 +1,32 @@
+{
+  "name": "YourWeatherFramework",
+  "platforms": {
+    "ios": "11.0"
+  },
+  "summary": "Loads API data and provides essential classes for your_weather app",
+  "requires_arc": true,
+  "version": "0.3.10",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Krzysztof Glimos": "kglimos@gmail.com"
+  },
+  "homepage": "https://github.com/ilizdogz/your_weather_ramework",
+  "source": {
+    "git": "git@github.com:ilizdogz/your_weather_ramework.git",
+    "tag": "0.3.10"
+  },
+  "frameworks": "UIKit",
+  "swift_version": "3.2",
+  "dependencies": {
+    "SwiftyJSON": [
+      "~> 4.0.0"
+    ],
+    "Timepiece": [
+      "~> 1.3.1"
+    ]
+  },
+  "source_files": "WeatherFramework/**/*.{swift}"
+}
