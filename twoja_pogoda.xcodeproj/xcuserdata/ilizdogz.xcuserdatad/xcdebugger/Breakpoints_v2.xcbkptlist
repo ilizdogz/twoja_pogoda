@@ -20,7 +20,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "twoja_pogoda/PogodaTableViewController.swift"
-            timestampString = "540687241.686836"
+            timestampString = "540732398.798908"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "213"
@@ -56,11 +56,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "twoja_pogoda/PogodaTableViewController.swift"
-            timestampString = "540687241.6868941"
+            timestampString = "540732398.7989939"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "219"
-            endingLineNumber = "219"
+            startingLineNumber = "222"
+            endingLineNumber = "222"
             landmarkName = "locationManager(_:didChangeAuthorization:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -72,11 +72,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "twoja_pogoda/PogodaTableViewController.swift"
-            timestampString = "540687241.686951"
+            timestampString = "540732398.799076"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "265"
-            endingLineNumber = "265"
+            startingLineNumber = "263"
+            endingLineNumber = "263"
             landmarkName = "refreshControlActivated(_:)"
             landmarkType = "7">
             <Locations>
@@ -120,11 +120,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "twoja_pogoda/PogodaTableViewController.swift"
-            timestampString = "540687241.687008"
+            timestampString = "540732398.7991689"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "232"
-            endingLineNumber = "232"
+            startingLineNumber = "230"
+            endingLineNumber = "230"
             landmarkName = "PogodaTableViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -136,11 +136,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "twoja_pogoda/PogodaTableViewController.swift"
-            timestampString = "540687241.6870641"
+            timestampString = "540732398.799253"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "242"
-            endingLineNumber = "242"
+            startingLineNumber = "240"
+            endingLineNumber = "240"
             landmarkName = "zrobUrl()"
             landmarkType = "7">
          </BreakpointContent>
@@ -152,11 +152,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "twoja_pogoda/PogodaTableViewController.swift"
-            timestampString = "540687241.68712"
+            timestampString = "540732398.799376"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "287"
-            endingLineNumber = "287">
+            startingLineNumber = "285"
+            endingLineNumber = "285">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -166,11 +166,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "twoja_pogoda/PogodaTableViewController.swift"
-            timestampString = "540687241.6871769"
+            timestampString = "540732398.79949"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "287"
-            endingLineNumber = "287">
+            startingLineNumber = "285"
+            endingLineNumber = "285">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -180,7 +180,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "twoja_pogoda/PogodaTableViewController+delegate.swift"
-            timestampString = "540687241.687235"
+            timestampString = "540732398.799579"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "34"

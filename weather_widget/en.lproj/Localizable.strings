@@ -1,0 +1,9 @@
+/* 
+  Localizable.strings
+  twoja_pogoda
+
+  Created by Krzysztof Glimos on 19.02.2018.
+  Copyright © 2018 Krzysztof Glimos. All rights reserved.
+*/
+"widget_loading" = "loading…";
+"error_header" = "An error occured.";

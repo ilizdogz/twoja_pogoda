@@ -214,10 +214,8 @@ class PogodaTableViewController: UITableViewController, UITabBarControllerDelega
     }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        if status == .authorizedWhenInUse || status == .authorizedAlways {
-            return
-        } else {
-            let ac = UIAlertController(title: NSLocalizedString("errorHeader", comment: "errorHeader"), message: NSLocalizedString("permissionError", comment: "permissionError"), preferredStyle: .alert)
+        if status != .authorizedWhenInUse || status != .authorizedAlways {
+            let ac = UIAlertController(title: NSLocalizedString("error_header", comment: "errorHeader"), message: NSLocalizedString("permission_error", comment: "permissionError"), preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             present(ac, animated: true, completion: nil)
             refreshControl?.performSelector(onMainThread: #selector(UIRefreshControl.endRefreshing), with: nil, waitUntilDone: false)
