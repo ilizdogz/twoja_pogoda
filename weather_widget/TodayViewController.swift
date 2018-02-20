@@ -26,7 +26,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, CLLocationManage
         super.viewDidLoad()
         // Do any additional setup after loading the view from its nib.
         locationManager.delegate = self
-        cityNameLabel.text = NSLocalizedString("widget_loading", comment: "widget_loading")
+        cityNameLabel.text = "--"
         windLabel.text = "--"
         rainLabel.text = "--"
         tempLabel.text = "--"
@@ -52,28 +52,30 @@ class TodayViewController: UIViewController, NCWidgetProviding, CLLocationManage
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         if status != .authorizedWhenInUse || status != .authorizedAlways {
-            cityNameLabel.text = NSLocalizedString("error_header", comment: "error_header")
+            cityNameLabel.text = "--"
         }
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        cityNameLabel.text = NSLocalizedString("error_header", comment: "error_header")
+        cityNameLabel.text = "--"
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let data = getDataWithLocation(lat: locations[0].coordinate.latitude, lon: locations[0].coordinate.longitude, apiKey: apiKey) {
-            cityNameLabel.text = data.cityName
-            tempLabel.text = "\(String(format: "%.2f", data.dzisiaj.temp.returnFormat(savedTempFormat))) \(savedTempFormat.rawValue)"
-            descLabel.text = data.dzisiaj.opis
-            if let snow = data.dzisiaj.snieg {
-                rainLabel.text = "\(String(format: "%.2f", snow)) mm"
+        getDataWithLocation(location: locations[0], apiKey: apiKey) { (data, err) in
+            if err != nil {
+                self.updateResult = .noData
             } else {
-                rainLabel.text = "\(String(format: "%.2f", data.dzisiaj.deszcz)) mm"
+                self.cityNameLabel.text = data!.cityName
+                self.tempLabel.text = "\(String(format: "%.2f", data!.dzisiaj.temp.returnFormat(self.savedTempFormat))) \(self.savedTempFormat.rawValue)"
+                self.descLabel.text = data!.dzisiaj.opis
+                if let snow = data!.dzisiaj.snieg {
+                    self.rainLabel.text = "\(String(format: "%.2f", snow)) mm"
+                } else {
+                    self.rainLabel.text = "\(String(format: "%.2f", data!.dzisiaj.deszcz)) mm"
+                }
+                self.windLabel.text = "\(String(format: "%.2f", data!.dzisiaj.wiatr)) m/s"
+                self.updateResult = .newData
             }
-            windLabel.text = "\(String(format: "%.2f", data.dzisiaj.wiatr)) m/s"
-            updateResult = .newData
-        } else {
-            updateResult = .noData
         }
     }
     

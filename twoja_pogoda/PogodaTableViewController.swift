@@ -185,15 +185,17 @@ class PogodaTableViewController: UITableViewController, UITabBarControllerDelega
     
     @objc func sprawdzNazweMiasta() {
         if let id = idMiasta {
-            if let data = getDataWithId(id: id, apiKey: apiKey) {
-                model = data
-                navigationItem.title = model!.cityName
-                refreshControl?.performSelector(onMainThread: #selector(UIRefreshControl.endRefreshing), with: nil, waitUntilDone: false)
-                tableView.reloadData()
-            } else {
-                showError()
-                refreshControl?.endRefreshing()
-            }
+            getDataWithId(id: id, apiKey: apiKey, callback: { (data, err) in
+                if err != nil {
+                    self.showError()
+                    self.refreshControl?.endRefreshing()
+                } else {
+                    self.model = data
+                    self.navigationItem.title = self.model!.cityName
+                    self.refreshControl?.performSelector(onMainThread: #selector(UIRefreshControl.endRefreshing), with: nil, waitUntilDone: false)
+                    self.tableView.reloadData()
+                }
+            })
         } else {
             zlokalizujMnie()
         }
@@ -233,24 +235,23 @@ class PogodaTableViewController: UITableViewController, UITabBarControllerDelega
         //uzywa lat i lon z lokalizacji do zrobienia 2 URL - obecnej pogody i progozy
         if let lok = lokalizacja,
             proba == 1 {
-                let lat = lok.coordinate.latitude
-                let lon = lok.coordinate.longitude
-            if let data = getDataWithLocation(lat: lat, lon: lon, apiKey: apiKey) {
-                model = data
-                navigationItem.title = model!.cityName
-                refreshControl?.endRefreshing()
-                tableView.reloadData()
-            } else {
-                performSelector(onMainThread: #selector(showError), with: nil, waitUntilDone: false)
-                refreshControl?.performSelector(onMainThread: #selector(UIRefreshControl.endRefreshing), with: nil, waitUntilDone: false)
-            }
+            getDataWithLocation(location: lok, apiKey: apiKey, callback: { (data, err) in
+                if err != nil {
+                    self.performSelector(onMainThread: #selector(self.showError), with: nil, waitUntilDone: false)
+                    self.refreshControl?.performSelector(onMainThread: #selector(UIRefreshControl.endRefreshing), with: nil, waitUntilDone: false)
+                } else {
+                    self.model = data
+                    self.navigationItem.title = self.model!.cityName
+                    self.refreshControl?.endRefreshing()
+                    self.tableView.reloadData()
+                }
+            })
         } else if proba > 1 {
             //zeby sie nie odswiezalo pare razy po tym jak juz znalazlo miejsce, zwykle dokladnosc 1 wystarcza
             return
         } else {
             performSelector(onMainThread: #selector(showError), with: nil, waitUntilDone: false)
             refreshControl?.performSelector(onMainThread: #selector(UIRefreshControl.endRefreshing), with: nil, waitUntilDone: false)
-            return
         }
     }
     

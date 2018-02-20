@@ -141,15 +141,17 @@ class ZapisaneTableViewController: UITableViewController, UITabBarControllerDele
             
             let indexPath = IndexPath(row: pogoda.count, section: 0)
 //            znajdzPogode(id: id)
-            if let data = getDataWithId(id: id, apiKey: apiKey) {
-                pogoda.append(data)
-            } else {
-                showError()
-                refreshControl?.endRefreshing()
-                return
-            }
-            tableView.insertRows(at: [indexPath], with: .automatic)
-            self.zapisz()
+            getDataWithId(id: id, apiKey: apiKey, callback: { (data, err) in
+                if err != nil {
+                    self.showError()
+                    self.refreshControl?.endRefreshing()
+                    
+                } else {
+                    self.pogoda.append(data!)
+                    self.tableView.insertRows(at: [indexPath], with: .automatic)
+                    self.zapisz()
+                }
+            })
         } else {
             let ac = UIAlertController(title: NSLocalizedString("not_found_header", comment: "not_found_header"), message: NSLocalizedString("not_found_msg", comment: "not_found_msg"), preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: "OK", style: .default,handler: nil))
@@ -198,12 +200,14 @@ class ZapisaneTableViewController: UITableViewController, UITabBarControllerDele
     @objc func zaladujPogode() {
         for miejsce in zapisaneId {
 //            znajdzPogode(id: miejsce)
-            if let data = getDataWithId(id: miejsce, apiKey: apiKey) {
-                pogoda.append(data)
-            } else {
-                performSelector(onMainThread: #selector(showError), with: nil, waitUntilDone: false)
-                refreshControl?.performSelector(onMainThread: #selector(UIRefreshControl.endRefreshing), with: nil, waitUntilDone: false)
-            }
+            getDataWithId(id: miejsce, apiKey: apiKey, callback: { (data, err) in
+                if err != nil {
+                    self.performSelector(onMainThread: #selector(self.showError), with: nil, waitUntilDone: false)
+                    self.refreshControl?.performSelector(onMainThread: #selector(UIRefreshControl.endRefreshing), with: nil, waitUntilDone: false)
+                } else {
+                    self.pogoda.append(data!)
+                }
+            })
         }
         DispatchQueue.main.async { [unowned self] in
             self.navigationItem.title = NSLocalizedString("saved_places_header", comment: "saved_places_header")
