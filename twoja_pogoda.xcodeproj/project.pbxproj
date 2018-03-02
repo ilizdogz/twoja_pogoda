@@ -143,7 +143,7 @@
 		A08C1F4A1F76A29A00B605DB /* coreDataManualImport.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = coreDataManualImport.sqlite; sourceTree = "<group>"; };
 		A08C1F4B1F76A29A00B605DB /* coreDataManualImport.sqlite-shm */ = {isa = PBXFileReference; lastKnownFileType = file; path = "coreDataManualImport.sqlite-shm"; sourceTree = "<group>"; };
 		A08C1F4C1F76A29B00B605DB /* coreDataManualImport.sqlite-wal */ = {isa = PBXFileReference; lastKnownFileType = file; path = "coreDataManualImport.sqlite-wal"; sourceTree = "<group>"; };
-		A0A8BD32203A09170051A9AD /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		A0A8BD32203A09170051A9AD /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A0A8BD3C203A11CD0051A9AD /* apiKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = apiKey.swift; sourceTree = "<group>"; };
 		A0A8BD3E203A151A0051A9AD /* formatTemp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = formatTemp.swift; sourceTree = "<group>"; };
 		A0F17D161F586085006D4E96 /* WyszukajViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WyszukajViewController.swift; sourceTree = "<group>"; };

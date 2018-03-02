@@ -17,28 +17,19 @@ class PogodaTableViewController: UITableViewController, UITabBarControllerDelega
     
     @IBOutlet weak var pogodaViewTrailing: NSLayoutConstraint!
     @IBOutlet weak var pogodaViewLeading: NSLayoutConstraint!
-    //var model: [[[String: Any]]] = [[[String: Any]]]()
     var model: PogodaModel?
-    //var miasto: String?
     var idMiasta: String?
     var znalazlLokalizacje = false
     var proba: Int = 0
     var storedOffset = [Int: CGFloat]()
-//    var objArray: PogodaModel?
     override func viewDidLoad() {
         super.viewDidLoad()
         //wyglad to wszystko
         navigationController?.navigationBar.barTintColor = Kolory.czarnyPrzezr
-        
-//        tableView.rowHeight = UITableViewAutomaticDimension
-//        tableView.estimatedRowHeight = 240
-        
-        
         //przewijanie do gory przez tabBar
         self.tabBarController?.delegate = self
     }
-    struct  PropertyKeys {
-        //"godzina": godzina, "tempWK": tempWK, "opis": opis, "ciśnienie": ciśnienie, "wilgotność": wilgotność, "zachmurzenie": zachmurzenie, "wiatr": wiatr, "deszcz": deszcz
+    struct PropertyKeys {
         static var godzina = "godzina"
         static var tempWK = "tempWK"
         static var opis = "opis"
@@ -56,15 +47,6 @@ class PogodaTableViewController: UITableViewController, UITabBarControllerDelega
         //kolory tutaj jakby ktos zmienil ustawienia i potem wrocil
         self.tableView.backgroundColor = zapisaneKolory.tlo
         self.tableView.backgroundView?.backgroundColor = zapisaneKolory.tlo
-        /*
-        let czyCiemne = Kolory.ciemneCzyJasne(kolorTla: zapisaneKolory.tlo)
-        switch czyCiemne {
-        case .ciemne:
-            return
-        case .jasne:
-            return
-        }
-        */
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -216,7 +198,7 @@ class PogodaTableViewController: UITableViewController, UITabBarControllerDelega
     }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        if status != .authorizedWhenInUse || status != .authorizedAlways {
+        if status == .denied || status == .restricted {
             let ac = UIAlertController(title: NSLocalizedString("error_header", comment: "errorHeader"), message: NSLocalizedString("permission_error", comment: "permissionError"), preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             present(ac, animated: true, completion: nil)

@@ -8,7 +8,7 @@
 "loading" = "ładowanie…";
 "back" = "wstecz";
 "loading_error" = "Nie udało się załadować danych. Spróbuj ponownie później.";
-"permission_error" = "Aplikacja nie ma zgody na lokalizację. Zmień to ustawienie lub wybierz inną opcję.";
+"permission_error" = "Aby użyć tej strony musisz zezwolić na używanie lokalizacji.";
 "error_header" = "Wystąpił błąd";
 "snow" = "śnieg";
 "rain" = "deszcz";

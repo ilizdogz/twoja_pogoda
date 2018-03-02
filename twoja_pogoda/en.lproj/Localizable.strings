@@ -8,7 +8,7 @@
 "loading" = "loading…";
 "back" = "back";
 "loading_error" = "Failed to get data. Try again later.";
-"permission_error" = "The app doesn't have the permission to access location. Change this setting or use another option.";
+"permission_error" = "To use this page you need to enable location services for this app.";
 "error_header" = "An error occured";
 "snow" = "snow";
 "rain" = "rain";

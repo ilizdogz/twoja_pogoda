@@ -126,6 +126,7 @@ class ZapisaneTableViewController: UITableViewController, UITabBarControllerDele
 
     //dodawanie miejsca po wybraniu dodaj
     @IBAction func dodajMiejsce(_ sender: UIBarButtonItem) {
+        sender.isEnabled = false
         guard let vc = storyboard?.instantiateViewController(withIdentifier: "search") as? WyszukajTableViewController else { return }
         vc.isAdding = true
         navigationController?.pushViewController(vc, animated: true)

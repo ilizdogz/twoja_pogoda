@@ -51,7 +51,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, CLLocationManage
     }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        if status != .authorizedWhenInUse || status != .authorizedAlways {
+        if status == .denied || status == .restricted {
             cityNameLabel.text = "--"
         }
     }
