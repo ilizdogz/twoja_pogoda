@@ -15,7 +15,6 @@
 		A000BA9D1F4B9B7C00AB967C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A000BA9B1F4B9B7C00AB967C /* LaunchScreen.storyboard */; };
 		A000BAA81F4B9B7C00AB967C /* twoja_pogodaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A000BAA71F4B9B7C00AB967C /* twoja_pogodaTests.swift */; };
 		A000BAB31F4B9B7C00AB967C /* twoja_pogodaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A000BAB21F4B9B7C00AB967C /* twoja_pogodaUITests.swift */; };
-		A000BAC11F4B9CD600AB967C /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A000BAC01F4B9CD600AB967C /* TabBar.swift */; };
 		A000BAC51F4B9F0C00AB967C /* ZapisaneTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A000BAC41F4B9F0C00AB967C /* ZapisaneTableViewController.swift */; };
 		A000BACD1F4C467A00AB967C /* PogodaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A000BACC1F4C467A00AB967C /* PogodaTableViewController.swift */; };
 		A000BACF1F4CE12F00AB967C /* Nast24hTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A000BACE1F4CE12F00AB967C /* Nast24hTableViewCell.swift */; };
@@ -111,7 +110,6 @@
 		A000BAAE1F4B9B7C00AB967C /* twoja_pogodaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = twoja_pogodaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A000BAB21F4B9B7C00AB967C /* twoja_pogodaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = twoja_pogodaUITests.swift; sourceTree = "<group>"; };
 		A000BAB41F4B9B7C00AB967C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A000BAC01F4B9CD600AB967C /* TabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		A000BAC41F4B9F0C00AB967C /* ZapisaneTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZapisaneTableViewController.swift; sourceTree = "<group>"; };
 		A000BACC1F4C467A00AB967C /* PogodaTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PogodaTableViewController.swift; sourceTree = "<group>"; };
 		A000BACE1F4CE12F00AB967C /* Nast24hTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Nast24hTableViewCell.swift; sourceTree = "<group>"; };
@@ -329,7 +327,6 @@
 		A08C1F491F76A12600B605DB /* globalne */ = {
 			isa = PBXGroup;
 			children = (
-				A000BAC01F4B9CD600AB967C /* TabBar.swift */,
 				A000BAD81F4EFDCE00AB967C /* UIRefreshControl + beginRefreshingManually.swift */,
 				A0F17D261F599FF2006D4E96 /* UIColor + hex.swift */,
 				A0A8BD3E203A151A0051A9AD /* formatTemp.swift */,
@@ -391,7 +388,6 @@
 				A000BA8C1F4B9B7C00AB967C /* Frameworks */,
 				A000BA8D1F4B9B7C00AB967C /* Resources */,
 				9765BB38DF1047EE821F199A /* [CP] Embed Pods Frameworks */,
-				9E20CFA144496F1AAB405839 /* [CP] Copy Pods Resources */,
 				A00B295F203ACF8D004CDE7B /* Embed App Extensions */,
 			);
 			buildRules = (
@@ -448,7 +444,6 @@
 				A00B294B203ACF8D004CDE7B /* Sources */,
 				A00B294C203ACF8D004CDE7B /* Frameworks */,
 				A00B294D203ACF8D004CDE7B /* Resources */,
-				C7117025275A1BC86D22D96B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -612,36 +607,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-twoja_pogoda/Pods-twoja_pogoda-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9E20CFA144496F1AAB405839 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-twoja_pogoda/Pods-twoja_pogoda-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C7117025275A1BC86D22D96B /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-weather_widget/Pods-weather_widget-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		EA7DE49F8891C1ED40F70237 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -667,7 +632,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A000BAC11F4B9CD600AB967C /* TabBar.swift in Sources */,
 				A0F17D191F596F22006D4E96 /* UstawieniaTableViewController.swift in Sources */,
 				A0F17D291F59C0DF006D4E96 /* ColorPickerViewController.swift in Sources */,
 				A000BAC51F4B9F0C00AB967C /* ZapisaneTableViewController.swift in Sources */,

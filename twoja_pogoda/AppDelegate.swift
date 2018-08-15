@@ -15,12 +15,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        UITabBarItem.appearance().titlePositionAdjustment = UIOffset(horizontal: 0, vertical: -(49 / 2 - 10))
-        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor : UIColor(red: 91/255, green: 154/255, blue: 1, alpha: 1), NSAttributedStringKey.font: UIFont(name: "Menlo", size: 15)!], for: UIControlState.normal) // changes the default color
-        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor : UIColor.orange, NSAttributedStringKey.font: UIFont(name: "Menlo", size: 17)!], for: UIControlState.selected)
-        UITabBar.appearance().tintColor = UIColor(red: 12/255, green: 25/255, blue: 45/255, alpha: 1)
+//        tab bar offset
+//        UITabBarItem.appearance().titlePositionAdjustment = UIOffset(horizontal: 0, vertical: -(49 / 2 - 10))
+//        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor : UIColor(red: 91/255, green: 154/255, blue: 1, alpha: 1), NSAttributedStringKey.font: UIFont(name: "Menlo", size: 15)!], for: UIControlState.normal) // tab bar text
+//        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor : UIColor.orange], for: UIControlState.selected) // selected tab bar text
+//        UITabBar.appearance().tintColor = UIColor(red: 12/255, green: 25/255, blue: 45/255, alpha: 1)
         
-        UIApplication.shared.statusBarStyle = .lightContent
+//        UIApplication.shared.statusBarStyle = .lightContent
         
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white, NSAttributedStringKey.font: UIFont(name: "Avenir Next", size: 15)!]
         //po zaladowaniu otwiera sie karta "teraz"
@@ -36,7 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             zapisaneKolory = ZapisaneKolory.domyslneUstawienia
         } else {
             let koloryData = defaults.object(forKey: "zapisaneKolory") as! Data
-            zapisaneKolory = NSKeyedUnarchiver.unarchiveObject(with: koloryData) as! ZapisaneKolory
+            zapisaneKolory = NSKeyedUnarchiver.unarchiveObject(with: koloryData) as? ZapisaneKolory
         }
         //wczytywanie ustawionej jednostki temperatury/ustawianie domyslne na C
         if defaults.object(forKey: "temperatura") == nil {
