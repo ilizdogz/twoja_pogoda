@@ -8,10 +8,10 @@
 
 import UIKit
 
-class Nast24hTableViewCell: UITableViewCell {
+class Next24hTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var nast24hLabel: UILabel!
-    @IBOutlet weak var pogodaView: UIView!
+    @IBOutlet weak var next24hLabel: UILabel!
+    @IBOutlet weak var weatherView: UIView!
     @IBOutlet private weak var collectionView: UICollectionView!
     
     var collectionViewOffset: CGFloat {

@@ -25,8 +25,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "215"
             endingLineNumber = "215"
-            landmarkName = "PogodaTableViewController"
-            landmarkType = "3">
+            landmarkName = "zrobUrl()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -76,9 +76,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "264"
-            endingLineNumber = "264"
-            landmarkName = "PogodaTableViewController"
-            landmarkType = "3">
+            endingLineNumber = "264">
             <Locations>
                <Location
                   shouldBeEnabled = "No"

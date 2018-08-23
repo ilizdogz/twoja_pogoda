@@ -14,7 +14,7 @@ import CoreLocation
 class TodayViewController: UIViewController, NCWidgetProviding, CLLocationManagerDelegate {
     
     lazy var locationManager = CLLocationManager()
-    var savedTempFormat: Stopien!
+    var savedTempFormat: TempUnit!
     var updateResult = NCUpdateResult.noData
         
     @IBOutlet weak var windLabel: UILabel!
@@ -33,11 +33,11 @@ class TodayViewController: UIViewController, NCWidgetProviding, CLLocationManage
         descLabel.text = "--"
         preferredContentSize = CGSize(width: self.view.frame.width, height: 110)
         let defaults = UserDefaults.standard
-        if let tempRaw = defaults.object(forKey: "temperatura") as? String {
-            savedTempFormat = Stopien(rawValue: tempRaw)
+        if let tempRaw = defaults.object(forKey: "temp") as? String {
+            savedTempFormat = TempUnit(rawValue: tempRaw)
         } else {
-            let tempFormat = Stopien.c
-            defaults.set(tempFormat.rawValue, forKey: "temperatura")
+            let tempFormat = TempUnit.c
+            defaults.set(tempFormat.rawValue, forKey: "temp")
             savedTempFormat = tempFormat
         }
     }
@@ -66,14 +66,14 @@ class TodayViewController: UIViewController, NCWidgetProviding, CLLocationManage
                 self.updateResult = .noData
             } else {
                 self.cityNameLabel.text = data!.cityName
-                self.tempLabel.text = "\(String(format: "%.2f", data!.dzisiaj.temp.returnFormat(self.savedTempFormat))) \(self.savedTempFormat.rawValue)"
-                self.descLabel.text = data!.dzisiaj.opis
-                if let snow = data!.dzisiaj.snieg {
+                self.tempLabel.text = "\(String(format: "%.2f", data!.today.temp.returnFormat(self.savedTempFormat))) \(self.savedTempFormat.rawValue)"
+                self.descLabel.text = data!.today.desc
+                if let snow = data!.today.snow {
                     self.rainLabel.text = "\(String(format: "%.2f", snow)) mm"
                 } else {
-                    self.rainLabel.text = "\(String(format: "%.2f", data!.dzisiaj.deszcz)) mm"
+                    self.rainLabel.text = "\(String(format: "%.2f", data!.today.rain)) mm"
                 }
-                self.windLabel.text = "\(String(format: "%.2f", data!.dzisiaj.wiatr)) m/s"
+                self.windLabel.text = "\(String(format: "%.2f", data!.today.wind)) m/s"
                 self.updateResult = .newData
             }
         }

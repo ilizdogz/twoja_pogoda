@@ -35,7 +35,7 @@ class ColorPickerViewController: UIViewController, UICollectionViewDelegate, UIC
 	// Global variables
 	var tag: Int = 0
 	var color: UIColor = UIColor.gray
-	var delegate: UstawieniaPogodaTableViewController? = nil
+	var delegate: ColorSettingsTableViewController? = nil
 	
 	// This function converts from HTML colors (hex strings of the form '#ffffff') to UIColors
 	func hexStringToUIColor (_ hex:String) -> UIColor {
@@ -45,7 +45,7 @@ class ColorPickerViewController: UIViewController, UICollectionViewDelegate, UIC
 			cString.remove(at: cString.startIndex)
 		}
 		
-		if (cString.characters.count != 6) {
+		if (cString.count != 6) {
 			return UIColor.gray
 		}
 		
@@ -98,7 +98,7 @@ class ColorPickerViewController: UIViewController, UICollectionViewDelegate, UIC
 			var hexString = colorPalette[cell.tag]
 			color = hexStringToUIColor(hexString)
 			self.view.backgroundColor = color
-            delegate?.zmienZapisane(color)
+            delegate?.changeSaved(color)
             self.dismiss(animated: true, completion: nil)
 		}
 	}

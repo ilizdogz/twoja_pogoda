@@ -9,4 +9,4 @@
 import Foundation
 import YourWeatherFramework
 
-var formatTemp: Stopien!
+var tempUnit: TempUnit!

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WyszukajTableViewController: UITableViewController, UISearchResultsUpdating {
+class SearchTableViewController: UITableViewController, UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         filterContentSearchForText(searchController.searchBar.text!)
     }
@@ -25,8 +25,8 @@ class WyszukajTableViewController: UITableViewController, UISearchResultsUpdatin
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.tableView.backgroundColor = zapisaneKolory.tlo
-        self.tableView.backgroundView?.backgroundColor = zapisaneKolory.tlo
+        self.tableView.backgroundColor = savedColors.bg
+        self.tableView.backgroundView?.backgroundColor = savedColors.bg
     }
     
     
@@ -38,7 +38,7 @@ class WyszukajTableViewController: UITableViewController, UISearchResultsUpdatin
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        navigationController?.navigationBar.barTintColor = Kolory.czarnyPrzezr
+        navigationController?.navigationBar.barTintColor = Colors.blackAlpha
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "wyszukaj miasto"
@@ -105,8 +105,8 @@ class WyszukajTableViewController: UITableViewController, UISearchResultsUpdatin
                     //navigationController?.popViewController(animated: true)
                 })
             } else {
-                guard let vc = storyboard?.instantiateViewController(withIdentifier: "Pogoda") as? PogodaTableViewController else { return }
-                vc.idMiasta = idArray[indexPath.row - 1]
+                guard let vc = storyboard?.instantiateViewController(withIdentifier: "Weather") as? WeatherTableViewController else { return }
+                vc.cityId = idArray[indexPath.row - 1]
                 navigationController?.pushViewController(vc, animated: true)
             }
         }
@@ -155,7 +155,7 @@ class WyszukajTableViewController: UITableViewController, UISearchResultsUpdatin
             }
             cell.textLabel?.textColor = UIColor.white
             cell.accessoryType = .none
-            cell.backgroundColor = Kolory.navCont
+            cell.backgroundColor = Colors.navCont
         }
 
         return cell

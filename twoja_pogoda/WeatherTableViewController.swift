@@ -10,34 +10,29 @@ import UIKit
 import CoreLocation
 import YourWeatherFramework
 
-class PogodaTableViewController: UITableViewController, UITabBarControllerDelegate, CLLocationManagerDelegate {
+class WeatherTableViewController: UITableViewController, UITabBarControllerDelegate, CLLocationManagerDelegate {
     var locationManager = CLLocationManager()
     lazy var geocoder = CLGeocoder()
-    var lokalizacja: CLLocation?
+    var location: CLLocation?
     
-    @IBOutlet weak var pogodaViewTrailing: NSLayoutConstraint!
-    @IBOutlet weak var pogodaViewLeading: NSLayoutConstraint!
-    var model: PogodaModel?
-    var idMiasta: String?
-    var znalazlLokalizacje = false
-    var proba: Int = 0
+    var model: WeatherModel?
+    var cityId: String?
+    var foundLocation = false
+    var getLocationCounter: Int = 0
     var storedOffset = [Int: CGFloat]()
     override func viewDidLoad() {
         super.viewDidLoad()
         //wyglad to wszystko
-        navigationController?.navigationBar.barTintColor = Kolory.czarnyPrzezr
+        navigationController?.navigationBar.barTintColor = Colors.blackAlpha
         //przewijanie do gory przez tabBar
         self.tabBarController?.delegate = self
     }
     struct PropertyKeys {
-        static var godzina = "godzina"
-        static var tempWK = "tempWK"
-        static var opis = "opis"
-        static var ciśnienie = "ciśnienie"
-        static var wilgotność = "wilgotność"
-        static var zachmurzenie = "zachmurzenie"
-        static var wiatr = "wiatr"
-        static var deszcz = "deszcz"
+        static var hour = "hour"
+        static var tempK = "tempK"
+        static var desc = "desc"
+        static var wind = "wind"
+        static var rain = "rain"
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -45,8 +40,8 @@ class PogodaTableViewController: UITableViewController, UITabBarControllerDelega
         self.refreshControl?.beginRefreshingManually()
         NotificationCenter.default.addObserver(self, selector: #selector(self.applicationDidBecomeActive(_:)), name: .UIApplicationDidBecomeActive, object: nil)
         //kolory tutaj jakby ktos zmienil ustawienia i potem wrocil
-        self.tableView.backgroundColor = zapisaneKolory.tlo
-        self.tableView.backgroundView?.backgroundColor = zapisaneKolory.tlo
+        self.tableView.backgroundColor = savedColors.bg
+        self.tableView.backgroundView?.backgroundColor = savedColors.bg
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -69,7 +64,7 @@ class PogodaTableViewController: UITableViewController, UITabBarControllerDelega
         if (model == nil) {
             return 0
         } else {
-            return 2 + model!.pozniej.count
+            return 2 + model!.later.count
         }
     }
 
@@ -77,48 +72,48 @@ class PogodaTableViewController: UITableViewController, UITabBarControllerDelega
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.row {
         case 0:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "DzisiajCell", for: indexPath) as! DzisiajTableViewCell
-            let dzisiaj = model!.dzisiaj
-            cell.tempLabel.text = "\(String(format: "%.2f", dzisiaj.temp.returnFormat(formatTemp))) \(formatTemp.rawValue)"
-            cell.opisLabel.text = dzisiaj.opis
-            if let snieg = dzisiaj.snieg {
-                cell.deszczLabel.text = "\(NSLocalizedString("snow", comment: "snow")): \(String(format: "%.2f", snieg)) mm"
+            let cell = tableView.dequeueReusableCell(withIdentifier: "TodayCell", for: indexPath) as! TodayTableViewCell
+            let today = model!.today
+            cell.tempLabel.text = "\(String(format: "%.2f", today.temp.returnFormat(tempUnit))) \(tempUnit.rawValue)"
+            cell.descLabel.text = today.desc
+            if let snow = today.snow {
+                cell.rainLabel.text = "\(NSLocalizedString("snow", comment: "snow")): \(String(format: "%.2f", snow)) mm"
             } else {
-                if (dzisiaj.temp.c <= 0 && dzisiaj.deszcz == 0) {
-                    cell.deszczLabel.text = "\(NSLocalizedString("snow", comment: "snow")): 0.00 mm"
+                if (today.temp.c <= 0 && today.rain == 0) {
+                    cell.rainLabel.text = "\(NSLocalizedString("snow", comment: "snow")): 0.00 mm"
                 } else {
-                    cell.deszczLabel.text = "\(NSLocalizedString("rain", comment: "rain")): \(String(format: "%.2f", dzisiaj.deszcz)) mm"
+                    cell.rainLabel.text = "\(NSLocalizedString("rain", comment: "rain")): \(String(format: "%.2f", today.rain)) mm"
                 }
             }
-            cell.wiatrLabel.text = "\(NSLocalizedString("wind", comment: "wind")): \(String(format: "%.2f", dzisiaj.wiatr)) m/s"
-            cell.ustawKolory()
+            cell.windLabel.text = "\(NSLocalizedString("wind", comment: "wind")): \(String(format: "%.2f", today.wind)) m/s"
+            cell.setColors()
             return cell
         case 1:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "Nast24Cell", for: indexPath) as! Nast24hTableViewCell
-            cell.backgroundColor = zapisaneKolory.tlo
-            cell.pogodaView.backgroundColor = zapisaneKolory.tlo
-            cell.nast24hLabel.textColor = zapisaneKolory.dzien
+            let cell = tableView.dequeueReusableCell(withIdentifier: "Next24hCell", for: indexPath) as! Next24hTableViewCell
+            cell.backgroundColor = savedColors.bg
+            cell.weatherView.backgroundColor = savedColors.bg
+            cell.next24hLabel.textColor = savedColors.day
             return cell
         default:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "PozniejCell", for: indexPath) as! PozniejTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "LaterCell", for: indexPath) as! LaterTableViewCell
             let formatter = DateFormatter()
             formatter.dateFormat = "EEEE, dd/MM/yyyy"
             formatter.locale = Locale(identifier: Locale.current.identifier)
-            let item = model!.pozniej[indexPath.row - 2]
-            cell.dataLabel.text = formatter.string(from: item.data).lowercased()
-            if let tempDzien = item.tempDzien, let opisDzien = item.opisDzien {
-                cell.dzienTempLabel.text = "\(String(format: "%.2f", tempDzien.returnFormat(formatTemp))) \(formatTemp.rawValue)"
-                cell.dzienOpisLabel.text = opisDzien
+            let item = model!.later[indexPath.row - 2]
+            cell.dateLabel.text = formatter.string(from: item.date).lowercased()
+            if let tempDay = item.tempDay, let descDay = item.descDay {
+                cell.dayTempLabel.text = "\(String(format: "%.2f", tempDay.returnFormat(tempUnit))) \(tempUnit.rawValue)"
+                cell.dayDescLabel.text = descDay
             } else {
-                cell.dzienView.isHidden = true
+                cell.dayView.isHidden = true
             }
-            if let tempNoc = item.tempNoc, let opisNoc = item.opisNoc {
-                cell.nocTempLabel.text = "\(String(format: "%.2f", tempNoc.returnFormat(formatTemp))) \(formatTemp.rawValue)"
-                cell.nocOpisLabel.text = opisNoc
+            if let tempNight = item.tempNight, let descNight = item.descNight {
+                cell.nightTempLabel.text = "\(String(format: "%.2f", tempNight.returnFormat(tempUnit))) \(tempUnit.rawValue)"
+                cell.nightDescLabel.text = descNight
             } else {
-                cell.nocView.isHidden = true
+                cell.nightView.isHidden = true
             }
-            cell.ustawKolory()
+            cell.setColors()
             return cell
         }
     }
@@ -126,13 +121,13 @@ class PogodaTableViewController: UITableViewController, UITabBarControllerDelega
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.row {
         case 0:
-            //dzisiaj
+            //today
             return 200
         case 1:
-            //następne 24h
+            //next 24h
             return 220
         default:
-            //później
+            //later
             return 210
         }
         
@@ -140,14 +135,14 @@ class PogodaTableViewController: UITableViewController, UITabBarControllerDelega
     
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        guard let tableViewCell = cell as? Nast24hTableViewCell else { return }
+        guard let tableViewCell = cell as? Next24hTableViewCell else { return }
         
         tableViewCell.setCollectionViewDataSourceDelegate(dataSourceDelegate: self, forRow: indexPath.row)
         
     }
     
     override func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        guard let tableViewCell = cell as? Nast24hTableViewCell else { return }
+        guard let tableViewCell = cell as? Next24hTableViewCell else { return }
         
         storedOffset[indexPath.row] = tableViewCell.collectionViewOffset
     }
@@ -165,8 +160,8 @@ class PogodaTableViewController: UITableViewController, UITabBarControllerDelega
         }
     }
     
-    @objc func sprawdzNazweMiasta() {
-        if let id = idMiasta {
+    @objc func checkCityName() {
+        if let id = cityId {
             getDataWithId(id: id, apiKey: apiKey, callback: { (data, err) in
                 if err != nil {
                     self.showError()
@@ -179,12 +174,12 @@ class PogodaTableViewController: UITableViewController, UITabBarControllerDelega
                 }
             })
         } else {
-            zlokalizujMnie()
+            getLocation()
         }
     }
     
     //lokalizacja
-    func zlokalizujMnie() {
+    func getLocation() {
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
         locationManager.requestWhenInUseAuthorization()
@@ -192,9 +187,9 @@ class PogodaTableViewController: UITableViewController, UITabBarControllerDelega
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        lokalizacja = locations[0]
-        proba += 1
-        zrobUrl()
+        location = locations[0]
+        getLocationCounter += 1
+        makeUrl()
     }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
@@ -213,11 +208,10 @@ class PogodaTableViewController: UITableViewController, UITabBarControllerDelega
     
     
     
-    func zrobUrl() {
-        //uzywa lat i lon z lokalizacji do zrobienia 2 URL - obecnej pogody i progozy
-        if let lok = lokalizacja,
-            proba == 1 {
-            getDataWithLocation(location: lok, apiKey: apiKey, callback: { (data, err) in
+    func makeUrl() {
+        if let loc = location,
+            getLocationCounter == 1 {
+            getDataWithLocation(location: loc, apiKey: apiKey, callback: { (data, err) in
                 if err != nil {
                     self.performSelector(onMainThread: #selector(self.showError), with: nil, waitUntilDone: false)
                     self.refreshControl?.performSelector(onMainThread: #selector(UIRefreshControl.endRefreshing), with: nil, waitUntilDone: false)
@@ -228,8 +222,8 @@ class PogodaTableViewController: UITableViewController, UITabBarControllerDelega
                     self.tableView.reloadData()
                 }
             })
-        } else if proba > 1 {
-            //zeby sie nie odswiezalo pare razy po tym jak juz znalazlo miejsce, zwykle dokladnosc 1 wystarcza
+        } else if getLocationCounter > 1 {
+            // don't refresh again after finding location
             return
         } else {
             performSelector(onMainThread: #selector(showError), with: nil, waitUntilDone: false)
@@ -241,11 +235,11 @@ class PogodaTableViewController: UITableViewController, UITabBarControllerDelega
     @IBAction func refreshControlActivated(_ sender: UIRefreshControl) {
         model = nil
         self.tableView.reloadData()
-        proba = 0
-        lokalizacja = nil
+        getLocationCounter = 0
+        location = nil
 //        objArray.removeAll(keepingCapacity: false)
         self.navigationItem.title = NSLocalizedString("loading", comment: "loading")
-        performSelector(inBackground: #selector(sprawdzNazweMiasta), with: nil)
+        performSelector(inBackground: #selector(checkCityName), with: nil)
     }
     
     @objc func applicationDidBecomeActive(_ notification: NSNotification) {

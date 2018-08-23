@@ -31,22 +31,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         //wczytywanie zapisanych kolorow/ustawianie domyslnych jesli ich nie ma
         let defaults = UserDefaults.standard
-        if defaults.object(forKey: "zapisaneKolory") == nil {
-            let zapisaneDomyslne = NSKeyedArchiver.archivedData(withRootObject: ZapisaneKolory.domyslneUstawienia)
-            defaults.set(zapisaneDomyslne, forKey: "zapisaneKolory")
-            zapisaneKolory = ZapisaneKolory.domyslneUstawienia
+        if defaults.object(forKey: "savedColors") == nil {
+            let savedDefaults = NSKeyedArchiver.archivedData(withRootObject: SavedColors.defaultSettings)
+            defaults.set(savedDefaults, forKey: "savedColors")
+            savedColors = SavedColors.defaultSettings
         } else {
-            let koloryData = defaults.object(forKey: "zapisaneKolory") as! Data
-            zapisaneKolory = NSKeyedUnarchiver.unarchiveObject(with: koloryData) as? ZapisaneKolory
+            let colorData = defaults.object(forKey: "savedColors") as! Data
+            savedColors = NSKeyedUnarchiver.unarchiveObject(with: colorData) as? SavedColors
         }
         //wczytywanie ustawionej jednostki temperatury/ustawianie domyslne na C
-        if defaults.object(forKey: "temperatura") == nil {
-            let temp: Stopien = .c
-            defaults.set(temp.rawValue, forKey: "temperatura")
-            formatTemp = temp
+        if defaults.object(forKey: "temp") == nil {
+            let temp: TempUnit = .c
+            defaults.set(temp.rawValue, forKey: "temp")
+            tempUnit = temp
         } else {
-            let tempRaw = defaults.object(forKey: "temperatura") as! String
-            formatTemp = Stopien(rawValue: tempRaw)
+            let tempRaw = defaults.object(forKey: "temp") as! String
+            tempUnit = TempUnit(rawValue: tempRaw)
         }
         let stack = CoreDataStack()
         stack.preloadDbData()

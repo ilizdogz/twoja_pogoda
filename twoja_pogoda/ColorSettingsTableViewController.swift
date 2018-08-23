@@ -8,43 +8,41 @@
 
 import UIKit
 
-class UstawieniaPogodaTableViewController: UITableViewController, UIPopoverPresentationControllerDelegate {
+class ColorSettingsTableViewController: UITableViewController, UIPopoverPresentationControllerDelegate {
 
-    @IBOutlet weak var kartaPodglad: UIView!
-    @IBOutlet weak var deszczPodglad: UIButton!
-    @IBOutlet weak var wiatrPodglad: UIButton!
-    @IBOutlet var dzienPodglad: [UIButton]!
-    @IBOutlet var tempPodglad: [UIButton]!
-    @IBOutlet var opisPodglad: [UIButton]!
-    @IBOutlet var godzPodglad: [UIButton]!
-    @IBOutlet weak var zapisaneMiescePodglad: UIButton!
-    @IBOutlet weak var zapisaneTempPodglad: UIButton!
-    @IBOutlet weak var zapisaneDeszczPodglad: UIButton!
-    @IBOutlet weak var zmienKolorTla: UIButton!
+    @IBOutlet weak var tabPreview: UIView!
+    @IBOutlet weak var rainPreview: UIButton!
+    @IBOutlet weak var windPreview: UIButton!
+    @IBOutlet var dayPreview: [UIButton]!
+    @IBOutlet var tempPreview: [UIButton]!
+    @IBOutlet var descPreview: [UIButton]!
+    @IBOutlet var hourPreview: [UIButton]!
+    @IBOutlet weak var savedPlacePreview: UIButton!
+    @IBOutlet weak var savedTempPreview: UIButton!
+    @IBOutlet weak var savedRainPreview: UIButton!
+    @IBOutlet weak var changeBgColor: UIButton!
 
-    var tempKolory: ZapisaneKolory!
+    var tempColors: SavedColors!
     
-    //z ColorPickerVC do zapisanych
+    //from ColorPickerVc to others
     var tempTag: Int?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //self.tableView.backgroundColor = Kolory.navCont
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        kartaPodglad.layer.cornerRadius = 8
-        tempKolory = zapisaneKolory
+        tabPreview.layer.cornerRadius = 8
+        tempColors = savedColors
         updateView()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        zapisz()
+        save()
     }
     
 
@@ -80,36 +78,36 @@ class UstawieniaPogodaTableViewController: UITableViewController, UIPopoverPrese
 
     //zmien wyglad
     func updateView() {
-        for item in dzienPodglad {
-            item.setTitleColor(tempKolory.dzien, for: .normal)
+        for item in dayPreview {
+            item.setTitleColor(tempColors.day, for: .normal)
         }
-        for item in tempPodglad {
-            item.setTitleColor(tempKolory.temp, for: .normal)
+        for item in tempPreview {
+            item.setTitleColor(tempColors.temp, for: .normal)
         }
-        for item in opisPodglad {
-            item.setTitleColor(tempKolory.opis, for: .normal)
+        for item in descPreview {
+            item.setTitleColor(tempColors.desc, for: .normal)
         }
-        for item in godzPodglad {
-            item.setTitleColor(tempKolory.godzina, for: .normal)
+        for item in hourPreview {
+            item.setTitleColor(tempColors.hour, for: .normal)
         }
-        wiatrPodglad.setTitleColor(tempKolory.wiatr, for: .normal)
-        deszczPodglad.setTitleColor(tempKolory.deszcz, for: .normal)
-        zapisaneMiescePodglad.setTitleColor(tempKolory.zapisaneMiejsce, for: .normal)
-        zapisaneTempPodglad.setTitleColor(tempKolory.temp, for: .normal)
-        zapisaneDeszczPodglad.setTitleColor(tempKolory.deszcz, for: .normal)
-        zmienTlo(kolor: tempKolory.tlo)
+        windPreview.setTitleColor(tempColors.wind, for: .normal)
+        rainPreview.setTitleColor(tempColors.rain, for: .normal)
+        savedPlacePreview.setTitleColor(tempColors.savedCity, for: .normal)
+        savedTempPreview.setTitleColor(tempColors.temp, for: .normal)
+        savedRainPreview.setTitleColor(tempColors.rain, for: .normal)
+        changeBg(color: tempColors.bg)
     }
     
     //zapisywanie/wczytywanie
     
-    func zapisz() {
-        let savedData = NSKeyedArchiver.archivedData(withRootObject: tempKolory)
+    func save() {
+        let savedData = NSKeyedArchiver.archivedData(withRootObject: tempColors)
         let defaults = UserDefaults.standard
-        defaults.set(savedData, forKey: "zapisaneKolory")
-        zapisaneKolory = tempKolory
+        defaults.set(savedData, forKey: "savedColors")
+        savedColors = tempColors
     }
 
-    @IBAction func zmienKolor(_ sender: UIButton) {
+    @IBAction func changeColor(_ sender: UIButton) {
         tempTag = sender.tag
         
         let popoverVC = storyboard?.instantiateViewController(withIdentifier: "colorPickerPopover") as! ColorPickerViewController
@@ -125,26 +123,25 @@ class UstawieniaPogodaTableViewController: UITableViewController, UIPopoverPrese
         present(popoverVC, animated: true, completion: nil)
     }
     
-    func zmienZapisane(_ kolor: UIColor) {
+    func changeSaved(_ color: UIColor) {
         guard let tag = tempTag else { return }
         switch tag {
         case 1000:
-            tempKolory.dzien = kolor
+            tempColors.day = color
         case 1001:
-            tempKolory.temp = kolor
+            tempColors.temp = color
         case 1002:
-            tempKolory.opis = kolor
+            tempColors.desc = color
         case 1003:
-            tempKolory.deszcz = kolor
+            tempColors.rain = color
         case 1004:
-            tempKolory.wiatr = kolor
+            tempColors.wind = color
         case 1005:
-            tempKolory.godzina = kolor
+            tempColors.hour = color
         case 1006:
-            tempKolory.zapisaneMiejsce = kolor
-            print(tempKolory.zapisaneMiejsce)
+            tempColors.savedCity = color
         case 1007:
-            tempKolory.tlo = kolor
+            tempColors.bg = color
         default:
             break
         }
@@ -158,28 +155,21 @@ class UstawieniaPogodaTableViewController: UITableViewController, UIPopoverPrese
         return .none
     }
     
-    func zmienTlo(kolor: UIColor) {
-        tableView.backgroundColor = kolor
+    func changeBg(color: UIColor) {
+        tableView.backgroundColor = color
         let paths = [IndexPath(row: 0, section: 0), IndexPath(row: 0, section: 1), IndexPath(row: 0, section: 2)]
         for path in paths {
             let cell = tableView.cellForRow(at: path)
-            cell?.backgroundColor = kolor
+            cell?.backgroundColor = color
         }
-        kartaPodglad.backgroundColor = kolor
-        let tableCG = tableView.backgroundColor!.cgColor
-        let jasnoscR = tableCG.components![0] * 0.299
-        let jasnoscG = tableCG.components![1] * 0.587
-        let jasnoscB = tableCG.components![2] * 0.114
-        //czy przyciski powinny być jasne czy ciemne?
-        let jasnoscTla = 1 - (jasnoscR + jasnoscG + jasnoscB)
-        if jasnoscTla < 0.5 {
-            //tło jest jasne - potrzebne są ciemne kolory
-            zmienKolorTla.setTitleColor(Kolory.navCont, for: .normal)
-            zapisaneMiescePodglad.setTitleColor(Kolory.navCont, for: .normal)
+        tabPreview.backgroundColor = color
+        if Colors.isDark(color) {
+            changeBgColor.setTitleColor(UIColor.white, for: .normal)
+            changeBgColor.setTitleColor(UIColor.white, for: .normal)
+            
         } else {
-            //tło jest ciemne - portrzebne są jasne kolory
-            zmienKolorTla.setTitleColor(Kolory.bialy, for: .normal)
-            zapisaneMiescePodglad.setTitleColor(Kolory.bialy, for: .normal)
+            changeBgColor.setTitleColor(Colors.navCont, for: .normal)
+            savedPlacePreview.setTitleColor(Colors.navCont, for: .normal)
         }
     }
 

@@ -8,12 +8,12 @@
 
 import UIKit
 
-class PogodaCollectionViewCell: UICollectionViewCell {
+class WeatherCollectionViewCell: UICollectionViewCell {
         
     
-    @IBOutlet weak var dataGodz: UILabel!
-    @IBOutlet weak var temp: UILabel!
-    @IBOutlet weak var opis: UILabel!
+    @IBOutlet weak var hourLabel: UILabel!
+    @IBOutlet weak var tempLabel: UILabel!
+    @IBOutlet weak var descLabel: UILabel!
     /*
     func roundCorners(_ corners: UIRectCorner, radius: CGFloat) {
         let path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))

@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-extension PogodaTableViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension WeatherTableViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
         guard (model != nil) else { return 0 }
@@ -23,26 +23,26 @@ extension PogodaTableViewController: UICollectionViewDelegate, UICollectionViewD
             storedOffset[collectionView.tag] = collectionView.contentOffset.x
         }
 //        }
-        collectionView.backgroundColor = zapisaneKolory!.tlo
-        return model!.nast24h.count
+        collectionView.backgroundColor = savedColors!.bg
+        return model!.next24h.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "pogodaCV",
-                                                      for: indexPath) as! PogodaCollectionViewCell
+                                                      for: indexPath) as! WeatherCollectionViewCell
         guard (model != nil) else { return cell }
-        let godzina = model!.nast24h[indexPath.item]
+        let item = model!.next24h[indexPath.item]
         //print(godzina)
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .none
         dateFormatter.timeStyle = .short
-        cell.dataGodz.text = dateFormatter.string(from: godzina.godz)
-        cell.temp.text = "\(String(format: "%.2f", godzina.temp.returnFormat(formatTemp))) \(formatTemp.rawValue)"
-        cell.opis.text = (godzina.opis)
-        cell.dataGodz.textColor = zapisaneKolory.godzina
-        cell.temp.textColor = zapisaneKolory.temp
-        cell.opis.textColor = zapisaneKolory.opis
-        cell.backgroundColor = zapisaneKolory.tlo
+        cell.hourLabel.text = dateFormatter.string(from: item.time)
+        cell.tempLabel.text = "\(String(format: "%.2f", item.temp.returnFormat(tempUnit))) \(tempUnit.rawValue)"
+        cell.descLabel.text = (item.desc)
+        cell.hourLabel.textColor = savedColors.hour
+        cell.tempLabel.textColor = savedColors.temp
+        cell.descLabel.textColor = savedColors.desc
+        cell.backgroundColor = savedColors.bg
         
         
         return cell

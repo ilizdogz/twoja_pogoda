@@ -10,15 +10,15 @@ import UIKit
 //import SwiftyJSON
 import YourWeatherFramework
 
-class ZapisaneTableViewController: UITableViewController, UITabBarControllerDelegate {
+class SavedTableViewController: UITableViewController, UITabBarControllerDelegate {
     
-    @IBOutlet weak var dodaj: UIBarButtonItem!
-    @IBOutlet weak var edytuj: UIBarButtonItem!
+    @IBOutlet weak var add: UIBarButtonItem!
+    @IBOutlet weak var edit: UIBarButtonItem!
 //    var timestamp: Date?
     
     //var zapisaneMiejsca = [String]()
-    var zapisaneId = [String]()
-    var pogoda = [PogodaModel]()
+    var savedIds = [String]()
+    var weatherArray = [WeatherModel]()
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -42,9 +42,9 @@ class ZapisaneTableViewController: UITableViewController, UITabBarControllerDele
         navigationItem.backBarButtonItem = backButton
         
         //wczytywanie/zapisywanie
-        wczytajMiejsca()
-        navigationController?.navigationBar.barTintColor = Kolory.czarnyPrzezr
-        self.zapisz()
+        loadIds()
+        navigationController?.navigationBar.barTintColor = Colors.blackAlpha
+        self.save()
         refreshControl?.beginRefreshingManually()
     }
     
@@ -52,7 +52,7 @@ class ZapisaneTableViewController: UITableViewController, UITabBarControllerDele
         super.viewWillAppear(animated)
         //odswiez przy ponownym otwarciu
         NotificationCenter.default.addObserver(self, selector: #selector(self.applicationDidBecomeActive(_:)), name: .UIApplicationDidBecomeActive, object: nil)
-        self.tableView.backgroundColor = zapisaneKolory.tlo
+        self.tableView.backgroundColor = savedColors.bg
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -74,7 +74,7 @@ class ZapisaneTableViewController: UITableViewController, UITabBarControllerDele
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
-            return pogoda.count
+            return weatherArray.count
         } else {
             return 0
         }
@@ -82,26 +82,25 @@ class ZapisaneTableViewController: UITableViewController, UITabBarControllerDele
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "miejsce", for: indexPath) as! MiejsceTableViewCell
-        let pogodaW = pogoda[indexPath.row]
-        let temperatura = pogodaW.dzisiaj.temp
+        let cell = tableView.dequeueReusableCell(withIdentifier: "place", for: indexPath) as! PlaceTableViewCell
+        let weather = weatherArray[indexPath.row]
         // Configure the cell...
-        var opady: Double?
-        if let snieg = pogodaW.dzisiaj.snieg {
-            opady = snieg
-            cell.deszczLabel.textColor = Kolory.bialy
+        var rain: Double?
+        if let snow = weather.today.snow {
+            rain = snow
+            cell.rainLabel.textColor = UIColor.white
         } else {
-            opady = pogodaW.dzisiaj.deszcz
+            rain = weather.today.rain
         }
-        cell.wypelnij(miejsce: pogodaW.cityName, temp: temperatura.returnFormat(formatTemp), deszcz: opady!)
-        cell.zmienKolory(kolory: zapisaneKolory)
+        cell.fillLabels(place: weather.cityName, temp: weather.today.temp.returnFormat(tempUnit), rain: rain!)
+        cell.changeColors(colors: savedColors)
         return cell
     }
     
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let vc = storyboard?.instantiateViewController(withIdentifier: "Pogoda") as? PogodaTableViewController {
-            vc.idMiasta = zapisaneId[indexPath.row]
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "Pogoda") as? WeatherTableViewController {
+            vc.cityId = savedIds[indexPath.row]
             navigationController?.pushViewController(vc, animated: true)
         }
     }
@@ -116,18 +115,18 @@ class ZapisaneTableViewController: UITableViewController, UITabBarControllerDele
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
-            zapisaneId.remove(at: indexPath.row)
-            pogoda.remove(at: indexPath.row)
+            savedIds.remove(at: indexPath.row)
+            weatherArray.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
-            self.zapisz()
+            self.save()
         }
     }
     
 
     //dodawanie miejsca po wybraniu dodaj
-    @IBAction func dodajMiejsce(_ sender: UIBarButtonItem) {
-        sender.isEnabled = false
-        guard let vc = storyboard?.instantiateViewController(withIdentifier: "search") as? WyszukajTableViewController else { return }
+    @IBAction func addCity(_ sender: UIBarButtonItem) {
+//        sender.isEnabled = false
+        guard let vc = storyboard?.instantiateViewController(withIdentifier: "search") as? SearchTableViewController else { return }
         vc.isAdding = true
         navigationController?.pushViewController(vc, animated: true)
     }
@@ -138,9 +137,9 @@ class ZapisaneTableViewController: UITableViewController, UITabBarControllerDele
         let items = stack.loadSavedData(name: miasto)
         if let items = items, let item = items.first {
             let id = item.id!
-            zapisaneId.append(id)
+            savedIds.append(id)
             
-            let indexPath = IndexPath(row: pogoda.count, section: 0)
+            let indexPath = IndexPath(row: weatherArray.count, section: 0)
 //            znajdzPogode(id: id)
             getDataWithId(id: id, apiKey: apiKey, callback: { (data, err) in
                 if err != nil {
@@ -148,9 +147,9 @@ class ZapisaneTableViewController: UITableViewController, UITabBarControllerDele
                     self.refreshControl?.endRefreshing()
                     
                 } else {
-                    self.pogoda.append(data!)
+                    self.weatherArray.append(data!)
                     self.tableView.insertRows(at: [indexPath], with: .automatic)
-                    self.zapisz()
+                    self.save()
                 }
             })
         } else {
@@ -161,19 +160,19 @@ class ZapisaneTableViewController: UITableViewController, UITabBarControllerDele
     }
     
     //edytowanie miejsca po wybraniu edytuj
-    @IBAction func edytujMiasta(_ sender: UIBarButtonItem) {
+    @IBAction func editCity(_ sender: UIBarButtonItem) {
         let tableViewEditingMode = tableView.isEditing
         tableView.setEditing(!tableViewEditingMode, animated: true)
     }
     
     //zmien miejsce na liscie
     override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        let przeniesioneMiasto = zapisaneId.remove(at: sourceIndexPath.row)
-        let przeniesionaPogoda = pogoda.remove(at: sourceIndexPath.row)
-        zapisaneId.insert(przeniesioneMiasto, at: destinationIndexPath.row)
-        pogoda.insert(przeniesionaPogoda, at: destinationIndexPath.row)
+        let movedId = savedIds.remove(at: sourceIndexPath.row)
+        let movedWeather = weatherArray.remove(at: sourceIndexPath.row)
+        savedIds.insert(movedId, at: destinationIndexPath.row)
+        weatherArray.insert(movedWeather, at: destinationIndexPath.row)
         tableView.reloadData()
-        self.zapisz()
+        self.save()
     }
     
     //przewin do gory przez przycisk w UITabBar
@@ -186,27 +185,26 @@ class ZapisaneTableViewController: UITableViewController, UITabBarControllerDele
     }
     
     //zaladuj/wczytaj zapisane miejsca
-    func zapisz() {
+    func save() {
         let defaults = UserDefaults.standard
-        defaults.set(zapisaneId, forKey: "zapisaneMiejsca")
+        defaults.set(savedIds, forKey: "zapisaneMiejsca")
     }
     
-    func wczytajMiejsca() {
+    func loadIds() {
         let defaults = UserDefaults.standard
-        zapisaneId = defaults.object(forKey: "zapisaneMiejsca") as? [String] ?? ["5128638"]
+        savedIds = defaults.object(forKey: "zapisaneMiejsca") as? [String] ?? ["5128638"]
     }
     
     //zaladuj pogode z zapisaneMiejsca
     
-    @objc func zaladujPogode() {
-        for miejsce in zapisaneId {
-//            znajdzPogode(id: miejsce)
-            getDataWithId(id: miejsce, apiKey: apiKey, callback: { (data, err) in
+    @objc func loadWeather() {
+        for id in savedIds {
+            getDataWithId(id: id, apiKey: apiKey, callback: { (data, err) in
                 if err != nil {
                     self.performSelector(onMainThread: #selector(self.showError), with: nil, waitUntilDone: false)
                     self.refreshControl?.performSelector(onMainThread: #selector(UIRefreshControl.endRefreshing), with: nil, waitUntilDone: false)
                 } else {
-                    self.pogoda.append(data!)
+                    self.weatherArray.append(data!)
                 }
             })
         }
@@ -225,14 +223,14 @@ class ZapisaneTableViewController: UITableViewController, UITabBarControllerDele
     
     //odśwież
     @IBAction func refreshControlActivated(_ sender: UIRefreshControl) {
-        let miejsca: [String] = zapisaneId
-        zapisaneId.removeAll(keepingCapacity: false)
-        pogoda.removeAll(keepingCapacity: false)
-        zapisaneId.removeAll(keepingCapacity: false)
+        let places: [String] = savedIds
+        savedIds.removeAll(keepingCapacity: false)
+        weatherArray.removeAll(keepingCapacity: false)
+        savedIds.removeAll(keepingCapacity: false)
         tableView.reloadData()
-        zapisaneId = miejsca
+        savedIds = places
         self.navigationItem.title = NSLocalizedString("loading", comment: "loading")
-        performSelector(inBackground: #selector(zaladujPogode), with: nil)
+        performSelector(inBackground: #selector(loadWeather), with: nil)
     }
     
     @objc func applicationDidBecomeActive(_ notification: NSNotification) {
@@ -241,13 +239,10 @@ class ZapisaneTableViewController: UITableViewController, UITabBarControllerDele
     
     @IBAction func prepareForUnwind(segue: UIStoryboardSegue) {
         guard segue.identifier == "unwindToSaved",
-            let source = segue.source as? WyszukajTableViewController else {
-                print("Wrong source!")
-                return
-        }
+            let source = segue.source as? SearchTableViewController else { return }
         if let id = source.selectedId {
-            zapisaneId.append(id)
-            zapisz()
+            savedIds.append(id)
+            save()
             refreshControl?.beginRefreshingManually()
         }
         

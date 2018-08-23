@@ -8,12 +8,12 @@
 
 import UIKit
 
-class DzisiajTableViewCell: UITableViewCell {
+class TodayTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var dzisiajLabel: UILabel!
-    @IBOutlet weak var wiatrLabel: UILabel!
-    @IBOutlet weak var deszczLabel: UILabel!
-    @IBOutlet weak var opisLabel: UILabel!
+    @IBOutlet weak var todayLabel: UILabel!
+    @IBOutlet weak var windLabel: UILabel!
+    @IBOutlet weak var rainLabel: UILabel!
+    @IBOutlet weak var descLabel: UILabel!
     @IBOutlet weak var tempLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,12 +26,12 @@ class DzisiajTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func ustawKolory() {
-        dzisiajLabel.textColor = zapisaneKolory.dzien
-        opisLabel.textColor = zapisaneKolory.opis
-        tempLabel.textColor = zapisaneKolory.temp
-        wiatrLabel.textColor = zapisaneKolory.wiatr
-        deszczLabel.textColor = zapisaneKolory.deszcz
+    func setColors() {
+        todayLabel.textColor = savedColors.day
+        descLabel.textColor = savedColors.desc
+        tempLabel.textColor = savedColors.temp
+        windLabel.textColor = savedColors.wind
+        rainLabel.textColor = savedColors.rain
     }
 
 }
