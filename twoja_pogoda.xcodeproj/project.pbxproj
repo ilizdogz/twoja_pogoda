@@ -250,14 +250,14 @@
 			children = (
 				A00B2961203AD5B7004CDE7B /* twoja_pogoda.entitlements */,
 				A0A8BD3C203A11CD0051A9AD /* apiKey.swift */,
-				A08C1F491F76A12600B605DB /* globalne */,
+				A08C1F491F76A12600B605DB /* global */,
 				A000BA921F4B9B7C00AB967C /* AppDelegate.swift */,
 				A000BA961F4B9B7C00AB967C /* Main.storyboard */,
 				A07EEA651FAD1FF10005DCE5 /* UISearchBar+textColor.swift */,
-				A0F17D1A1F596F2F006D4E96 /* ustawienia */,
-				A0F17D1B1F596F39006D4E96 /* wyszukaj */,
-				A0F17D1C1F596F41006D4E96 /* pogoda(1) */,
-				A0F17D1D1F596F5A006D4E96 /* zapisane */,
+				A0F17D1A1F596F2F006D4E96 /* settings */,
+				A0F17D1B1F596F39006D4E96 /* search */,
+				A0F17D1C1F596F41006D4E96 /* weather(1) */,
+				A0F17D1D1F596F5A006D4E96 /* saved */,
 				A08C1F451F76A01400B605DB /* Core Data */,
 				A000BA991F4B9B7C00AB967C /* Assets.xcassets */,
 				A000BA9B1F4B9B7C00AB967C /* LaunchScreen.storyboard */,
@@ -321,17 +321,17 @@
 			name = "Core Data";
 			sourceTree = "<group>";
 		};
-		A08C1F491F76A12600B605DB /* globalne */ = {
+		A08C1F491F76A12600B605DB /* global */ = {
 			isa = PBXGroup;
 			children = (
 				A000BAD81F4EFDCE00AB967C /* UIRefreshControl + beginRefreshingManually.swift */,
 				A0F17D261F599FF2006D4E96 /* UIColor + hex.swift */,
 				A0A8BD3E203A151A0051A9AD /* formatTemp.swift */,
 			);
-			name = globalne;
+			name = global;
 			sourceTree = "<group>";
 		};
-		A0F17D1A1F596F2F006D4E96 /* ustawienia */ = {
+		A0F17D1A1F596F2F006D4E96 /* settings */ = {
 			isa = PBXGroup;
 			children = (
 				A0F17D181F596F22006D4E96 /* SettingsTableViewController.swift */,
@@ -340,18 +340,18 @@
 				A0F17D2C1F59EE87006D4E96 /* colorPalette.plist */,
 				A0F17D281F59C0DE006D4E96 /* ColorPickerViewController.swift */,
 			);
-			name = ustawienia;
+			name = settings;
 			sourceTree = "<group>";
 		};
-		A0F17D1B1F596F39006D4E96 /* wyszukaj */ = {
+		A0F17D1B1F596F39006D4E96 /* search */ = {
 			isa = PBXGroup;
 			children = (
 				A07EEA611FABD7700005DCE5 /* SearchTableViewController.swift */,
 			);
-			name = wyszukaj;
+			name = search;
 			sourceTree = "<group>";
 		};
-		A0F17D1C1F596F41006D4E96 /* pogoda(1) */ = {
+		A0F17D1C1F596F41006D4E96 /* weather(1) */ = {
 			isa = PBXGroup;
 			children = (
 				A000BACC1F4C467A00AB967C /* WeatherTableViewController.swift */,
@@ -361,16 +361,16 @@
 				A00D8D312019350700DF59F9 /* LaterTableViewCell.swift */,
 				A000BAD21F4CE50D00AB967C /* WeatherCollectionViewCell.swift */,
 			);
-			name = "pogoda(1)";
+			name = "weather(1)";
 			sourceTree = "<group>";
 		};
-		A0F17D1D1F596F5A006D4E96 /* zapisane */ = {
+		A0F17D1D1F596F5A006D4E96 /* saved */ = {
 			isa = PBXGroup;
 			children = (
 				A000BAC41F4B9F0C00AB967C /* SavedTableViewController.swift */,
 				A000BAD61F4DBF8F00AB967C /* PlaceTableViewCell.swift */,
 			);
-			name = zapisane;
+			name = saved;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
