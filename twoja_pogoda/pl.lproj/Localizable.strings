@@ -20,3 +20,9 @@
 "not_found_header" = "Nie znaleziono";
 "not_found_msg" = "Nie znaleziono miasta";
 "saved_places_header" = "zapisane miejsca";
+"more" = "rozwiń…";
+"less" = "zwiń…";
+"pressure" = "ciśnienie";
+"humidity" = "wilgotność";
+"clouds" = "zachmurzenie";
+"select_more_info" = "wybierz godzinę żeby uzyskać więcej informacji";

@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 extension WeatherTableViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
         guard (model != nil) else { return 0 }
@@ -25,6 +26,11 @@ extension WeatherTableViewController: UICollectionViewDelegate, UICollectionView
 //        }
         collectionView.backgroundColor = savedColors!.bg
         return model!.next24h.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+        cvItemSelected(number: indexPath.row)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

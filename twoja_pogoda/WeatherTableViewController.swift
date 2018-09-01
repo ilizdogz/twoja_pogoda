@@ -14,6 +14,8 @@ class WeatherTableViewController: UITableViewController, UITabBarControllerDeleg
     var locationManager = CLLocationManager()
     lazy var geocoder = CLGeocoder()
     var location: CLLocation?
+    var isTodayExpanded = false
+    var isNext24hExpanded = false
     
     var model: WeatherModel?
     var cityId: String?
@@ -64,7 +66,27 @@ class WeatherTableViewController: UITableViewController, UITabBarControllerDeleg
         if (model == nil) {
             return 0
         } else {
-            return 2 + model!.later.count
+            return 4 + model!.later.count
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch (indexPath.row) {
+        case 0:
+//            now
+            return 200
+        case 1:
+//            expanded
+            return isTodayExpanded ? 160 : 48
+        case 2:
+//            next 24h
+            return 220
+        case 3:
+//            expanded
+            return isNext24hExpanded ? 160 : 48
+        default:
+//            later
+            return 210
         }
     }
 
@@ -89,17 +111,30 @@ class WeatherTableViewController: UITableViewController, UITabBarControllerDeleg
             cell.setColors()
             return cell
         case 1:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ExpandedCell", for: indexPath) as! ExpandedTableViewCell
+            let today = model!.today
+            cell.setColors()
+            cell.moreLessLabel.text = NSLocalizedString("more", comment: "more")
+            cell.humidityLabel.text = "\(NSLocalizedString("humidity", comment: "humidity")): \(today.humidity)%"
+            cell.pressureLabel.text = "\(NSLocalizedString("pressure", comment: "pressure")): \(today.pressure) hPa"
+            cell.cloudLabel.text = "\(NSLocalizedString("clouds", comment: "clouds")): \(today.clouds)%"
+            return cell
+        case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: "Next24hCell", for: indexPath) as! Next24hTableViewCell
             cell.backgroundColor = savedColors.bg
             cell.weatherView.backgroundColor = savedColors.bg
             cell.next24hLabel.textColor = savedColors.day
+            return cell
+        case 3:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ExpandedCell", for: indexPath) as! ExpandedTableViewCell
+            cell.setColors()
             return cell
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: "LaterCell", for: indexPath) as! LaterTableViewCell
             let formatter = DateFormatter()
             formatter.dateFormat = "EEEE, dd/MM/yyyy"
             formatter.locale = Locale(identifier: Locale.current.identifier)
-            let item = model!.later[indexPath.row - 2]
+            let item = model!.later[indexPath.row - 4]
             cell.dateLabel.text = formatter.string(from: item.date).lowercased()
             if let tempDay = item.tempDay, let descDay = item.descDay {
                 cell.dayTempLabel.text = "\(String(format: "%.2f", tempDay.returnFormat(tempUnit))) \(tempUnit.rawValue)"
@@ -118,22 +153,6 @@ class WeatherTableViewController: UITableViewController, UITabBarControllerDeleg
         }
     }
     
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        switch indexPath.row {
-        case 0:
-            //today
-            return 200
-        case 1:
-            //next 24h
-            return 220
-        default:
-            //later
-            return 210
-        }
-        
-    }
-    
-    
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         guard let tableViewCell = cell as? Next24hTableViewCell else { return }
         
@@ -149,15 +168,40 @@ class WeatherTableViewController: UITableViewController, UITabBarControllerDeleg
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        switch (indexPath.row) {
+        case 1:
+            isTodayExpanded = !isTodayExpanded
+            let cell = tableView.cellForRow(at: indexPath) as! ExpandedTableViewCell
+            cell.moreLessLabel.text = isTodayExpanded ? NSLocalizedString("less", comment: "less") : NSLocalizedString("more", comment: "more")
+        case 3:
+            isNext24hExpanded = !isNext24hExpanded
+            let cell = tableView.cellForRow(at: indexPath) as! ExpandedTableViewCell
+            cell.moreLessLabel.text = isNext24hExpanded ? NSLocalizedString("less", comment: "less") : NSLocalizedString("more", comment: "more")
+        default: break
+        }
+        tableView.beginUpdates()
+        tableView.endUpdates()
     }
     
-    //przewijanie do gory przez tabBar
+    //scrolling up with tab bar
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
         let tabBarIndex = tabBarController.selectedIndex
         
         if tabBarIndex == 1 {
             self.tableView.setContentOffset(CGPoint(x: 0,y: -60), animated: true)
         }
+    }
+    
+//    refresh more label after selecting - used in delegate
+    func cvItemSelected(number: Int) {
+        guard let cell = tableView.cellForRow(at: IndexPath(row: 3, section: 0)) as? ExpandedTableViewCell else { return }
+//        cell.slideOut()
+        cell.setLabels(item: model!.next24h[number])
+        isNext24hExpanded = true
+        cell.moreLessLabel.text = NSLocalizedString("less", comment: "less")
+        tableView.beginUpdates()
+        tableView.endUpdates()
+//        tableView.reloadRows(at: [IndexPath(row: 3, section: 0)], with: .left)
     }
     
     @objc func checkCityName() {
@@ -178,7 +222,7 @@ class WeatherTableViewController: UITableViewController, UITabBarControllerDeleg
         }
     }
     
-    //lokalizacja
+    //location
     func getLocation() {
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
@@ -231,13 +275,11 @@ class WeatherTableViewController: UITableViewController, UITabBarControllerDeleg
         }
     }
     
-    //odswiez, pokaz wskaznik ladowania
     @IBAction func refreshControlActivated(_ sender: UIRefreshControl) {
         model = nil
         self.tableView.reloadData()
         getLocationCounter = 0
         location = nil
-//        objArray.removeAll(keepingCapacity: false)
         self.navigationItem.title = NSLocalizedString("loading", comment: "loading")
         performSelector(inBackground: #selector(checkCityName), with: nil)
     }
@@ -246,9 +288,6 @@ class WeatherTableViewController: UITableViewController, UITabBarControllerDeleg
         self.refreshControl?.beginRefreshingManually()
     }
     
-    
-    
-    //pokaz blad jak cos pojdzie nie tak
     @objc func showError() {
         let ac = UIAlertController(title: NSLocalizedString("error_header", comment: "errorHeader"), message: NSLocalizedString("loading_error", comment: "loadingError"), preferredStyle: .alert)
         ac.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))

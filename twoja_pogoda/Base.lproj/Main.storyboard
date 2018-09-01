@@ -218,7 +218,7 @@
                                         <view contentMode="scaleToFill" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="xyf-1Z-ZDM">
                                             <rect key="frame" x="0.0" y="50.666666666666671" width="375" height="161.33333333333331"/>
                                             <subviews>
-                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="752" bounces="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="7yv-sm-INt">
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="752" alwaysBounceHorizontal="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="7yv-sm-INt">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="161.33333333333334"/>
                                                     <color key="backgroundColor" red="0.047058823530000002" green="0.098039215690000001" blue="0.1764705882" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="NUt-P9-DSD">
@@ -428,6 +428,57 @@
                                     <outlet property="nightLabel" destination="MJo-IA-ZRd" id="inc-P0-9vg"/>
                                     <outlet property="nightTempLabel" destination="Vnh-Gs-u2i" id="fio-ta-LDG"/>
                                     <outlet property="nightView" destination="i4c-9a-8XH" id="mcT-cu-phE"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ExpandedCell" rowHeight="210" id="LEv-uq-NDf" customClass="ExpandedTableViewCell" customModule="twoja_pogoda" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="658" width="375" height="210"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LEv-uq-NDf" id="I5Z-jA-yDG">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="210"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NoH-eH-Jij">
+                                            <rect key="frame" x="187.66666666666666" y="24" width="0.0" height="0.0"/>
+                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YWf-0o-nTL">
+                                            <rect key="frame" x="187.66666666666666" y="32" width="0.0" height="0.0"/>
+                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qA3-PW-PAN">
+                                            <rect key="frame" x="187.66666666666666" y="16" width="0.0" height="0.0"/>
+                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pjo-5g-TVh">
+                                            <rect key="frame" x="187.66666666666666" y="8" width="0.0" height="0.0"/>
+                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
+                                            <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="qA3-PW-PAN" firstAttribute="centerX" secondItem="I5Z-jA-yDG" secondAttribute="centerX" id="0Ts-Kt-Hwq"/>
+                                        <constraint firstItem="qA3-PW-PAN" firstAttribute="top" secondItem="Pjo-5g-TVh" secondAttribute="bottom" constant="8" id="0pv-Xe-ObU"/>
+                                        <constraint firstItem="NoH-eH-Jij" firstAttribute="centerX" secondItem="I5Z-jA-yDG" secondAttribute="centerX" id="8b1-ft-FtC"/>
+                                        <constraint firstItem="NoH-eH-Jij" firstAttribute="top" secondItem="qA3-PW-PAN" secondAttribute="bottom" constant="8" id="Sg5-ZW-O9z"/>
+                                        <constraint firstItem="Pjo-5g-TVh" firstAttribute="centerX" secondItem="I5Z-jA-yDG" secondAttribute="centerX" id="YZO-23-KNz"/>
+                                        <constraint firstItem="Pjo-5g-TVh" firstAttribute="top" secondItem="I5Z-jA-yDG" secondAttribute="top" constant="8" id="dqG-O0-hhm"/>
+                                        <constraint firstItem="YWf-0o-nTL" firstAttribute="centerX" secondItem="I5Z-jA-yDG" secondAttribute="centerX" id="ghR-DO-svT"/>
+                                        <constraint firstItem="YWf-0o-nTL" firstAttribute="top" secondItem="NoH-eH-Jij" secondAttribute="bottom" constant="8" id="z9l-xJ-Bzj"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.047058823530000002" green="0.098039215690000001" blue="0.1764705882" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="cloudLabel" destination="qA3-PW-PAN" id="epR-8s-1ro"/>
+                                    <outlet property="humidityLabel" destination="YWf-0o-nTL" id="uAU-ar-jpP"/>
+                                    <outlet property="moreLessLabel" destination="Pjo-5g-TVh" id="baa-oF-aTs"/>
+                                    <outlet property="pressureLabel" destination="NoH-eH-Jij" id="fmS-s0-o1F"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

@@ -32,7 +32,6 @@
 		A00B296B203ADD5A004CDE7B /* apiKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00B296A203ADD5A004CDE7B /* apiKey.swift */; };
 		A00D8D30201934FA00DF59F9 /* TodayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00D8D2F201934FA00DF59F9 /* TodayTableViewCell.swift */; };
 		A00D8D322019350700DF59F9 /* LaterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00D8D312019350700DF59F9 /* LaterTableViewCell.swift */; };
-		A047E93B1F755D18000C8C5A /* wczytajListy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A047E93A1F755D18000C8C5A /* wczytajListy.swift */; };
 		A07C2D771F68A14B006A9BD7 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = A07C2D761F68A14B006A9BD7 /* .gitignore */; };
 		A07EEA601FABB09C0005DCE5 /* todo in Resources */ = {isa = PBXBuildFile; fileRef = A07EEA5F1FABB09C0005DCE5 /* todo */; };
 		A07EEA621FABD7700005DCE5 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07EEA611FABD7700005DCE5 /* SearchTableViewController.swift */; };
@@ -47,6 +46,7 @@
 		A0A8BD33203A09180051A9AD /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = A0A8BD32203A09170051A9AD /* Podfile */; };
 		A0A8BD3D203A11CD0051A9AD /* apiKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A8BD3C203A11CD0051A9AD /* apiKey.swift */; };
 		A0A8BD3F203A151A0051A9AD /* formatTemp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A8BD3E203A151A0051A9AD /* formatTemp.swift */; };
+		A0D14671213155490045B00B /* ExpandedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D14670213155490045B00B /* ExpandedTableViewCell.swift */; };
 		A0F17D191F596F22006D4E96 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F17D181F596F22006D4E96 /* SettingsTableViewController.swift */; };
 		A0F17D211F597B3C006D4E96 /* ColorSettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F17D201F597B3C006D4E96 /* ColorSettingsTableViewController.swift */; };
 		A0F17D251F599BE8006D4E96 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F17D241F599BE8006D4E96 /* Colors.swift */; };
@@ -128,7 +128,6 @@
 		A00B296A203ADD5A004CDE7B /* apiKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = apiKey.swift; sourceTree = "<group>"; };
 		A00D8D2F201934FA00DF59F9 /* TodayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayTableViewCell.swift; sourceTree = "<group>"; };
 		A00D8D312019350700DF59F9 /* LaterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaterTableViewCell.swift; sourceTree = "<group>"; };
-		A047E93A1F755D18000C8C5A /* wczytajListy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wczytajListy.swift; sourceTree = "<group>"; };
 		A07C2D761F68A14B006A9BD7 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		A07EEA5F1FABB09C0005DCE5 /* todo */ = {isa = PBXFileReference; lastKnownFileType = text; name = todo; path = twoja_pogoda/todo; sourceTree = "<group>"; };
 		A07EEA611FABD7700005DCE5 /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
@@ -143,6 +142,7 @@
 		A0A8BD32203A09170051A9AD /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A0A8BD3C203A11CD0051A9AD /* apiKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = apiKey.swift; sourceTree = "<group>"; };
 		A0A8BD3E203A151A0051A9AD /* formatTemp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = formatTemp.swift; sourceTree = "<group>"; };
+		A0D14670213155490045B00B /* ExpandedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedTableViewCell.swift; sourceTree = "<group>"; };
 		A0F17D181F596F22006D4E96 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		A0F17D201F597B3C006D4E96 /* ColorSettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorSettingsTableViewController.swift; sourceTree = "<group>"; };
 		A0F17D241F599BE8006D4E96 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
@@ -310,7 +310,6 @@
 			isa = PBXGroup;
 			children = (
 				A08C1F0B1F766C6F00B605DB /* CoreDataStack.swift */,
-				A047E93A1F755D18000C8C5A /* wczytajListy.swift */,
 				A08C1F3E1F76997E00B605DB /* CityListItem+CoreDataProperties.swift */,
 				A08C1F3D1F76997E00B605DB /* CityListItem+CoreDataClass.swift */,
 				A08C1F4A1F76A29A00B605DB /* coreDataManualImport.sqlite */,
@@ -354,6 +353,7 @@
 		A0F17D1C1F596F41006D4E96 /* weather(1) */ = {
 			isa = PBXGroup;
 			children = (
+				A0D14670213155490045B00B /* ExpandedTableViewCell.swift */,
 				A000BACC1F4C467A00AB967C /* WeatherTableViewController.swift */,
 				A000BAD01F4CE45400AB967C /* WeatherTableViewController+delegate.swift */,
 				A000BACE1F4CE12F00AB967C /* Next24hTableViewCell.swift */,
@@ -636,12 +636,12 @@
 				A000BAD71F4DBF8F00AB967C /* PlaceTableViewCell.swift in Sources */,
 				A08C1F3F1F76997E00B605DB /* CityListItem+CoreDataClass.swift in Sources */,
 				A08C1F351F76933300B605DB /* twoja_pogoda.xcdatamodeld in Sources */,
+				A0D14671213155490045B00B /* ExpandedTableViewCell.swift in Sources */,
 				A000BAD91F4EFDCE00AB967C /* UIRefreshControl + beginRefreshingManually.swift in Sources */,
 				A0F17D251F599BE8006D4E96 /* Colors.swift in Sources */,
 				A0A8BD3F203A151A0051A9AD /* formatTemp.swift in Sources */,
 				A000BAD31F4CE50D00AB967C /* WeatherCollectionViewCell.swift in Sources */,
 				A08C1F0C1F766C6F00B605DB /* CoreDataStack.swift in Sources */,
-				A047E93B1F755D18000C8C5A /* wczytajListy.swift in Sources */,
 				A0F17D271F599FF2006D4E96 /* UIColor + hex.swift in Sources */,
 				A07EEA621FABD7700005DCE5 /* SearchTableViewController.swift in Sources */,
 				A00D8D30201934FA00DF59F9 /* TodayTableViewCell.swift in Sources */,

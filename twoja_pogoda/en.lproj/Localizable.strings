@@ -20,3 +20,9 @@
 "not_found_header" = "Not found";
 "not_found_msg" = "City not found";
 "saved_places_header" = "saved places";
+"more" = "more…";
+"less" = "less…";
+"humidity" = "humidity";
+"pressure" = "pressure";
+"clouds" = "clouds";
+"select_more_info" = "select an item to view more info";

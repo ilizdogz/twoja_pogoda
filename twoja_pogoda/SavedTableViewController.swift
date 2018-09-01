@@ -99,7 +99,7 @@ class SavedTableViewController: UITableViewController, UITabBarControllerDelegat
     
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let vc = storyboard?.instantiateViewController(withIdentifier: "Pogoda") as? WeatherTableViewController {
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "Weather") as? WeatherTableViewController {
             vc.cityId = savedIds[indexPath.row]
             navigationController?.pushViewController(vc, animated: true)
         }
