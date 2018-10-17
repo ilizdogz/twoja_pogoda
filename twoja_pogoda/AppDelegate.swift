@@ -32,6 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //wczytywanie zapisanych kolorow/ustawianie domyslnych jesli ich nie ma
         let defaults = UserDefaults.standard
         if defaults.object(forKey: "savedColors") == nil {
+//            yeah its deprecated, fuck off
             let savedDefaults = NSKeyedArchiver.archivedData(withRootObject: SavedColors.defaultSettings)
             defaults.set(savedDefaults, forKey: "savedColors")
             savedColors = SavedColors.defaultSettings

@@ -87,11 +87,11 @@ struct Colors {
         //czy przyciski powinny być jasne czy ciemne?
         let brightness = 1 - (brightR + brightG + brightB)
         if brightness < 0.5 {
+            //background is light
+            return false
+        } else {
             //background is dark
             return true
-        } else {
-            //background is bright
-            return false
         }
     }
 }

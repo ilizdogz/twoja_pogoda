@@ -9,21 +9,21 @@
 /* Begin PBXBuildFile section */
 		0D50479394A936A08D973D50FF9C059D /* Pods-twoja_pogoda-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D8700DC722D00B8C5BC9070C3032DF06 /* Pods-twoja_pogoda-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		10F3267450665FB922948614AF325916 /* Pods-weather_widget-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EE289C2448B2B413E4A5EE0D8BD30FB /* Pods-weather_widget-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		28EB756572CCCD07D505F99090AF9B50 /* Temperature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83302CCB4CC65DFF021B88FE6AEBBC01 /* Temperature.swift */; };
+		28EB756572CCCD07D505F99090AF9B50 /* Temperature.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E112589AE1899D9E8ADCB2A76195F0 /* Temperature.swift */; };
 		2B8730E1EADCD4C8B2A977EC15EBE641 /* Timepiece-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F12887C16E8851315F66612E44A89DB4 /* Timepiece-dummy.m */; };
 		37E9968EB7DE023750E8B68B8F6929F1 /* SwiftyJSON-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 78ADCB0FEB4A541398D29CF4BE9AAD42 /* SwiftyJSON-dummy.m */; };
 		3F03CE5B799617F3B2427F9E5259BBDC /* Timepiece.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F89CC856AFA9CBF270F2BEA23E1238F9 /* Timepiece.framework */; };
 		4F0E9ADC66D84BA1DE55AC7B8BEA4E9F /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961ADE31D5E992CDB2339D5FF3C15996 /* SwiftyJSON.swift */; };
 		500668FDBF525F3B201F82F191F66692 /* Int+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734A3725FA7DF7A8EC1A8FA181CE0F5F /* Int+Timepiece.swift */; };
-		55EE0276379CC2A14FBDCC62980C7052 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB746B48849CA513CA8CC04E171A9851 /* WeatherModel.swift */; };
+		55EE0276379CC2A14FBDCC62980C7052 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A31D82444851B464CB5865A48DD92C /* WeatherModel.swift */; };
 		69E9B5AF2C2C51F03CA0850D5F6D7CF0 /* SwiftyJSON-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E825B8054B00E1AE6EEDA21CAC8D8280 /* SwiftyJSON-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6F9AD6A037F198B5EE275A5B0EEA0B21 /* Date+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = D026A31BAD3B68248EFC4415AE3AD29C /* Date+Timepiece.swift */; };
 		8904D678E56775E8A935218C01C933AA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD9588476A1113424DD4E18675BB6235 /* UIKit.framework */; };
 		897E598036A66678DFE4ED591F00327C /* Timepiece-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EA5A6CB12FFB3EA2C8DC22F67508386C /* Timepiece-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A477DA0313B7535AEB2BA642CC7357D4 /* Pods-twoja_pogoda-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D11D5A0D5758AB06FAEF36EE68E62F /* Pods-twoja_pogoda-dummy.m */; };
 		A6858CCBD34B837739582B838FABD702 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9C5C068CB98F35BA2281A31E1C4840E /* Foundation.framework */; };
-		ABDA04962FC985BF5124208CB763F28D /* GetWeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20FFFE5AEE694A1E72BD0A68932E3BF /* GetWeatherData.swift */; };
-		B4A764080EE1CB3AA9DA6D38319C18DC /* YourWeatherFramework-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B5930B091E9606979959149AF146FEFC /* YourWeatherFramework-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ABDA04962FC985BF5124208CB763F28D /* GetWeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579DA51588C13507482E949CB0A03F4A /* GetWeatherData.swift */; };
+		B4A764080EE1CB3AA9DA6D38319C18DC /* YourWeatherFramework-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0FA1BBC92B46CDE6537E92A551203033 /* YourWeatherFramework-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CAC2E7797127D3D573FE8AF585F31FD2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9C5C068CB98F35BA2281A31E1C4840E /* Foundation.framework */; };
 		D2C3FF7BA2A49BF96008C615E2E7F205 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9C5C068CB98F35BA2281A31E1C4840E /* Foundation.framework */; };
 		D440166786B93040A7C657A1AFE93978 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25E2EA6C7D74C4CC130CADE59C965D93 /* SwiftyJSON.framework */; };
@@ -32,7 +32,7 @@
 		F72A95E747B531C22154FC8C8978DFDF /* String+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1507FC60DD6E42B57656AB23F4B851EE /* String+Timepiece.swift */; };
 		FA1581571850276FB52BC3B01DEC5573 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9C5C068CB98F35BA2281A31E1C4840E /* Foundation.framework */; };
 		FD9CDD7C9C32B8D3CF712935330DE13D /* Pods-weather_widget-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DD76B6E54F95044A49A490936C27663A /* Pods-weather_widget-dummy.m */; };
-		FEC8FEA8141BF4F918041E248FD96B31 /* YourWeatherFramework-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F327CACB3A3EF5F734E476989EA7549 /* YourWeatherFramework-dummy.m */; };
+		FEC8FEA8141BF4F918041E248FD96B31 /* YourWeatherFramework-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 64A7AE5715125DC14858B85B30664D5A /* YourWeatherFramework-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +95,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0FA1BBC92B46CDE6537E92A551203033 /* YourWeatherFramework-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "YourWeatherFramework-umbrella.h"; sourceTree = "<group>"; };
 		13A39139525634C595142ACA9FDF1E83 /* Pods-twoja_pogoda.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-twoja_pogoda.modulemap"; sourceTree = "<group>"; };
 		1507FC60DD6E42B57656AB23F4B851EE /* String+Timepiece.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+Timepiece.swift"; path = "Sources/String+Timepiece.swift"; sourceTree = "<group>"; };
 		1978E37B4157AEE450512BFDFAAC9B46 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -104,22 +105,22 @@
 		25E2EA6C7D74C4CC130CADE59C965D93 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BA92C90B40CF36678BA11B1C9B6881E /* Pods-weather_widget.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-weather_widget.modulemap"; sourceTree = "<group>"; };
 		2EEAB44BBB93B4C9035144173D67EB66 /* Pods-twoja_pogoda.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-twoja_pogoda.release.xcconfig"; sourceTree = "<group>"; };
-		2F327CACB3A3EF5F734E476989EA7549 /* YourWeatherFramework-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "YourWeatherFramework-dummy.m"; sourceTree = "<group>"; };
+		32E1EF434DE956D2F3D4BB7B5A226139 /* YourWeatherFramework.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = YourWeatherFramework.xcconfig; sourceTree = "<group>"; };
 		364741A463C0A2D33D718D881A0941DC /* SwiftyJSON.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyJSON.xcconfig; sourceTree = "<group>"; };
 		38764C7C4C56D3B783A44D7198088893 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3929FF4B62014D2712AFB5B7656D878F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3B20AF052C338A80899260E2E8DDF178 /* YourWeatherFramework.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = YourWeatherFramework.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		3BFD65A71FA76D75A7AD7C760B159C4D /* YourWeatherFramework-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "YourWeatherFramework-prefix.pch"; sourceTree = "<group>"; };
 		49D661FE4C39D691FB6253DA2251D39E /* Pods-twoja_pogoda.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-twoja_pogoda.debug.xcconfig"; sourceTree = "<group>"; };
-		4EE23BFD74BEE12F9A984647ACCD41EE /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		579DA51588C13507482E949CB0A03F4A /* GetWeatherData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GetWeatherData.swift; path = WeatherFramework/GetWeatherData.swift; sourceTree = "<group>"; };
 		5FF54EADB39E11A9EBF6CB65B0419DFB /* Pods_twoja_pogoda.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_twoja_pogoda.framework; path = "Pods-twoja_pogoda.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		64A7AE5715125DC14858B85B30664D5A /* YourWeatherFramework-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "YourWeatherFramework-dummy.m"; sourceTree = "<group>"; };
+		6C968F8F88953233C4E2196F7F806DB4 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		734A3725FA7DF7A8EC1A8FA181CE0F5F /* Int+Timepiece.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Int+Timepiece.swift"; path = "Sources/Int+Timepiece.swift"; sourceTree = "<group>"; };
-		73651446C88B41F92AE316499AC23B74 /* YourWeatherFramework-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "YourWeatherFramework-prefix.pch"; sourceTree = "<group>"; };
 		78ADCB0FEB4A541398D29CF4BE9AAD42 /* SwiftyJSON-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyJSON-dummy.m"; sourceTree = "<group>"; };
 		79C84D4B40F1826C0B7C92417CD66C70 /* Pods-twoja_pogoda-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-twoja_pogoda-acknowledgements.markdown"; sourceTree = "<group>"; };
 		7BE0178B92D51E312E3D00E291C089DF /* Pods-twoja_pogoda-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-twoja_pogoda-frameworks.sh"; sourceTree = "<group>"; };
 		7DD7C9729E176435373E8DDA7F464E2B /* Pods-weather_widget-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-weather_widget-acknowledgements.plist"; sourceTree = "<group>"; };
-		7F6C6D124BD258AE0E3DD713A05F5741 /* YourWeatherFramework.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = YourWeatherFramework.modulemap; sourceTree = "<group>"; };
-		83302CCB4CC65DFF021B88FE6AEBBC01 /* Temperature.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Temperature.swift; path = WeatherFramework/Temperature.swift; sourceTree = "<group>"; };
+		83A31D82444851B464CB5865A48DD92C /* WeatherModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WeatherModel.swift; path = WeatherFramework/WeatherModel.swift; sourceTree = "<group>"; };
 		855D77D5618BD1D3B4ED1D3D255AAEED /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8FC9D790CF77BF3BF72BE1FD3967D7F4 /* Timepiece.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Timepiece.xcconfig; sourceTree = "<group>"; };
 		920B4C3E10D0CF2CD1BEBF77D0F00AE9 /* Timepiece.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Timepiece.modulemap; sourceTree = "<group>"; };
@@ -128,19 +129,18 @@
 		9A607332FC5307E4297D8E2EE2E2907D /* Pods_weather_widget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_weather_widget.framework; path = "Pods-weather_widget.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BF08B591FA50B8F1AFC48A87D2D9865 /* Pods-twoja_pogoda-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-twoja_pogoda-resources.sh"; sourceTree = "<group>"; };
 		A6BA7527A9B51FCB9A20D157F5ADDB26 /* SwiftyJSON.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftyJSON.modulemap; sourceTree = "<group>"; };
-		AB1A09FECA177FF9F63EB198F4D67184 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD9588476A1113424DD4E18675BB6235 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		B27CBA650DDF2EA1872BFAC3BB76C7A4 /* Timepiece-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Timepiece-prefix.pch"; sourceTree = "<group>"; };
-		B5930B091E9606979959149AF146FEFC /* YourWeatherFramework-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "YourWeatherFramework-umbrella.h"; sourceTree = "<group>"; };
-		BB746B48849CA513CA8CC04E171A9851 /* WeatherModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WeatherModel.swift; path = WeatherFramework/WeatherModel.swift; sourceTree = "<group>"; };
+		B7B3B2CC7274EFFFAE7C13A4FA180D03 /* YourWeatherFramework.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = YourWeatherFramework.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		BE8793183A9B0DF3799BA50BDC741E6D /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftyJSON.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7A65B995A6E583CF635A3EAA015B712 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		C9C5C068CB98F35BA2281A31E1C4840E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		CF2444FDCB1BE97765EBE107A0A31E56 /* DateComponents+Timepiece.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DateComponents+Timepiece.swift"; path = "Sources/DateComponents+Timepiece.swift"; sourceTree = "<group>"; };
 		D026A31BAD3B68248EFC4415AE3AD29C /* Date+Timepiece.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Date+Timepiece.swift"; path = "Sources/Date+Timepiece.swift"; sourceTree = "<group>"; };
-		D20FFFE5AEE694A1E72BD0A68932E3BF /* GetWeatherData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GetWeatherData.swift; path = WeatherFramework/GetWeatherData.swift; sourceTree = "<group>"; };
 		D8700DC722D00B8C5BC9070C3032DF06 /* Pods-twoja_pogoda-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-twoja_pogoda-umbrella.h"; sourceTree = "<group>"; };
-		D9F273097DA53767CF1DDECE4C8D7B63 /* YourWeatherFramework.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = YourWeatherFramework.xcconfig; sourceTree = "<group>"; };
+		D8E112589AE1899D9E8ADCB2A76195F0 /* Temperature.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Temperature.swift; path = WeatherFramework/Temperature.swift; sourceTree = "<group>"; };
 		DD76B6E54F95044A49A490936C27663A /* Pods-weather_widget-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-weather_widget-dummy.m"; sourceTree = "<group>"; };
+		DDD500ED565B165E8E1B7D60427D7419 /* YourWeatherFramework.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = YourWeatherFramework.modulemap; sourceTree = "<group>"; };
 		DE869C261C5427FD8659455B215CCD37 /* Pods-weather_widget-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-weather_widget-resources.sh"; sourceTree = "<group>"; };
 		E19C14E68F1A07FA38212C691919E8D5 /* Pods-weather_widget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-weather_widget.debug.xcconfig"; sourceTree = "<group>"; };
 		E825B8054B00E1AE6EEDA21CAC8D8280 /* SwiftyJSON-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyJSON-umbrella.h"; sourceTree = "<group>"; };
@@ -224,6 +224,15 @@
 			path = "../Target Support Files/Timepiece";
 			sourceTree = "<group>";
 		};
+		116779623227AA0F6CBCE7CA024AA3C0 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				C7A65B995A6E583CF635A3EAA015B712 /* LICENSE */,
+				B7B3B2CC7274EFFFAE7C13A4FA180D03 /* YourWeatherFramework.podspec */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
 		1452FB5F57EED6ED9063A1EA0C26D8C2 /* Timepiece */ = {
 			isa = PBXGroup;
 			children = (
@@ -255,6 +264,20 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
+		3002F54FE925B9F98570955830859346 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				6C968F8F88953233C4E2196F7F806DB4 /* Info.plist */,
+				DDD500ED565B165E8E1B7D60427D7419 /* YourWeatherFramework.modulemap */,
+				32E1EF434DE956D2F3D4BB7B5A226139 /* YourWeatherFramework.xcconfig */,
+				64A7AE5715125DC14858B85B30664D5A /* YourWeatherFramework-dummy.m */,
+				3BFD65A71FA76D75A7AD7C760B159C4D /* YourWeatherFramework-prefix.pch */,
+				0FA1BBC92B46CDE6537E92A551203033 /* YourWeatherFramework-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../../ios/twoja_pogoda/Pods/Target Support Files/YourWeatherFramework";
+			sourceTree = "<group>";
+		};
 		31A584C9FE85A0D0CD23CB6C599D6807 /* Pods-twoja_pogoda */ = {
 			isa = PBXGroup;
 			children = (
@@ -283,19 +306,10 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		4ED426160EF87B854CC967BDBC828DA6 /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				4EE23BFD74BEE12F9A984647ACCD41EE /* LICENSE */,
-				3B20AF052C338A80899260E2E8DDF178 /* YourWeatherFramework.podspec */,
-			);
-			name = Pod;
-			sourceTree = "<group>";
-		};
 		63DD5C655AAB2A4E54EC3F8470678717 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				84AA184CAFA36B2193628BECC1B24283 /* YourWeatherFramework */,
+				F27899DD98FF0A3B2DC8B72847FC548E /* YourWeatherFramework */,
 			);
 			name = "Development Pods";
 			sourceTree = "<group>";
@@ -312,19 +326,6 @@
 			);
 			sourceTree = "<group>";
 		};
-		84AA184CAFA36B2193628BECC1B24283 /* YourWeatherFramework */ = {
-			isa = PBXGroup;
-			children = (
-				D20FFFE5AEE694A1E72BD0A68932E3BF /* GetWeatherData.swift */,
-				83302CCB4CC65DFF021B88FE6AEBBC01 /* Temperature.swift */,
-				BB746B48849CA513CA8CC04E171A9851 /* WeatherModel.swift */,
-				4ED426160EF87B854CC967BDBC828DA6 /* Pod */,
-				B845200CCAECD12DF1027082B6C4F7BE /* Support Files */,
-			);
-			name = YourWeatherFramework;
-			path = /Users/ilizdogz/dev/libraries/WeatherFramework;
-			sourceTree = "<absolute>";
-		};
 		A8DFE1E528696705253FBC348F4AF67D /* SwiftyJSON */ = {
 			isa = PBXGroup;
 			children = (
@@ -333,20 +334,6 @@
 			);
 			name = SwiftyJSON;
 			path = SwiftyJSON;
-			sourceTree = "<group>";
-		};
-		B845200CCAECD12DF1027082B6C4F7BE /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				AB1A09FECA177FF9F63EB198F4D67184 /* Info.plist */,
-				7F6C6D124BD258AE0E3DD713A05F5741 /* YourWeatherFramework.modulemap */,
-				D9F273097DA53767CF1DDECE4C8D7B63 /* YourWeatherFramework.xcconfig */,
-				2F327CACB3A3EF5F734E476989EA7549 /* YourWeatherFramework-dummy.m */,
-				73651446C88B41F92AE316499AC23B74 /* YourWeatherFramework-prefix.pch */,
-				B5930B091E9606979959149AF146FEFC /* YourWeatherFramework-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../../../OneDrive/dev/ios/twoja_pogoda/Pods/Target Support Files/YourWeatherFramework";
 			sourceTree = "<group>";
 		};
 		CACE7996728CF4FF5B883DC291985754 /* Pods-weather_widget */ = {
@@ -391,6 +378,19 @@
 			);
 			name = Products;
 			sourceTree = "<group>";
+		};
+		F27899DD98FF0A3B2DC8B72847FC548E /* YourWeatherFramework */ = {
+			isa = PBXGroup;
+			children = (
+				579DA51588C13507482E949CB0A03F4A /* GetWeatherData.swift */,
+				D8E112589AE1899D9E8ADCB2A76195F0 /* Temperature.swift */,
+				83A31D82444851B464CB5865A48DD92C /* WeatherModel.swift */,
+				116779623227AA0F6CBCE7CA024AA3C0 /* Pod */,
+				3002F54FE925B9F98570955830859346 /* Support Files */,
+			);
+			name = YourWeatherFramework;
+			path = /Users/ilizdogz/dev/libraries/WeatherFramework;
+			sourceTree = "<absolute>";
 		};
 /* End PBXGroup section */
 
@@ -937,7 +937,7 @@
 		};
 		7FD0BC3E1CA252BFF47287F0329598CA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D9F273097DA53767CF1DDECE4C8D7B63 /* YourWeatherFramework.xcconfig */;
+			baseConfigurationReference = 32E1EF434DE956D2F3D4BB7B5A226139 /* YourWeatherFramework.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -1068,7 +1068,7 @@
 		};
 		B13093A895C9CCBF25E870674BDB645D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D9F273097DA53767CF1DDECE4C8D7B63 /* YourWeatherFramework.xcconfig */;
+			baseConfigurationReference = 32E1EF434DE956D2F3D4BB7B5A226139 /* YourWeatherFramework.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_OBJC_WEAK = NO;
