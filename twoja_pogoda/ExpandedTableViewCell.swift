@@ -36,8 +36,8 @@ class ExpandedTableViewCell: UITableViewCell {
         humidityLabel.text = "\(NSLocalizedString("humidity", comment: "humidity")): \(item.humidity)%"
 //        slide in
         let transition = CATransition()
-        transition.type = kCATransitionPush
-        transition.subtype = kCATransitionFromRight
+        transition.type = CATransitionType.push
+        transition.subtype = CATransitionSubtype.fromRight
         layer.add(transition, forKey: nil)
     }
     

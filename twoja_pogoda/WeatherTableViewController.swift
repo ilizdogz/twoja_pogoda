@@ -40,7 +40,7 @@ class WeatherTableViewController: UITableViewController, UITabBarControllerDeleg
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.refreshControl?.beginRefreshingManually()
-        NotificationCenter.default.addObserver(self, selector: #selector(self.applicationDidBecomeActive(_:)), name: .UIApplicationDidBecomeActive, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.applicationDidBecomeActive(_:)), name: UIApplication.didBecomeActiveNotification, object: nil)
         //kolory tutaj jakby ktos zmienil ustawienia i potem wrocil
         self.tableView.backgroundColor = savedColors.bg
         self.tableView.backgroundView?.backgroundColor = savedColors.bg

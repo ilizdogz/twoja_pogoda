@@ -37,7 +37,7 @@ class SavedTableViewController: UITableViewController, UITabBarControllerDelegat
         //do przewijania do gory przez tabBar
         self.tabBarController?.delegate = self
         
-        let backButton = UIBarButtonItem(title: NSLocalizedString("back", comment: "back"), style: UIBarButtonItemStyle.plain, target: self, action: nil)
+        let backButton = UIBarButtonItem(title: NSLocalizedString("back", comment: "back"), style: UIBarButtonItem.Style.plain, target: self, action: nil)
         //backButton.setTitleTextAttributes([NSAttributedStringKey.font: UIFont(name: "Menlo", size: 15)!], for: .normal)
         navigationItem.backBarButtonItem = backButton
         
@@ -51,7 +51,7 @@ class SavedTableViewController: UITableViewController, UITabBarControllerDelegat
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         //odswiez przy ponownym otwarciu
-        NotificationCenter.default.addObserver(self, selector: #selector(self.applicationDidBecomeActive(_:)), name: .UIApplicationDidBecomeActive, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.applicationDidBecomeActive(_:)), name: UIApplication.didBecomeActiveNotification, object: nil)
         self.tableView.backgroundColor = savedColors.bg
     }
     
@@ -106,13 +106,13 @@ class SavedTableViewController: UITableViewController, UITabBarControllerDelegat
     }
     
     //pozwala na usuwanie
-    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         return .delete
     }
 
     
     // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
             savedIds.remove(at: indexPath.row)

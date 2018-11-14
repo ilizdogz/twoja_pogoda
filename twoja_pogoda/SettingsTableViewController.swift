@@ -28,8 +28,8 @@ class SettingsTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         navigationController?.navigationBar.barTintColor = Colors.blackAlpha
         
-        let backButton = UIBarButtonItem(title: NSLocalizedString("back", comment: "back"), style: UIBarButtonItemStyle.plain, target: self, action: nil)
-        backButton.setTitleTextAttributes([NSAttributedStringKey.font: UIFont(name: "Menlo", size: 15)!], for: .normal)
+        let backButton = UIBarButtonItem(title: NSLocalizedString("back", comment: "back"), style: UIBarButtonItem.Style.plain, target: self, action: nil)
+        backButton.setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "Menlo", size: 15)!], for: .normal)
         navigationItem.backBarButtonItem = backButton
         for button in unitButtons {
             if button.titleLabel?.text == tempUnit.rawValue {

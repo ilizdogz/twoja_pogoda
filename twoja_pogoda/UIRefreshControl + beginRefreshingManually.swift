@@ -16,6 +16,6 @@ extension UIRefreshControl {
             tableView.setContentOffset(CGPoint(x: 0, y: tableView.contentOffset.y - frame.height), animated: true)
         }
         beginRefreshing()
-        sendActions(for: UIControlEvents.valueChanged)      //od razu po tym robi sie to samo jak przy IBAction z RefreshControl
+        sendActions(for: UIControl.Event.valueChanged)      //od razu po tym robi sie to samo jak przy IBAction z RefreshControl
     }
 }
